@@ -27,11 +27,21 @@ if (title && title.children.length && title.children[0].nodeName === "A") {
   }
 }
 
-// Wrap the first piece of text in each comment into its own p
+// Wrap the first piece of text in each comment into its own p and add a class to the upvote td
 $("span.comment").forEach(function (elem) {
   var paragraph = document.createElement("p");
-  paragraph.appendChild(elem.children[0]);
-  elem.insertBefore(paragraph, elem.children[0]);  
+
+  if (elem.children.length) {
+    paragraph.appendChild(elem.children[0]);
+    elem.insertBefore(paragraph, elem.children[0]);    
+  } else {
+    paragraph.textContent = elem.textContent;
+    elem.textContent = "";
+    elem.appendChild(paragraph);
+  } 
+
+  var container = elem.parentElement.parentElement;
+  container.children[1].classList.add("hn-upvote-button")
 });
 
 // Style error pages (and ignore the rss page)

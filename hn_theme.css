@@ -1,8 +1,10 @@
-html,body{background:#fff;margin:0;padding:0;font:15px/1.5 Helvetica Neue,Arial,sans-serif;color:#555}
+html,body{background:#fff;margin:0;padding:0;font:15px/1.5 Helvetica Neue, Arial, sans-serif;color:#555}
 a{color:#ffac5b;text-decoration:none}
 a:hover{text-decoration:underline}
-input{-webkit-appearance:none;-moz-appearance:none;border:1px solid #ccc;font:inherit;color:inherit;padding:5px 8px;}
-input:focus{border-color:#aaa;outline:none}
+input,textarea{-webkit-appearance:none;-moz-appearance:none;border:1px solid #ccc;font:15px/1.5 Helvetica Neue, Arial, sans-serif;color:inherit;padding:5px 8px;margin:0;font-weight:200;}
+input[type=submit],textarea[type=submit]{background:#ff8937;border:none;color:#fbf9f7;font:15px/1.5 Helvetica Neue, Arial, sans-serif;font-weight:200}
+input:focus,textarea:focus{border-color:#aaa;outline:none}
+textarea{width:600px;height:120px;resize:vertical}
 table{border-collapse:collapse;border:none}
 tr,td{border:none;padding:0}
 body.error{text-align:center;padding-top:140px;font-size:40px;font-weight:100;letter-spacing:1px;}
@@ -24,13 +26,17 @@ body > center > table > tbody > tr:first-child > td > table td:nth-child(2) .pag
 body > center > table > tbody > tr:first-child > td > table td:last-child{text-align:right;padding-right:20px;}
 body > center > table > tbody > tr:first-child > td > table td:last-child a[href^=logout]{margin-left:10px}
 body > center > table > tbody > tr:first-child > td > table a{font-weight:100;letter-spacing:1px;color:#fbf9f7}
-body > center > table > tbody > tr:nth-child(3) > td{padding:20px 20px 0 20px;}
-body > center > table > tbody > tr:nth-child(3) > td > table{width:100%;font-weight:200;color:#999}
-body > center > table > tbody > tr:nth-child(3) > td td.title{padding:25px 0 5px 0;}
-body > center > table > tbody > tr:nth-child(3) > td td.title + td{padding:22px 10px 3px 0}
+body > center > table > tbody > tr:nth-child(3) > td{padding:42px 20px 0 20px;}
+body > center > table > tbody > tr:nth-child(3) > td > table{width:100%;font-weight:200;color:#999;}
+body > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr:first-child > td:first-child:not(.title),body > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr:first-child > td:first-child:not(.title){padding:0 10px 3px 0}
+body > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(6) td,body > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(6) td{padding-top:30px;}
+body > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(6) td input[type=submit],body > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(6) td input[type=submit]{width:150px}
+body > center > table > tbody > tr:nth-child(3) > td > table p{line-height:1.5;margin:0;margin-bottom:1em}
+body > center > table > tbody > tr:nth-child(3) > td td.title{padding:3px 0 5px 0;}
+body > center > table > tbody > tr:nth-child(3) > td td.title + td{padding:0 10px 3px 0}
 body > center > table > tbody > tr:nth-child(3) > td td.title a{color:#ff9a38}
 body > center > table > tbody > tr:nth-child(3) > td td.title a:visited{color:#ffd6ad}
-body > center > table > tbody > tr:nth-child(3) > td td.subtext{font-size:13px}
+body > center > table > tbody > tr:nth-child(3) > td td.subtext{font-size:13px;padding-bottom:22px}
 body > center > table > tbody > tr:nth-child(4) > td{padding-top:40px;font-weight:200;font-size:13px;}
 body > center > table > tbody > tr:nth-child(4) > td .yclinks a{margin-right:10px}
 body > center > table > tbody > tr:nth-child(4) > td form input{width:400px;margin-left:10px}

@@ -1,15 +1,15 @@
 base-color = #ff8937
-
 text-color = #555
-
 link-color = #ffac5b
+light-link-color = #fbf9f7
+base-font = "15px/1.5 Helvetica Neue, Arial, sans-serif"
 
 /* Base styles */
 html, body
     background #fff
     margin 0
     padding 0
-    font 15px/1.5 Helvetica Neue, Arial, sans-serif
+    font unquote(base-font)
     color text-color
 
 a
@@ -20,18 +20,33 @@ a:hover
     /*color #fdbe80*/
     text-decoration underline
 
-input
+input, textarea
     -webkit-appearance none
     -moz-appearance none
 
     border 1px solid lighten(text-color, 70%)
-    font inherit
+    font unquote(base-font)
     color inherit
     padding 5px 8px
+    margin 0
+    font-weight 200
+
+    &[type=submit]
+        background base-color
+        border none
+        color light-link-color
+        font unquote(base-font)
+        font-weight 200
 
     &:focus
         border-color lighten(text-color, 50%)
         outline none
+
+// 832
+textarea
+    width 600px
+    height 120px
+    resize vertical
 
 table
     border-collapse collapse
@@ -41,10 +56,9 @@ tr, td
     border none
     padding 0
 
-/**
- * Some selectors are pretty contrived but I think it's the only
- * way to select some things. Please correct me if I'm wrong!
- */
+
+// Some selectors are pretty contrived but I think it's the only
+// way to select some things. Please correct me if I'm wrong!
 body
     &.error
         text-align center
@@ -143,21 +157,40 @@ body
                     a
                         font-weight 100
                         letter-spacing 1px
-                        color #fbf9f7
+                        color light-link-color
 
                 > tr:nth-child(3) > td
-                    padding 20px 20px 0 20px
+                    padding 42px 20px 0 20px
 
                     > table
                         width 100%
                         font-weight 200
                         color lighten(text-color, 40%)
 
+                        > tbody 
+
+                        > tbody
+                            > tr:first-child > td:first-child:not(.title)
+                                padding 0px 10px 3px 0 // Refactor: same as #1
+                            
+                            > tr:nth-child(6) td
+                                padding-top 30px
+
+                                input[type=submit]                     
+                                    width 150px
+
+                        // Self posts
+                        p
+                            line-height 1.5
+                            margin 0
+                            margin-bottom 1em
+
+
                     td.title
-                        padding 25px 0 5px 0
+                        padding 3px 0 5px 0
 
                         + td
-                            padding 22px 10px 3px 0
+                            padding 0px 10px 3px 0 // Refactor: same as #1
 
                         a
                             color darken(link-color, 10%)
@@ -167,6 +200,7 @@ body
 
                     td.subtext
                         font-size 13px
+                        padding-bottom 22px
 
                 > tr:nth-child(4) > td
                     padding-top 40px

@@ -1,41 +1,37 @@
-/* Base color: #ff9731 */
+base-color = #ff9731
+
+text-color = #444
 
 /* Base styles */
-html, body {
-    background: #fff;
-    margin: 0;
-    padding: 0;
-    font: 15px/1.5 Helvetica Neue, Arial, sans-serif;
-    color: #444;
-}
+html, body
+    background #fff
+    margin 0
+    padding 0
+    font 15px/1.5 Helvetica Neue, Arial, sans-serif
+    color text-color
 
-a {
-    color: #ffac5b;
-    text-decoration: none;
-}
+a
+    color #ffac5b
+    text-decoration none
 
-a:hover {
-    /*color: #fdbe80;*/
-    text-decoration: underline;
-}
+a:hover
+    /*color #fdbe80*/
+    text-decoration underline
 
-table {
-    border-collapse: collapse;
-    border: none;
-}
+table
+    border-collapse collapse
+    border none
 
-tr, td {
-    border: none;
-    padding: 0;
-}
+tr, td
+    border none
+    padding 0
 
 /**
  * Some selectors are pretty contrived but I think it's the only
  * way to select some things. Please correct me if I'm wrong!
  */
-body > center > table > tbody > tr:first-child > td > table {
-    /*height: 50px;
-    padding: 10px;*/
-    background: red;
-    width: 100%;
-}
+body > center > table > tbody > tr:first-child > td > table
+    /*height 50px
+    padding 10px*/
+    background red
+    width 100%

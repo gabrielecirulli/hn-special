@@ -14,7 +14,7 @@
     {
       "matches": [ "http://news.ycombinator.com/*", "https://news.ycombinator.com/*" ],
       "js": [ "clear_styles.js" ],
-      "css": [ "hn_special.css" ]
+      "css": [ "hn_theme.css" ]
     }
   ]
 }

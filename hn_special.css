@@ -19,11 +19,23 @@ a:hover {
     text-decoration: underline;
 }
 
+table {
+    border-collapse: collapse;
+    border: none;
+}
+
+tr, td {
+    border: none;
+    padding: 0;
+}
+
 /**
- * This selector is pretty contrived but I think it's the only
- * way to select the header <td>. Please correct me if I'm wrong!
+ * Some selectors are pretty contrived but I think it's the only
+ * way to select some things. Please correct me if I'm wrong!
  */
-body > center > table > tbody > tr:first-child td {
-    height: 50px;
-    padding: 10px;
+body > center > table > tbody > tr:first-child > td > table {
+    /*height: 50px;
+    padding: 10px;*/
+    background: red;
+    width: 100%;
 }

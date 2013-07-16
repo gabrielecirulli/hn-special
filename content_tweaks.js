@@ -7,9 +7,9 @@ $("span.pagetop, span.yclinks").forEach(function (elem) {
   })
 });
 
-// Style error pages
+// Style error pages (and ignore the rss page)
 var body = document.body;
-if (body.children.length === 0 || body.children[0].nodeName === "PRE") {
+if (location.pathname !== "/rss" && (!body.children.length || body.children[0].nodeName === "PRE")) {
   body.classList.add("error");
 
   // Dirty hack to remove the <pre> element shown on 404 pages

@@ -1,11 +1,27 @@
 // Makes a few tweaks to the content of the page
 $("span.pagetop, span.yclinks").forEach(function (elem) {
   toArray(elem.childNodes).forEach(function (node) {
-    if (node.nodeName === "#text") {
+    if (node.nodeType === Node.TEXT_NODE) {
       node.nodeValue = node.nodeValue.replace(/\|/g, "");
     }
   })
 });
+
+// Add p tags to the first paragraph of self posts
+var title = document.getElementsByClassName("title")[0];
+
+// If the first title in the page contains an A tag we're hopefully in an item page
+// I'm not sure if there's a better way to match this.
+if (title.children.length && title.children[0].nodeName === "A") {
+  var container = title.parentElement.parentElement.children[3].children[1];
+  var unwrapped = container.childNodes[0];
+  var text = unwrapped.nodeValue;
+  unwrapped.remove();
+
+  var paragraph = document.createElement("p");
+  paragraph.textContent = text;
+  container.insertBefore(paragraph, container.children[0]);
+}
 
 // Style error pages (and ignore the rss page)
 var body = document.body;

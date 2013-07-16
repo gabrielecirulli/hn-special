@@ -10,13 +10,14 @@ $("link[rel=stylesheet]").forEach(function(elem){
 // Removes all styling attributes
 $("table, tr, td").forEach(function(elem){
     var attrs = elem.attributes;
-    var rem = [];
+    var names = [];
+
     for(var i = 0; i < attrs.length; i++) {
       var attr = attrs[i];
-      rem.push(attr.name);
+      names.push(attr.name);
     }
 
-    rem.forEach(function(attr){
+    names.forEach(function(attr){
       elem.removeAttribute(attr);
     });
 });

@@ -23,6 +23,13 @@ if (title.children.length && title.children[0].nodeName === "A") {
   container.insertBefore(paragraph, container.children[0]);
 }
 
+// Wrap the first piece of text in each comment into its own p
+$("span.comment").forEach(function (elem) {
+  var paragraph = document.createElement("p");
+  paragraph.appendChild(elem.children[0]);
+  elem.insertBefore(paragraph, elem.children[0]);  
+});
+
 // Style error pages (and ignore the rss page)
 var body = document.body;
 if (location.pathname !== "/rss" && (!body.children.length || body.children[0].nodeName === "PRE")) {

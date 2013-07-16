@@ -11,7 +11,7 @@ $("table, tr, td").forEach(function (elem) {
     // This is contrived because .length is changed, messing up the loop
     for (var i = 0; i < attrs.length; i++) {
       var attr = attrs[i].name;
-      if (attr === "colspan") continue; 
+      if (["colspan", "class"].indexOf(attr) !== -1) continue; 
       names.push(attr);
     }
 

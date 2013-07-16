@@ -12,5 +12,5 @@ npm install -g stylus
 
 You can then tell Stylus to watch the changes to the `.styl` file and compile automatically:
 ```
-stylus -c -w hn_special.styl
+stylus -c -w hn_theme.styl
 ```

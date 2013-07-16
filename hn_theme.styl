@@ -12,6 +12,9 @@ html, body
     font unquote(base-font)
     color text-color
 
+u
+    text-decoration none
+
 a
     color link-color
     text-decoration none
@@ -98,15 +101,19 @@ body
                     font-weight 100
                     width 100%
 
+                    b
+                        font-weight inherit
+                        margin 0
+
                     td
-                        padding 15px 0
+                        padding 20px 0
 
                         // Logo td
                         &:first-child
                             square-size = 30px
                             width square-size
 
-                            padding-left 20px
+                            padding-left 25px
                             padding-right 10px
 
                             a
@@ -132,9 +139,8 @@ body
 
                         // Title and links td
                         &:nth-child(2)
-                            b
-                                margin-right 25px
-                                a
+                            b a
+                                    margin-right 25px
                                     font-weight 400
                                     letter-spacing 0px
 
@@ -149,7 +155,7 @@ body
                         // User td
                         &:last-child
                             text-align right
-                            padding-right 20px
+                            padding-right 25px
 
                             a[href^=logout]
                                 margin-left 10px
@@ -164,7 +170,7 @@ body
                     padding 42px 20px 0 20px
 
                     // Self posts and comments
-                    p, .comhead
+                    p
                         line-height 1.5
                         margin 0
                         margin-bottom 1em
@@ -180,19 +186,31 @@ body
                         > tbody
                             > tr:first-child > td:first-child:not(.title)
                                 padding 0px 10px 3px 0 // Refactor: same as #1
-                            
-                            > tr:nth-child(6) td
+
+                            form
                                 padding-top 30px
+                                margin 0
 
                                 input[type=submit]                     
                                     width 150px
 
                     // Comments
-                    //.comhead
-                    > table:nth-of-type(2)
-                        //background green !important
+                    .default
+                        padding-top 20px
 
+                        // Comment info & reply button
+                        .comhead, u
+                            font-weight 200
+                            font-size 13px
+                            color lighten(text-color, 40%)
 
+                    // Custom class added by js on the comment upvote button
+                    .hn-upvote-button
+                        padding-right 10px
+                        vertical-align top
+
+                        center
+                            padding-top 20px
 
                     td.title
                         padding 3px 0 5px 0
@@ -211,7 +229,7 @@ body
                         padding-bottom 22px
 
                 > tr:nth-child(4) > td
-                    padding-top 40px
+                    padding-top 30px
                     font-weight 200
                     font-size 13px
 

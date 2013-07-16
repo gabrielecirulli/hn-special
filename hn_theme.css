@@ -1,4 +1,5 @@
 html,body{background:#fff;margin:0;padding:0;font:15px/1.5 Helvetica Neue, Arial, sans-serif;color:#555}
+u{text-decoration:none}
 a{color:#ffac5b;text-decoration:none}
 a:hover{text-decoration:underline}
 input,textarea{-webkit-appearance:none;-moz-appearance:none;border:1px solid #ccc;font:15px/1.5 Helvetica Neue, Arial, sans-serif;color:inherit;padding:5px 8px;margin:0;font-weight:200;}
@@ -14,29 +15,33 @@ body .WordSection1 .MsoNormal{margin:15px 0}
 body > center{display:block;width:900px;margin:0 auto;}
 body > center > table{width:100%;}
 body > center > table > tbody > tr:first-child > td > table{background:#ff8937;color:#ffdcc3;font-weight:100;width:100%;}
-body > center > table > tbody > tr:first-child > td > table td{padding:15px 0;}
-body > center > table > tbody > tr:first-child > td > table td:first-child{width:30px;padding-left:20px;padding-right:10px;}
+body > center > table > tbody > tr:first-child > td > table b{font-weight:inherit;margin:0}
+body > center > table > tbody > tr:first-child > td > table td{padding:20px 0;}
+body > center > table > tbody > tr:first-child > td > table td:first-child{width:30px;padding-left:25px;padding-right:10px;}
 body > center > table > tbody > tr:first-child > td > table td:first-child a{display:block;width:30px;height:30px;background:#fff;border-radius:100%;}
 body > center > table > tbody > tr:first-child > td > table td:first-child a:after{content:'Y';width:30px;height:30px;display:block;line-height:32px;text-align:center;font-size:22px;font-weight:200;color:#ff8937}
 body > center > table > tbody > tr:first-child > td > table td:first-child a img{display:none}
-body > center > table > tbody > tr:first-child > td > table td:nth-child(2) b{margin-right:25px;}
-body > center > table > tbody > tr:first-child > td > table td:nth-child(2) b a{font-weight:400;letter-spacing:0}
+body > center > table > tbody > tr:first-child > td > table td:nth-child(2) b a{margin-right:25px;font-weight:400;letter-spacing:0}
 body > center > table > tbody > tr:first-child > td > table td:nth-child(2) img{display:none}
 body > center > table > tbody > tr:first-child > td > table td:nth-child(2) .pagetop > a,body > center > table > tbody > tr:first-child > td > table td:nth-child(2) .pagetop > .topsel{margin-right:10px}
-body > center > table > tbody > tr:first-child > td > table td:last-child{text-align:right;padding-right:20px;}
+body > center > table > tbody > tr:first-child > td > table td:last-child{text-align:right;padding-right:25px;}
 body > center > table > tbody > tr:first-child > td > table td:last-child a[href^=logout]{margin-left:10px}
 body > center > table > tbody > tr:first-child > td > table a{font-weight:100;letter-spacing:1px;color:#fbf9f7}
 body > center > table > tbody > tr:nth-child(3) > td{padding:42px 20px 0 20px;}
-body > center > table > tbody > tr:nth-child(3) > td p,body > center > table > tbody > tr:nth-child(3) > td .comhead{line-height:1.5;margin:0;margin-bottom:1em;color:#555;font-weight:200}
+body > center > table > tbody > tr:nth-child(3) > td p{line-height:1.5;margin:0;margin-bottom:1em;color:#555;font-weight:200}
 body > center > table > tbody > tr:nth-child(3) > td > table:first-child{width:100%;font-weight:200;color:#999;}
 body > center > table > tbody > tr:nth-child(3) > td > table:first-child > tbody > tr:first-child > td:first-child:not(.title){padding:0 10px 3px 0}
-body > center > table > tbody > tr:nth-child(3) > td > table:first-child > tbody > tr:nth-child(6) td{padding-top:30px;}
-body > center > table > tbody > tr:nth-child(3) > td > table:first-child > tbody > tr:nth-child(6) td input[type=submit]{width:150px}
+body > center > table > tbody > tr:nth-child(3) > td > table:first-child > tbody form{padding-top:30px;margin:0;}
+body > center > table > tbody > tr:nth-child(3) > td > table:first-child > tbody form input[type=submit]{width:150px}
+body > center > table > tbody > tr:nth-child(3) > td .default{padding-top:20px;}
+body > center > table > tbody > tr:nth-child(3) > td .default .comhead,body > center > table > tbody > tr:nth-child(3) > td .default u{font-weight:200;font-size:13px;color:#999}
+body > center > table > tbody > tr:nth-child(3) > td .hn-upvote-button{padding-right:10px;vertical-align:top;}
+body > center > table > tbody > tr:nth-child(3) > td .hn-upvote-button center{padding-top:20px}
 body > center > table > tbody > tr:nth-child(3) > td td.title{padding:3px 0 5px 0;}
 body > center > table > tbody > tr:nth-child(3) > td td.title + td{padding:0 10px 3px 0}
 body > center > table > tbody > tr:nth-child(3) > td td.title a{color:#ff9a38}
 body > center > table > tbody > tr:nth-child(3) > td td.title a:visited{color:#ffd6ad}
 body > center > table > tbody > tr:nth-child(3) > td td.subtext{font-size:13px;padding-bottom:22px}
-body > center > table > tbody > tr:nth-child(4) > td{padding-top:40px;font-weight:200;font-size:13px;}
+body > center > table > tbody > tr:nth-child(4) > td{padding-top:30px;font-weight:200;font-size:13px;}
 body > center > table > tbody > tr:nth-child(4) > td .yclinks a{margin-right:10px}
 body > center > table > tbody > tr:nth-child(4) > td form input{width:400px;margin-left:10px}

@@ -13,7 +13,10 @@
   "content_scripts": [
     {
       "matches": [ "http://news.ycombinator.com/*", "https://news.ycombinator.com/*" ],
-      "js": [ "clear_styles.js" ],
+      "js": [
+        "clear_styles.js", 
+        "content_tweaks.js" 
+      ],
       "css": [ "hn_theme.css" ]
     }
   ]

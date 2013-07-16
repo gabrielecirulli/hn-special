@@ -1,9 +1,3 @@
-// TODO: Add option to make links target _blank
-
-var $ = function (selector) {
-    return [].slice.call(document.querySelectorAll(selector));
-};
-
 // Removes the original HN CSS to avoid conflicts with the CSS added by the extension 
 $("link[rel=stylesheet]").forEach(function (elem) {
     elem.remove();

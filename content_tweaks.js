@@ -12,15 +12,19 @@ var title = document.getElementsByClassName("title")[0];
 
 // If the first title in the page contains an A tag we're hopefully in an item page
 // I'm not sure if there's a better way to match this.
-if (title.children.length && title.children[0].nodeName === "A") {
+if (title && title.children.length && title.children[0].nodeName === "A") {
   var container = title.parentElement.parentElement.children[3].children[1];
-  var unwrapped = container.childNodes[0];
-  var text = unwrapped.nodeValue;
-  unwrapped.remove();
 
-  var paragraph = document.createElement("p");
-  paragraph.textContent = text;
-  container.insertBefore(paragraph, container.children[0]);
+  // Don't do this when the post has no textual content
+  if (container.getElementsByTagName("p").length) {
+    var unwrapped = container.childNodes[0];
+    var text = unwrapped.nodeValue;
+    unwrapped.remove();
+
+    var paragraph = document.createElement("p");
+    paragraph.textContent = text;
+    container.insertBefore(paragraph, container.children[0]);
+  }
 }
 
 // Wrap the first piece of text in each comment into its own p

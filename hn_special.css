@@ -1,3 +1,29 @@
-body {
-	background: green !important;
+/* Base color: #ff9731 */
+
+/* Base styles */
+html, body {
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    font: 15px/1.5 Helvetica Neue, Arial, sans-serif;
+    color: #444;
+}
+
+a {
+    color: #ffac5b;
+    text-decoration: none;
+}
+
+a:hover {
+    /*color: #fdbe80;*/
+    text-decoration: underline;
+}
+
+/**
+ * This selector is pretty contrived but I think it's the only
+ * way to select the header <td>. Please correct me if I'm wrong!
+ */
+body > center > table > tbody > tr:first-child td {
+    height: 50px;
+    padding: 10px;
 }

@@ -1,17 +1,17 @@
 // Removes the original HN CSS to avoid conflicts with the CSS added by the extension 
-$("link[rel=stylesheet]").forEach(function (elem) {
+$("link[rel=stylesheet], style").forEach(function (elem) {
     elem.remove();
 });
  
 // Removes all styling attributes
-$("table, tr, td").forEach(function (elem) {
+$("table, tr, td, span, p").forEach(function (elem) {
     var attrs = elem.attributes;
     var names = [];
 
     // This is contrived because .length is changed, messing up the loop
     for (var i = 0; i < attrs.length; i++) {
       var attr = attrs[i].name;
-      if (["colspan", "class"].indexOf(attr) !== -1) continue; 
+      if (["colspan", "class", "id"].indexOf(attr) !== -1) continue; 
       names.push(attr);
     }
 

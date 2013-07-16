@@ -12,7 +12,7 @@ var title = document.getElementsByClassName("title")[0];
 
 // If the first title in the page contains an A tag we're hopefully in an item page
 // I'm not sure if there's a better way to match this.
-if (title && title.children.length && title.children[0].nodeName === "A") {
+if (title && title.children.length === 2 && title.children[0].nodeName === "A") {
   var container = title.parentElement.parentElement.children[3].children[1];
 
   // Don't do this when the post has no textual content

@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+
+  "name": "Special HN Theme",
+  "description": "This extension refreshes the visual appearance of Hacker News.",
+  "version": "1.0",
+
+  "permissions": [
+    "https://news.ycombinator.com/",
+    "http://news.ycombinator.com/"
+  ],
+  
+  "content_scripts": [
+    {
+      "matches": [ "http://news.ycombinator.com/*", "https://news.ycombinator.com/*" ],
+      "js": [ "clear_styles.js" ],
+      "css": [ "hn_special.css" ]
+    }
+  ]
+}

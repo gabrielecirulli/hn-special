@@ -22,3 +22,6 @@ You can then tell Stylus to watch the changes to the `.styl` file and compile au
 ```
 stylus -c -w hn_theme.styl
 ```
+
+### A note about the CSS
+Some of the selectors in the CSS are very contrived. I found it was the only way to select what I wanted in a document made of tables within tables with barely any classes. I tried to use class selectors wherever I could, but it's mostly unavoidable to go down a long chain of selectors. If you spot any ways to improve any of the selectors, please make a pull request and I'll be glad to take it in!

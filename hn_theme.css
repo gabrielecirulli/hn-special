@@ -1,10 +1,14 @@
 html,body{background:#fff;margin:0;padding:0;font:15px/1.5 Helvetica Neue,Arial,sans-serif;color:#555}
 a{color:#ffac5b;text-decoration:none}
 a:hover{text-decoration:underline}
+input{-webkit-appearance:none;-moz-appearance:none;border:1px solid #ccc;font:inherit;color:inherit;padding:5px 8px;}
+input:focus{border-color:#aaa;outline:none}
 table{border-collapse:collapse;border:none}
 tr,td{border:none;padding:0}
 body.error{text-align:center;padding-top:140px;font-size:40px;font-weight:100;letter-spacing:1px;}
 body.error a{display:block;font-size:20px;font-weight:100}
+body .WordSection1{width:900px;margin:0 auto;padding:50px 0;}
+body .WordSection1 .MsoNormal{margin:15px 0}
 body > center{display:block;width:900px;margin:0 auto;}
 body > center > table{width:100%;}
 body > center > table > tbody > tr:first-child > td > table{background:#ff8937;color:#ffdcc3;font-weight:100;width:100%;}
@@ -27,5 +31,6 @@ body > center > table > tbody > tr:nth-child(3) > td td.title + td{padding:22px 
 body > center > table > tbody > tr:nth-child(3) > td td.title a{color:#ff9a38}
 body > center > table > tbody > tr:nth-child(3) > td td.title a:visited{color:#ffd6ad}
 body > center > table > tbody > tr:nth-child(3) > td td.subtext{font-size:13px}
-body > center > table > tbody > tr:nth-child(4) > td{padding-top:40px;}
-body > center > table > tbody > tr:nth-child(4) > td .yclinks a{margin-right:10px;font-weight:200}
+body > center > table > tbody > tr:nth-child(4) > td{padding-top:40px;font-weight:200;font-size:13px;}
+body > center > table > tbody > tr:nth-child(4) > td .yclinks a{margin-right:10px}
+body > center > table > tbody > tr:nth-child(4) > td form input{width:400px;margin-left:10px}

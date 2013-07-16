@@ -20,6 +20,19 @@ a:hover
     /*color #fdbe80*/
     text-decoration underline
 
+input
+    -webkit-appearance none
+    -moz-appearance none
+
+    border 1px solid lighten(text-color, 70%)
+    font inherit
+    color inherit
+    padding 5px 8px
+
+    &:focus
+        border-color lighten(text-color, 50%)
+        outline none
+
 table
     border-collapse collapse
     border none
@@ -45,7 +58,16 @@ body
             font-size 20px
             font-weight 100
             
+    // Secondary pages
+    .WordSection1 
+        width 900px
+        margin 0 auto
+        padding 50px 0
 
+        .MsoNormal
+            margin 15px 0
+
+    // Primary pages
     > center
         display block
         width 900px
@@ -131,9 +153,6 @@ body
                         font-weight 200
                         color lighten(text-color, 40%)
 
-                            
-
-
                     td.title
                         padding 25px 0 5px 0
 
@@ -151,7 +170,13 @@ body
 
                 > tr:nth-child(4) > td
                     padding-top 40px
+                    font-weight 200
+                    font-size 13px
 
                     .yclinks a
                             margin-right 10px
-                            font-weight 200
+                            
+
+                    form input
+                        width 400px
+                        margin-left 10px

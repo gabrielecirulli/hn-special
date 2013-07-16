@@ -3,6 +3,8 @@ a{color:#ffac5b;text-decoration:none}
 a:hover{text-decoration:underline}
 table{border-collapse:collapse;border:none}
 tr,td{border:none;padding:0}
+body.error{text-align:center;padding-top:140px;font-size:40px;font-weight:100;letter-spacing:1px;}
+body.error a{display:block;font-size:20px;font-weight:100}
 body > center{display:block;width:900px;margin:0 auto;}
 body > center > table{width:100%;}
 body > center > table > tbody > tr:first-child > td > table{background:#ff8937;color:#ffdcc3;font-weight:100;width:100%;}
@@ -19,8 +21,11 @@ body > center > table > tbody > tr:first-child > td > table td:last-child{text-a
 body > center > table > tbody > tr:first-child > td > table td:last-child a[href^=logout]{margin-left:10px}
 body > center > table > tbody > tr:first-child > td > table a{font-weight:100;letter-spacing:1px;color:#fbf9f7}
 body > center > table > tbody > tr:nth-child(3) > td{padding:20px 20px 0 20px;}
-body > center > table > tbody > tr:nth-child(3) > td > table{width:100%;font-weight:200;color:#999;}
-body > center > table > tbody > tr:nth-child(3) > td > table a{color:#ff9a38}
+body > center > table > tbody > tr:nth-child(3) > td > table{width:100%;font-weight:200;color:#999}
 body > center > table > tbody > tr:nth-child(3) > td td.title{padding:25px 0 5px 0;}
 body > center > table > tbody > tr:nth-child(3) > td td.title + td{padding:22px 10px 3px 0}
+body > center > table > tbody > tr:nth-child(3) > td td.title a{color:#ff9a38}
+body > center > table > tbody > tr:nth-child(3) > td td.title a:visited{color:#ffd6ad}
 body > center > table > tbody > tr:nth-child(3) > td td.subtext{font-size:13px}
+body > center > table > tbody > tr:nth-child(4) > td{padding-top:40px;}
+body > center > table > tbody > tr:nth-child(4) > td .yclinks a{margin-right:10px;font-weight:200}

@@ -3,4 +3,8 @@ a{color:#ffac5b;text-decoration:none}
 a:hover{text-decoration:underline}
 table{border-collapse:collapse;border:none}
 tr,td{border:none;padding:0}
-body > center > table > tbody > tr:first-child > td > table{background:#f00;width:100%}
+body > center > table tbody > tr:first-child > td > table{background:#ff8937;width:100%;}
+body > center > table tbody > tr:first-child > td > table td{height:50px;}
+body > center > table tbody > tr:first-child > td > table td:last-child{text-align:right}
+body > center > table tbody > tr:first-child > td > table{color:transparent}
+body > center > table tbody > tr:first-child > td > table a{color:#fbf9f7}

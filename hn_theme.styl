@@ -1,4 +1,4 @@
-base-color = #ff9731
+base-color = #ff8937
 
 text-color = #444
 
@@ -30,8 +30,20 @@ tr, td
  * Some selectors are pretty contrived but I think it's the only
  * way to select some things. Please correct me if I'm wrong!
  */
-body > center > table > tbody > tr:first-child > td > table
-    /*height 50px
-    padding 10px*/
-    background red
-    width 100%
+body > center > table
+    // Header
+    tbody > tr:first-child > td > table
+        background base-color
+        width 100%
+
+        td
+            height 50px
+
+            &:last-child
+                text-align right
+
+        &
+            color transparent
+
+        a
+            color #fbf9f7

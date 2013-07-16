@@ -27,11 +27,11 @@ body > center > table > tbody > tr:first-child > td > table td:last-child{text-a
 body > center > table > tbody > tr:first-child > td > table td:last-child a[href^=logout]{margin-left:10px}
 body > center > table > tbody > tr:first-child > td > table a{font-weight:100;letter-spacing:1px;color:#fbf9f7}
 body > center > table > tbody > tr:nth-child(3) > td{padding:42px 20px 0 20px;}
-body > center > table > tbody > tr:nth-child(3) > td > table{width:100%;font-weight:200;color:#999;}
-body > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr:first-child > td:first-child:not(.title),body > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr:first-child > td:first-child:not(.title){padding:0 10px 3px 0}
-body > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(6) td,body > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(6) td{padding-top:30px;}
-body > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(6) td input[type=submit],body > center > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(6) td input[type=submit]{width:150px}
-body > center > table > tbody > tr:nth-child(3) > td > table p{line-height:1.5;margin:0;margin-bottom:1em}
+body > center > table > tbody > tr:nth-child(3) > td p,body > center > table > tbody > tr:nth-child(3) > td .comhead{line-height:1.5;margin:0;margin-bottom:1em;color:#555;font-weight:200}
+body > center > table > tbody > tr:nth-child(3) > td > table:first-child{width:100%;font-weight:200;color:#999;}
+body > center > table > tbody > tr:nth-child(3) > td > table:first-child > tbody > tr:first-child > td:first-child:not(.title){padding:0 10px 3px 0}
+body > center > table > tbody > tr:nth-child(3) > td > table:first-child > tbody > tr:nth-child(6) td{padding-top:30px;}
+body > center > table > tbody > tr:nth-child(3) > td > table:first-child > tbody > tr:nth-child(6) td input[type=submit]{width:150px}
 body > center > table > tbody > tr:nth-child(3) > td td.title{padding:3px 0 5px 0;}
 body > center > table > tbody > tr:nth-child(3) > td td.title + td{padding:0 10px 3px 0}
 body > center > table > tbody > tr:nth-child(3) > td td.title a{color:#ff9a38}

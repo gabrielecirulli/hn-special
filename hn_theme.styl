@@ -159,15 +159,23 @@ body
                         letter-spacing 1px
                         color light-link-color
 
+                // Contents
                 > tr:nth-child(3) > td
                     padding 42px 20px 0 20px
 
-                    > table
+                    // Self posts and comments
+                    p, .comhead
+                        line-height 1.5
+                        margin 0
+                        margin-bottom 1em
+                        color lighten(text-color, 0%)
+                        font-weight 200
+
+                    // Post area
+                    > table:first-child
                         width 100%
                         font-weight 200
                         color lighten(text-color, 40%)
-
-                        > tbody 
 
                         > tbody
                             > tr:first-child > td:first-child:not(.title)
@@ -179,11 +187,11 @@ body
                                 input[type=submit]                     
                                     width 150px
 
-                        // Self posts
-                        p
-                            line-height 1.5
-                            margin 0
-                            margin-bottom 1em
+                    // Comments
+                    //.comhead
+                    > table:nth-of-type(2)
+                        //background green !important
+
 
 
                     td.title

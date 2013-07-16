@@ -4,7 +4,7 @@ $("link[rel=stylesheet], style").forEach(function (elem) {
 });
  
 // Removes all styling attributes
-$("table, tr, td, span, p").forEach(function (elem) {
+$("table, tr, td, span, p, font, div").forEach(function (elem) {
     var attrs = elem.attributes;
     var names = [];
 

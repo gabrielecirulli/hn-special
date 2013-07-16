@@ -41,7 +41,10 @@ $("span.comment").forEach(function (elem) {
   } 
 
   var container = elem.parentElement.parentElement;
-  container.children[1].classList.add("hn-upvote-button")
+
+  var index = 1;
+  if (container.children.length === 2) { index = 0; } // /newcomments has two tds instead of three
+  container.children[index].classList.add("hn-upvote-button");
 });
 
 // Style error pages (and ignore the rss page)

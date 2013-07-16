@@ -1,9 +1,22 @@
-// Removes the original HN CSS to avoid conflicts with the CSS added by the extension
-var links = document.getElementsByTagName('link');
+var $ = function(selector){
+    return [].slice.call(document.querySelectorAll(selector));
+};
 
-for (var i = 0; i < links.length; i++) {
-  var link = links[i];
-  if (link.getAttribute("rel") === "stylesheet") {
-    link.parentNode.removeChild(link);
-  }
-}
+// Removes the original HN CSS to avoid conflicts with the CSS added by the extension 
+$("link[rel=stylesheet]").forEach(function(elem){
+    elem.remove();
+});
+ 
+// Removes all styling attributes
+$("table, tr, td").forEach(function(elem){
+    var attrs = elem.attributes;
+    var rem = [];
+    for(var i = 0; i < attrs.length; i++) {
+      var attr = attrs[i];
+      rem.push(attr.name);
+    }
+
+    rem.forEach(function(attr){
+      elem.removeAttribute(attr);
+    });
+});

@@ -3,7 +3,8 @@ u{text-decoration:none}
 a{color:#ffac5b;text-decoration:none}
 a:hover{text-decoration:underline}
 input,textarea{-webkit-appearance:none;-moz-appearance:none;border:1px solid #ccc;font:15px/1.5 Helvetica Neue, Arial, sans-serif;color:inherit;padding:5px 8px;margin:0;font-weight:200;}
-input[type=submit],textarea[type=submit]{background:#ff8937;border:none;color:#fbf9f7;font:15px/1.5 Helvetica Neue, Arial, sans-serif;font-weight:200;cursor:pointer}
+input[type=submit],textarea[type=submit]{background:#ff8937;border:none;color:#fbf9f7;font:15px/1.5 Helvetica Neue, Arial, sans-serif;font-weight:200;cursor:pointer;}
+input[type=submit]:active,textarea[type=submit]:active{color:#fff;background:#ff7718}
 input:focus,textarea:focus{border-color:#aaa;outline:none}
 textarea{width:600px;height:120px;resize:vertical}
 table{border-collapse:collapse;border:none}

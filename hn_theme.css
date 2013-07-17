@@ -25,6 +25,7 @@ body > center > table > tbody > tr:first-child > td > table td:first-child a img
 body > center > table > tbody > tr:first-child > td > table td:nth-child(2) b a{margin-right:25px;font-weight:400;letter-spacing:0}
 body > center > table > tbody > tr:first-child > td > table td:nth-child(2) img{display:none}
 body > center > table > tbody > tr:first-child > td > table td:nth-child(2) .pagetop > a,body > center > table > tbody > tr:first-child > td > table td:nth-child(2) .pagetop > .topsel{margin-right:10px}
+body > center > table > tbody > tr:first-child > td > table td:nth-child(2) .pagetop .topsel a{font-weight:300}
 body > center > table > tbody > tr:first-child > td > table td:last-child{text-align:right;padding-right:25px;}
 body > center > table > tbody > tr:first-child > td > table td:last-child a[href^=logout]{margin-left:10px}
 body > center > table > tbody > tr:first-child > td > table a{font-weight:100;letter-spacing:1px;color:#fbf9f7}

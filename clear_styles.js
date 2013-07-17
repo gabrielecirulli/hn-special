@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+load(function () {
   // Removes the original HN CSS to avoid conflicts with the CSS added by the extension 
   $("link[rel=stylesheet], style").forEach(function (elem) {
       elem.remove();

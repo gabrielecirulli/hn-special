@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+load(function () {
   // Makes a few tweaks to the content of the page
   $("span.pagetop, span.yclinks").forEach(function (elem) {
     toArray(elem.childNodes).forEach(function (node) {
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var container = elem.parentElement.parentElement;
 
     var index = 1;
-    if (container.children.length === 2) { index = 0; } // /newcomments has two tds instead of three
+    if (container.children.length === 2) index = 0; // page /newcomments has two tds instead of three
     container.children[index].classList.add("hn-upvote-button");
   });
 

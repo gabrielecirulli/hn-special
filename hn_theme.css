@@ -19,7 +19,7 @@ body > center > table > tbody > tr:first-child > td > table b{font-weight:inheri
 body > center > table > tbody > tr:first-child > td > table td{padding:20px 0;}
 body > center > table > tbody > tr:first-child > td > table td:first-child{width:30px;padding-left:25px;padding-right:10px;}
 body > center > table > tbody > tr:first-child > td > table td:first-child a{display:block;width:30px;height:30px;background:#fff;border-radius:100%;}
-body > center > table > tbody > tr:first-child > td > table td:first-child a:after{content:'Y';width:30px;height:30px;display:block;line-height:32px;text-align:center;font-size:22px;font-weight:200;color:#ff8937}
+body > center > table > tbody > tr:first-child > td > table td:first-child a:after{content:'Y';width:31px;height:30px;display:block;line-height:32px;text-align:center;font-size:22px;font-weight:200;color:#ff8937}
 body > center > table > tbody > tr:first-child > td > table td:first-child a img{display:none}
 body > center > table > tbody > tr:first-child > td > table td:nth-child(2) b a{margin-right:25px;font-weight:400;letter-spacing:0}
 body > center > table > tbody > tr:first-child > td > table td:nth-child(2) img{display:none}

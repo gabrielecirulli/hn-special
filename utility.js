@@ -4,4 +4,4 @@ function toArray(collection) {
 
 function $(selector) {
     return toArray(document.querySelectorAll(selector));
-};
+}

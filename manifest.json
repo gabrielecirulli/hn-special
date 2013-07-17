@@ -18,7 +18,8 @@
         "clear_styles.js",
         "content_tweaks.js" 
       ],
-      "css": [ "hn_theme.css" ]
+      "css": [ "hn_theme.css" ],
+      "run_at": "document_start"
     }
   ]
 }

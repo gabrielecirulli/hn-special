@@ -16,7 +16,8 @@
       "js": [
         "utility.js",
         "clear_styles.js",
-        "content_tweaks.js" 
+        "content_tweaks.js",
+        "settings.js"
       ],
       "css": [ "hn_theme.css" ],
       "run_at": "document_start"

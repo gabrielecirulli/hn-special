@@ -17,14 +17,20 @@ load(function () {
     var container = title.parentElement.parentElement.children[3].children[1];
 
     // Don't do this when the post has no textual content
-    if (container.getElementsByTagName("p").length) {
+
+    if (container.textContent.trim().length) {
       var unwrapped = container.childNodes[0];
       var text = unwrapped.nodeValue;
       unwrapped.remove();
 
       var paragraph = document.createElement("p");
       paragraph.textContent = text;
-      container.insertBefore(paragraph, container.children[0]);
+
+      if(container.getElementsByTagName("p").length) {
+        container.insertBefore(paragraph, container.children[0]);  
+      } else {
+        container.appendChild(paragraph);
+      }      
     }
   }
 

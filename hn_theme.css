@@ -38,10 +38,10 @@ body > center > table > tbody > tr:nth-child(3) > td > table:first-child > tbody
 body > center > table > tbody > tr:nth-child(3) > td > table:first-child > tbody form input[type=submit]{width:150px}
 body > center > table > tbody > tr:nth-child(3) > td .default{padding-top:20px;}
 body > center > table > tbody > tr:nth-child(3) > td .default .comhead,body > center > table > tbody > tr:nth-child(3) > td .default u{font-weight:200;font-size:13px;color:#999}
-body > center > table > tbody > tr:nth-child(3) > td .hn-poll-row + tr td{padding-top:5px;padding-bottom:20px}
-body > center > table > tbody > tr:nth-child(3) > td .hn-upvote-button{padding-right:10px;vertical-align:top;}
-body > center > table > tbody > tr:nth-child(3) > td .hn-upvote-button.poll center{padding-top:1px}
-body > center > table > tbody > tr:nth-child(3) > td .hn-upvote-button center{padding-top:20px}
+body > center > table > tbody > tr:nth-child(3) > td .hnspecial-poll-row + tr td{padding-top:5px;padding-bottom:20px}
+body > center > table > tbody > tr:nth-child(3) > td .hnspecial-upvote-button{padding-right:10px;vertical-align:top;}
+body > center > table > tbody > tr:nth-child(3) > td .hnspecial-upvote-button.poll center{padding-top:1px}
+body > center > table > tbody > tr:nth-child(3) > td .hnspecial-upvote-button center{padding-top:20px}
 body > center > table > tbody > tr:nth-child(3) > td td.comment{font-weight:200}
 body > center > table > tbody > tr:nth-child(3) > td td.title{padding:3px 0 5px 0;}
 body > center > table > tbody > tr:nth-child(3) > td td.title + td{padding:0 10px 3px 0}

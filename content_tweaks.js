@@ -51,15 +51,15 @@ load(function () {
 
     var index = 1;
     if (container.children.length === 2) index = 0; // page /newcomments has two tds instead of three
-    container.children[index].classList.add("hn-upvote-button");
+    container.children[index].classList.add("hnspecial-upvote-button");
   });
 
   // Add a class to the upvote buttons on poll items
   $("td.comment").forEach(function (elem) {
     var row = elem.parentElement;
-    row.classList.add("hn-poll-row");
+    row.classList.add("hnspecial-poll-row");
     var arrow = row.children[0];
-    arrow.classList.add("hn-upvote-button", "poll");
+    arrow.classList.add("hnspecial-upvote-button", "poll");
     arrow.parentElement
   });
 

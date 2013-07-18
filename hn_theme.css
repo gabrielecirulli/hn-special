@@ -12,7 +12,16 @@ table{border-collapse:collapse;border:none}
 tr,td{border:none;padding:0}
 body.error{text-align:center;padding-top:140px;font-size:40px;font-weight:100;letter-spacing:1px;}
 body.error a{display:block;font-size:20px;font-weight:100}
-body .hnspecial-settings-button{display:inline-block;width:16px;height:16px;background:#f00;margin-right:10px;cursor:pointer;position:relative;top:3px}
+body .hnspecial-settings-button{display:inline-block;width:16px;height:16px;margin-right:10px;cursor:pointer;position:relative;top:3px;}
+body .hnspecial-settings-button img{opacity:.5;-webkit-transition:opacity 100ms ease}
+body .hnspecial-settings-button-checkbox{width:16px;height:16px;border:none;position:absolute;z-index:2;cursor:pointer;}
+body .hnspecial-settings-button-checkbox:hover ~ img{opacity:1}
+body .hnspecial-settings-button-checkbox:active ~ img{opacity:.5 !important}
+body .hnspecial-settings-button-checkbox:checked ~ img{opacity:1}
+body .hnspecial-settings-button-checkbox:checked ~ .hnspecial-settings-menu-container{opacity:1;top:24px;height:2000px;padding-top:10px;outline:1px solid rgba(255,137,55,0.004);-webkit-transition-delay:0,0,0,0,300ms;-webkit-transition-timing-function:ease-out}
+body .hnspecial-settings-menu-container{position:absolute;top:60px;left:-142px;width:300px;height:0;background:transparent;padding:0;overflow:hidden;box-sizing:border-box;color:#8a837c;font-weight:200;text-align:left;opacity:0;cursor:auto;pointer-events:none;outline:none;-webkit-transition-timing-function:ease-out;-webkit-transition-property:opacity,top,height,padding,outline;-webkit-transition-duration:150ms,300ms,0,0,0;-webkit-transition-delay:0,0,300ms,300ms,0;}
+body .hnspecial-settings-menu-container:before{content:'';position:absolute;left:142px;top:3px;-webkit-transform:rotate(45deg);z-index:0;background:#f6e9d9;display:block;width:16px;height:16px}
+body .hnspecial-settings-menu-inner{width:100%;background:#f00;padding:20px;box-sizing:border-box;background:#f6e9d9;pointer-events:auto;line-height:1.5}
 body .WordSection1{width:900px;margin:0 auto;padding:50px 0;}
 body .WordSection1 .MsoNormal{margin:15px 0}
 body.hnspecial-form-page form td{font-weight:200;padding-bottom:20px;}

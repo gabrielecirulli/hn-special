@@ -86,17 +86,97 @@ body
             font-weight 100
 
     // HN Special menu
+    button-size = 16px
+    menu-width = 300px
+    menu-background = #f6e9d9
+    menu-color = #8a837c
+
     .hnspecial-settings-button
         display inline-block
-        button-size = 16px
+        
         width button-size
         height button-size
-        background red
         margin-right 10px
         cursor pointer
         // Adjust position
         position relative
         top 3px
+
+        img
+            opacity .5
+            -webkit-transition opacity 100ms ease            
+
+    .hnspecial-settings-button-checkbox
+        width button-size
+        height button-size
+        border none
+        position absolute
+        z-index 2
+        cursor pointer
+
+        &:hover ~ img
+            opacity 1
+
+        &:active ~ img
+            opacity 0.5 !important
+
+        &:checked ~
+            img
+                opacity 1
+
+            .hnspecial-settings-menu-container
+                opacity 1
+                top 24px
+                height 2000px
+                padding-top 10px
+                outline 1px solid rgba(base-color, 0.4%) // Trick to trigger a redraw when the animation is over (fixes visual glitch)
+
+                -webkit-transition-delay 0ms, 0ms, 0ms, 0ms, 300ms
+                -webkit-transition-timing-function ease-out
+
+    .hnspecial-settings-menu-container
+        position absolute
+        top 60px
+        left -(menu-width/2 - button-size/2)
+        width menu-width
+        height 0px
+        background transparent
+        padding 0px
+        overflow hidden
+        box-sizing border-box
+        color menu-color
+        font-weight 200
+        text-align left
+        opacity 0
+        cursor auto
+        pointer-events none
+        outline none
+
+        -webkit-transition-timing-function ease-out
+        -webkit-transition-property opacity, top, height, padding, outline
+        -webkit-transition-duration 150ms, 300ms, 0ms, 0ms, 0ms
+        -webkit-transition-delay 0ms, 0ms, 300ms, 300ms, 0ms
+
+        &:before
+            content ''
+            position absolute
+            left (menu-width/2 - button-size/2)
+            top 3px
+            -webkit-transform rotate(45deg)
+            z-index 0
+            background menu-background
+            display block
+            width button-size
+            height button-size
+
+    .hnspecial-settings-menu-inner
+        width 100%
+        background red
+        padding 20px
+        box-sizing border-box
+        background menu-background
+        pointer-events auto
+        line-height 1.5
 
     // Secondary pages
     .WordSection1 

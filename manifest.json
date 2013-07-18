@@ -22,5 +22,7 @@
       "css": [ "hn_theme.css" ],
       "run_at": "document_start"
     }
-  ]
+  ],
+
+  "web_accessible_resources": ["gear.svg"]
 }

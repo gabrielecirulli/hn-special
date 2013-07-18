@@ -129,9 +129,9 @@ load(function () {
   } else {
     // The page has no container. It's either the login page or an error page
 
-    // Style error pages (and ignore the rss page)
+    // Style error pages (ignoring the rss page)
     var body = document.body;
-    if (location.pathname !== "/rss" && (!body.children.length || body.children[0].nodeName === "PRE")) {
+    if ((!body.children.length || body.children[0].nodeName === "PRE") && location.pathname !== "/rss") {
       body.classList.add("error");
 
       // Dirty hack to remove the <pre> element shown on 404 pages
@@ -143,10 +143,20 @@ load(function () {
       link.textContent = "Back home";
       body.appendChild(link);
     }
+
+    // Select log in form
+    if ($("body > form")[0]) {
+      body.classList.add("hnspecial-form-page", "login");
+
+      // Wrap everything in the body in a div
+      var loginContainer = document.createElement("div");
+      loginContainer.classList.add("hnspecial-form-container");
+
+      while (body.firstChild) {
+        loginContainer.appendChild(body.firstChild);
+      }
+
+      body.appendChild(loginContainer);
+    }
   }
-
-
-
-
-  
 });

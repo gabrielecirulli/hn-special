@@ -36,7 +36,6 @@ load(function () {
     var form = content.getElementsByTagName("form")[0];
 
     if (form && !isCommentPage) {
-      console.log("With forms");
 
       document.body.classList.add("hnspecial-form-page");
       var form = document.getElementsByTagName("form")[0];
@@ -49,10 +48,8 @@ load(function () {
         // Refactor: this code is the same as below
         
         var container = paragraph.parentElement;
-        console.log(container);
         var unwrapped = container.childNodes[0];
         var text = unwrapped.nodeValue;
-        console.log(text);
         unwrapped.remove();
 
         var paragraph = document.createElement("p");
@@ -60,8 +57,6 @@ load(function () {
 
         container.insertBefore(paragraph, container.children[0]);
       });
-    } else {
-      console.log("Without forms");
     }
 
     // Make the logo go to the home of hacker news

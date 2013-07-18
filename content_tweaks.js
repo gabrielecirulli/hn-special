@@ -80,4 +80,25 @@ load(function () {
 
   // Make the logo go to the home of hacker news
   $("img[src='y18.gif']")[0].parentElement.setAttribute("href", location.origin);
+
+  // If the third TD is empty, add all of the following TDs into it (happens in threads page)
+  var container = $("body > center > table > tbody")[0];
+  var cell = container.children[2].children[0];
+
+  if (!cell.textContent.trim().length) {
+    // Empty the element completely
+    cell.innerHTML = "";
+
+    // New table to hold comments (mimics comment page structure)
+    var table = document.createElement("table");
+    var tbody = document.createElement("tbody");
+    
+    var i = 3; // First stray row is at index 3
+    while (!container.children[i].getElementsByClassName("yclinks").length) { // Stop at the footer
+      tbody.appendChild(container.children[i]);
+    }
+
+    table.appendChild(tbody);
+    cell.appendChild(table);
+  }
 });

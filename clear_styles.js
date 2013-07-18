@@ -5,7 +5,7 @@ load(function () {
   });
    
   // Removes all styling attributes
-  $("table, tr, td, span, p, font, div").forEach(function (elem) {
+  $("body, table, tr, td, span, p, font, div").forEach(function (elem) {
       var attrs = elem.attributes;
       var names = [];
 

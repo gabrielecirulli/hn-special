@@ -12,6 +12,7 @@ table{border-collapse:collapse;border:none}
 tr,td{border:none;padding:0}
 body.error{text-align:center;padding-top:140px;font-size:40px;font-weight:100;letter-spacing:1px;}
 body.error a{display:block;font-size:20px;font-weight:100}
+body .hnspecial-settings-button{display:inline-block;width:16px;height:16px;background:#f00;margin-right:10px;cursor:pointer;position:relative;top:3px}
 body .WordSection1{width:900px;margin:0 auto;padding:50px 0;}
 body .WordSection1 .MsoNormal{margin:15px 0}
 body.hnspecial-form-page form td{font-weight:200;padding-bottom:20px;}

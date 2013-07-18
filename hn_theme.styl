@@ -56,6 +56,13 @@ textarea
     height 120px
     resize vertical
 
+// Pre and code tags can stretch the page if not limited
+pre
+    overflow auto
+    max-width 600px
+    word-wrap normal
+    white-space pre
+
 table
     border-collapse collapse
     border none
@@ -92,8 +99,8 @@ body
     // Primary pages
     > center
         display block
-        width 900px
-        margin 0 auto
+        max-width 900px
+        margin 0 auto // Add an option to disable this
 
         > table
             width 100%
@@ -184,6 +191,7 @@ body
                         margin-bottom 1em
                         color lighten(text-color, 0%)
                         font-weight 200
+                        word-wrap break-word
 
                     // Post area
                     > table:first-child
@@ -212,13 +220,25 @@ body
                             font-size 13px
                             color lighten(text-color, 40%)
 
+                    // Custom class added to poll items
+                    .hn-poll-row + tr td
+                        padding-top 5px
+                        padding-bottom 20px
+
                     // Custom class added by js on the comment upvote button
                     .hn-upvote-button
                         padding-right 10px
                         vertical-align top
+                        
+                        &.poll center
+                            padding-top 1px
 
                         center
                             padding-top 20px
+
+                    td.comment
+                        // background red
+                        font-weight 200
 
                     td.title
                         padding 3px 0 5px 0

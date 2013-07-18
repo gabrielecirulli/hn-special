@@ -7,13 +7,14 @@ input[type=submit],textarea[type=submit]{background:#ff8937;border:none;color:#f
 input[type=submit]:active,textarea[type=submit]:active{color:#fff;background:#ff7718}
 input:focus,textarea:focus{border-color:#aaa;outline:none}
 textarea{width:600px;height:120px;resize:vertical}
+pre{overflow:auto;max-width:600px;word-wrap:normal;white-space:pre}
 table{border-collapse:collapse;border:none}
 tr,td{border:none;padding:0}
 body.error{text-align:center;padding-top:140px;font-size:40px;font-weight:100;letter-spacing:1px;}
 body.error a{display:block;font-size:20px;font-weight:100}
 body .WordSection1{width:900px;margin:0 auto;padding:50px 0;}
 body .WordSection1 .MsoNormal{margin:15px 0}
-body > center{display:block;width:900px;margin:0 auto;}
+body > center{display:block;max-width:900px;margin:0 auto;}
 body > center > table{width:100%;}
 body > center > table > tbody > tr:first-child > td > table{background:#ff8937;color:#ffdcc3;font-weight:100;width:100%;}
 body > center > table > tbody > tr:first-child > td > table b{font-weight:inherit;margin:0}
@@ -30,15 +31,18 @@ body > center > table > tbody > tr:first-child > td > table td:last-child{text-a
 body > center > table > tbody > tr:first-child > td > table td:last-child a[href^=logout]{margin-left:10px}
 body > center > table > tbody > tr:first-child > td > table a{font-weight:100;letter-spacing:1px;color:#fbf9f7}
 body > center > table > tbody > tr:nth-child(3) > td{padding:42px 20px 0 20px;}
-body > center > table > tbody > tr:nth-child(3) > td p{line-height:1.5;margin:0;margin-bottom:1em;color:#555;font-weight:200}
+body > center > table > tbody > tr:nth-child(3) > td p{line-height:1.5;margin:0;margin-bottom:1em;color:#555;font-weight:200;word-wrap:break-word}
 body > center > table > tbody > tr:nth-child(3) > td > table:first-child{width:100%;font-weight:200;color:#999;}
 body > center > table > tbody > tr:nth-child(3) > td > table:first-child > tbody > tr:first-child > td:first-child:not(.title){padding:0 10px 3px 0}
 body > center > table > tbody > tr:nth-child(3) > td > table:first-child > tbody form{padding-top:30px;margin:0;}
 body > center > table > tbody > tr:nth-child(3) > td > table:first-child > tbody form input[type=submit]{width:150px}
 body > center > table > tbody > tr:nth-child(3) > td .default{padding-top:20px;}
 body > center > table > tbody > tr:nth-child(3) > td .default .comhead,body > center > table > tbody > tr:nth-child(3) > td .default u{font-weight:200;font-size:13px;color:#999}
+body > center > table > tbody > tr:nth-child(3) > td .hn-poll-row + tr td{padding-top:5px;padding-bottom:20px}
 body > center > table > tbody > tr:nth-child(3) > td .hn-upvote-button{padding-right:10px;vertical-align:top;}
+body > center > table > tbody > tr:nth-child(3) > td .hn-upvote-button.poll center{padding-top:1px}
 body > center > table > tbody > tr:nth-child(3) > td .hn-upvote-button center{padding-top:20px}
+body > center > table > tbody > tr:nth-child(3) > td td.comment{font-weight:200}
 body > center > table > tbody > tr:nth-child(3) > td td.title{padding:3px 0 5px 0;}
 body > center > table > tbody > tr:nth-child(3) > td td.title + td{padding:0 10px 3px 0}
 body > center > table > tbody > tr:nth-child(3) > td td.title a{color:#ff9a38}

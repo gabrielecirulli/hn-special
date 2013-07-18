@@ -54,6 +54,15 @@ load(function () {
     container.children[index].classList.add("hn-upvote-button");
   });
 
+  // Add a class to the upvote buttons on poll items
+  $("td.comment").forEach(function (elem) {
+    var row = elem.parentElement;
+    row.classList.add("hn-poll-row");
+    var arrow = row.children[0];
+    arrow.classList.add("hn-upvote-button", "poll");
+    arrow.parentElement
+  });
+
   // Style error pages (and ignore the rss page)
   var body = document.body;
   if (location.pathname !== "/rss" && (!body.children.length || body.children[0].nodeName === "PRE")) {

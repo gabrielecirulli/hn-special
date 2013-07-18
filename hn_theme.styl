@@ -45,7 +45,6 @@ input, textarea
             color #fff
             background darken(base-color, 10%)
 
-
     &:focus
         border-color lighten(text-color, 50%)
         outline none
@@ -71,7 +70,6 @@ tr, td
     border none
     padding 0
 
-
 // Some selectors are pretty contrived but I think it's the only
 // way to select some things. Please correct me if I'm wrong!
 body
@@ -86,7 +84,7 @@ body
             display block
             font-size 20px
             font-weight 100
-            
+
     // Secondary pages
     .WordSection1 
         width 900px
@@ -96,21 +94,39 @@ body
         .MsoNormal
             margin 15px 0
 
-    &.hnspecial-form-page form
-        td
-            font-weight 200
-            padding-bottom 20px
+    &.hnspecial-form-page
+        form
+            td
+                font-weight 200
+                padding-bottom 20px
 
-            &:first-child
-                text-transform capitalize
-                padding-right 30px
+                &:first-child
+                    text-transform capitalize
+                    padding-right 30px
 
-                &.hnspecial-textarea-label
-                    vertical-align top
-                    padding-top 8px
+                    &.hnspecial-textarea-label
+                        vertical-align top
+                        padding-top 8px
 
-        b
-            font-weight 200
+            b
+                font-weight 200
+
+        &.login .hnspecial-form-container
+            width 300px
+            margin 0 auto
+            padding-top 100px
+
+            input[type=submit]
+                width 130px
+
+            b
+                font-size 40px
+                font-weight 100
+                letter-spacing 1px
+
+            td:last-child
+                &, input
+                    width 100%
 
     // Primary pages
     > center
@@ -245,7 +261,7 @@ body
                     .hnspecial-upvote-button
                         padding-right 13px
                         vertical-align top
-                        
+
                         &.poll center
                             padding-top 1px
 
@@ -283,7 +299,6 @@ body
 
                     .yclinks a
                             margin-right 10px
-                            
 
                     form input
                         width 400px

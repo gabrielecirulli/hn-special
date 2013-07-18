@@ -18,6 +18,10 @@ body.hnspecial-form-page form td{font-weight:200;padding-bottom:20px;}
 body.hnspecial-form-page form td:first-child{text-transform:capitalize;padding-right:30px;}
 body.hnspecial-form-page form td:first-child.hnspecial-textarea-label{vertical-align:top;padding-top:8px}
 body.hnspecial-form-page form b{font-weight:200}
+body.hnspecial-form-page.login .hnspecial-form-container{width:300px;margin:0 auto;padding-top:100px;}
+body.hnspecial-form-page.login .hnspecial-form-container input[type=submit]{width:130px}
+body.hnspecial-form-page.login .hnspecial-form-container b{font-size:40px;font-weight:100;letter-spacing:1px}
+body.hnspecial-form-page.login .hnspecial-form-container td:last-child,body.hnspecial-form-page.login .hnspecial-form-container td:last-child input{width:100%}
 body > center{display:block;max-width:900px;margin:0 auto;}
 body > center > table{width:100%;}
 body > center > table > tbody > tr:first-child > td > table{background:#ff8937;color:#ffdcc3;font-weight:100;width:100%;}

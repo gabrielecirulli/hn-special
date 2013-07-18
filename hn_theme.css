@@ -14,6 +14,10 @@ body.error{text-align:center;padding-top:140px;font-size:40px;font-weight:100;le
 body.error a{display:block;font-size:20px;font-weight:100}
 body .WordSection1{width:900px;margin:0 auto;padding:50px 0;}
 body .WordSection1 .MsoNormal{margin:15px 0}
+body.hnspecial-form-page form td{font-weight:200;padding-bottom:20px;}
+body.hnspecial-form-page form td:first-child{text-transform:capitalize;padding-right:30px;}
+body.hnspecial-form-page form td:first-child.hnspecial-textarea-label{vertical-align:top;padding-top:8px}
+body.hnspecial-form-page form b{font-weight:200}
 body > center{display:block;max-width:900px;margin:0 auto;}
 body > center > table{width:100%;}
 body > center > table > tbody > tr:first-child > td > table{background:#ff8937;color:#ffdcc3;font-weight:100;width:100%;}

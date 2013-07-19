@@ -23,6 +23,15 @@ a:hover
     /*color #fdbe80*/
     text-decoration underline
 
+// Used in posts and comments
+p
+    line-height 1.5
+    margin 0
+    margin-bottom 1em
+    color lighten(text-color, 0%)
+    font-weight 200
+    word-wrap break-word
+
 input, textarea
     -webkit-appearance none
     -moz-appearance none
@@ -144,7 +153,6 @@ body
         padding 0px
         overflow hidden
         box-sizing border-box
-        color menu-color
         font-weight 200
         text-align left
         opacity 0
@@ -177,13 +185,78 @@ body
         background menu-background
         pointer-events auto
         line-height 1.5
+        color menu-color
 
         strong
             font-weight 400
             color darken(menu-color, 20%)
+            margin-bottom 109px
 
-        .hnspecial-settings-info
+        strong + p
+            margin-top 5px
+            margin-bottom 20px
+
+        p
             font-size 13px
+
+        .hnspecial-settings-block
+            margin-bottom 7px
+
+            &:after
+                content ''
+                display block
+                clear both
+
+            label
+                display block
+                float left
+                width 88%
+                font-weight 200
+                color darken(menu-color, 20%)
+
+            .hnspecial-settings-checkbox-container
+                display block
+                float right
+                width 12%
+                //text-align right
+                position relative
+
+                input
+                    display block
+                    position absolute
+                    top 0
+                    left 0
+                    width 100%
+                    border none
+                    height 100%
+
+                    &:not(checked) ~
+                        .on
+                            display none
+
+                        .off
+                            display block
+
+                    &:checked ~
+                        .on
+                            display block
+
+                        .off 
+                            display none
+
+            .hnspecial-settings-checkbox-indicator
+                text-transform uppercase
+                //font-weight 400
+
+                &.on
+                    color #ff9e3c
+
+        .hnspecial-settings-submit-button
+            width 100%
+            margin-top 20px
+
+
+            
 
     // Secondary pages
     .WordSection1 
@@ -315,15 +388,6 @@ body
                 // Contents
                 > tr:nth-child(3) > td
                     padding 42px 20px 0 20px
-
-                    // Self posts and comments
-                    p
-                        line-height 1.5
-                        margin 0
-                        margin-bottom 1em
-                        color lighten(text-color, 0%)
-                        font-weight 200
-                        word-wrap break-word
 
                     // Post area
                     > table:first-child

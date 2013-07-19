@@ -2,6 +2,7 @@ html,body{background:#fff;margin:0;padding:0;font:15px/1.5 Helvetica Neue, Arial
 u{text-decoration:none}
 a{color:#ffac5b;text-decoration:none}
 a:hover{text-decoration:underline}
+p{line-height:1.5;margin:0;margin-bottom:1em;color:#555;font-weight:200;word-wrap:break-word}
 input,textarea{-webkit-appearance:none;-moz-appearance:none;border:1px solid #ccc;font:15px/1.5 Helvetica Neue, Arial, sans-serif;color:inherit;padding:5px 8px;margin:0;font-weight:200;}
 input[type=submit],textarea[type=submit]{background:#ff8937;border:none;color:#fbf9f7;font:15px/1.5 Helvetica Neue, Arial, sans-serif;font-weight:200;cursor:pointer;}
 input[type=submit]:active,textarea[type=submit]:active{color:#fff;background:#ff7718}
@@ -19,11 +20,24 @@ body .hnspecial-settings-button-checkbox:hover ~ img{opacity:1}
 body .hnspecial-settings-button-checkbox:active ~ img{opacity:.5 !important}
 body .hnspecial-settings-button-checkbox:checked ~ img{opacity:1}
 body .hnspecial-settings-button-checkbox:checked ~ .hnspecial-settings-menu-container{opacity:1;top:24px;height:2000px;padding-top:10px;outline:1px solid rgba(255,137,55,0.004);-webkit-transition-delay:0,0,0,0,300ms;-webkit-transition-timing-function:ease-out}
-body .hnspecial-settings-menu-container{position:absolute;top:60px;left:-142px;width:300px;height:0;background:transparent;padding:0;overflow:hidden;box-sizing:border-box;color:#8a837c;font-weight:200;text-align:left;opacity:0;cursor:auto;pointer-events:none;outline:none;-webkit-transition-timing-function:ease-out;-webkit-transition-property:opacity,top,height,padding,outline;-webkit-transition-duration:150ms,300ms,0,0,0;-webkit-transition-delay:0,0,300ms,300ms,0;}
+body .hnspecial-settings-menu-container{position:absolute;top:60px;left:-142px;width:300px;height:0;background:transparent;padding:0;overflow:hidden;box-sizing:border-box;font-weight:200;text-align:left;opacity:0;cursor:auto;pointer-events:none;outline:none;-webkit-transition-timing-function:ease-out;-webkit-transition-property:opacity,top,height,padding,outline;-webkit-transition-duration:150ms,300ms,0,0,0;-webkit-transition-delay:0,0,300ms,300ms,0;}
 body .hnspecial-settings-menu-container:before{content:'';position:absolute;left:142px;top:3px;-webkit-transform:rotate(45deg);z-index:0;background:#f6e9d9;display:block;width:16px;height:16px}
-body .hnspecial-settings-menu-inner{width:100%;background:#f00;padding:20px;box-sizing:border-box;background:#f6e9d9;pointer-events:auto;line-height:1.5;}
-body .hnspecial-settings-menu-inner strong{font-weight:400;color:#6f6963}
-body .hnspecial-settings-menu-inner .hnspecial-settings-info{font-size:13px}
+body .hnspecial-settings-menu-inner{width:100%;background:#f00;padding:20px;box-sizing:border-box;background:#f6e9d9;pointer-events:auto;line-height:1.5;color:#8a837c;}
+body .hnspecial-settings-menu-inner strong{font-weight:400;color:#6f6963;margin-bottom:109px}
+body .hnspecial-settings-menu-inner strong + p{margin-top:5px;margin-bottom:20px}
+body .hnspecial-settings-menu-inner p{font-size:13px}
+body .hnspecial-settings-menu-inner .hnspecial-settings-block{margin-bottom:7px;}
+body .hnspecial-settings-menu-inner .hnspecial-settings-block:after{content:'';display:block;clear:both}
+body .hnspecial-settings-menu-inner .hnspecial-settings-block label{display:block;float:left;width:88%;font-weight:200;color:#6f6963}
+body .hnspecial-settings-menu-inner .hnspecial-settings-block .hnspecial-settings-checkbox-container{display:block;float:right;width:12%;position:relative;}
+body .hnspecial-settings-menu-inner .hnspecial-settings-block .hnspecial-settings-checkbox-container input{display:block;position:absolute;top:0;left:0;width:100%;border:none;height:100%;}
+body .hnspecial-settings-menu-inner .hnspecial-settings-block .hnspecial-settings-checkbox-container input:not(checked) ~ .on{display:none}
+body .hnspecial-settings-menu-inner .hnspecial-settings-block .hnspecial-settings-checkbox-container input:not(checked) ~ .off{display:block}
+body .hnspecial-settings-menu-inner .hnspecial-settings-block .hnspecial-settings-checkbox-container input:checked ~ .on{display:block}
+body .hnspecial-settings-menu-inner .hnspecial-settings-block .hnspecial-settings-checkbox-container input:checked ~ .off{display:none}
+body .hnspecial-settings-menu-inner .hnspecial-settings-block .hnspecial-settings-checkbox-indicator{text-transform:uppercase;}
+body .hnspecial-settings-menu-inner .hnspecial-settings-block .hnspecial-settings-checkbox-indicator.on{color:#ff9e3c}
+body .hnspecial-settings-menu-inner .hnspecial-settings-submit-button{width:100%;margin-top:20px}
 body .WordSection1{width:900px;margin:0 auto;padding:50px 0;}
 body .WordSection1 .MsoNormal{margin:15px 0}
 body.hnspecial-form-page form td{font-weight:200;padding-bottom:20px;}
@@ -51,7 +65,6 @@ body > center > table > tbody > tr:first-child > td > table td:last-child{text-a
 body > center > table > tbody > tr:first-child > td > table td:last-child a[href^=logout]{margin-left:10px}
 body > center > table > tbody > tr:first-child > td > table a{font-weight:100;letter-spacing:1px;color:#fbf9f7}
 body > center > table > tbody > tr:nth-child(3) > td{padding:42px 20px 0 20px;}
-body > center > table > tbody > tr:nth-child(3) > td p{line-height:1.5;margin:0;margin-bottom:1em;color:#555;font-weight:200;word-wrap:break-word}
 body > center > table > tbody > tr:nth-child(3) > td > table:first-child{width:100%;font-weight:200;color:#999;}
 body > center > table > tbody > tr:nth-child(3) > td > table:first-child > tbody > tr:first-child > td:first-child:not(.title){padding:0 13px 3px 10px}
 body > center > table > tbody > tr:nth-child(3) > td > table:first-child > tbody form{padding-top:30px;margin:0;}

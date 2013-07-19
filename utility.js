@@ -45,6 +45,11 @@ function makeElement(options) {
       elem.classList.add(name);
     });
   }
+  if (options.attributes) {
+    for (var attr in options.attributes) {
+      elem.setAttribute(attr, options.attributes[attr]);
+    }
+  }
 
   return elem;
 }

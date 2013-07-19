@@ -106,7 +106,6 @@ body
         width button-size
         height button-size
         margin-right 10px
-        cursor pointer
         // Adjust position
         position relative
         top 3px
@@ -156,7 +155,6 @@ body
         font-weight 200
         text-align left
         opacity 0
-        cursor auto
         pointer-events none
         outline none
 
@@ -201,6 +199,7 @@ body
 
         .hnspecial-settings-block
             margin-bottom 7px
+            -webkit-user-select none
 
             &:after
                 content ''
@@ -213,6 +212,7 @@ body
                 width 88%
                 font-weight 200
                 color darken(menu-color, 20%)
+                cursor pointer
 
             .hnspecial-settings-checkbox-container
                 display block
@@ -224,11 +224,13 @@ body
                 input
                     display block
                     position absolute
+                    z-index 2 
                     top 0
                     left 0
                     width 100%
                     border none
                     height 100%
+                    cursor pointer
 
                     &:not(checked) ~
                         .on
@@ -252,6 +254,7 @@ body
                     color #ff9e3c
 
         .hnspecial-settings-submit-button
+            cursor pointer
             width 100%
             margin-top 20px
 

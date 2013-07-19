@@ -37,8 +37,8 @@ function request(url, method, callback) {
   request.send();
 }
 
-function makeElement(options) {
-  var elem = document.createElement(options.type);
+function makeElement(type, options) {
+  var elem = document.createElement(type);
   if (options.content) elem.textContent = options.content;
   if (options.classes) {
     options.classes.forEach(function (name) {

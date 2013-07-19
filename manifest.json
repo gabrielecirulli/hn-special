@@ -24,5 +24,5 @@
     }
   ],
 
-  "web_accessible_resources": ["gear.svg"]
+  "web_accessible_resources": ["gear.svg", "defaults.json"]
 }

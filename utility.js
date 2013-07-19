@@ -26,20 +26,20 @@ function replaceTag(container, tag) {
 
 function request(url, method, callback) {
   var request = new XMLHttpRequest();
+  request.open(method, url, true);
 
   request.onreadystatechange = function () {
     if (request.readyState === 4) {
-      callback(request.response);
+      callback(request.responseText);
     }
   }
 
-  request.open(method, url, true);
   request.send();
 }
 
 function makeElement(type, options) {
   var elem = document.createElement(type);
-  if (options.content) elem.textContent = options.content;
+  if (options.content) elem.innerHTML = options.content;
   if (options.classes) {
     options.classes.forEach(function (name) {
       elem.classList.add(name);
@@ -52,4 +52,8 @@ function makeElement(type, options) {
   }
 
   return elem;
+}
+
+function naturalWords (key) {
+  return key.replace(/_/g, " ").replace(/^\S/, function (char) { return char.toUpperCase() });
 }

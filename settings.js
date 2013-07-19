@@ -55,7 +55,7 @@ load(function () {
         }
       });
       apply.addEventListener("click", function () {
-        updateSettings(current, toArray(items.inner.getElementsByClassName("hnspecial-settings-checkbox")));
+        updateSettings.call(this, current, toArray(items.inner.getElementsByClassName("hnspecial-settings-checkbox")), items.toggle);
       });
 
       items.inner.appendChild(apply);
@@ -161,13 +161,19 @@ function makeSettingsBlock(key, status) {
   return block;
 }
 
-function updateSettings(current, checkboxes) {
-  console.log(current);
+function updateSettings(current, checkboxes, toggle) {
+  var button = this;
+  
   checkboxes.forEach(function (checkbox) {
     var key = checkbox.getAttribute("data-key");
     current[key] = checkbox.checked;
   });
 
   localStorage.setItem("hnspecial-settings", JSON.stringify(current));
-  location.reload();
+  button.value = "Saved. Reloading page...";
+
+  setTimeout(function () {
+    toggle.checked = false;
+    location.reload();
+  }, 500);
 }

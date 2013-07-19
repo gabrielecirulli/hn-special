@@ -55,7 +55,7 @@ load(function () {
         }
       });
       apply.addEventListener("click", function () {
-        updateSettings(toArray(items.inner.getElementsByClassName("hnspecial-settings-checkbox")));
+        updateSettings(current, toArray(items.inner.getElementsByClassName("hnspecial-settings-checkbox")));
       });
 
       items.inner.appendChild(apply);
@@ -161,9 +161,13 @@ function makeSettingsBlock(key, status) {
   return block;
 }
 
-function updateSettings(checkboxes) {
+function updateSettings(current, checkboxes) {
+  console.log(current);
   checkboxes.forEach(function (checkbox) {
     var key = checkbox.getAttribute("data-key");
-    console.log(key);
+    current[key] = checkbox.checked;
   });
+
+  localStorage.setItem("hnspecial-settings", JSON.stringify(current));
+  location.reload();
 }

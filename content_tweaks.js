@@ -1,8 +1,11 @@
 // Tweaks the content of the pages to allow for better styling
 // TODO: refactor code
-load(function () {
+settings.loadConditional("visual_theme", function () {
+  console.log("fuck");
   // Main container (contains header and content)
-  var container = $("body > center > table > tbody")[0];
+  var body = document.body;
+  body.classList.add("hnspecial-theme");
+  var container = _.$("body > center > table > tbody")[0];
 
   // Apply to pages with a container
   if (container) {
@@ -39,12 +42,12 @@ load(function () {
 
       document.body.classList.add("hnspecial-form-page");
       var form = document.getElementsByTagName("form")[0];
-      toArray(form.getElementsByTagName("textarea")).forEach(function (textarea) {
+      _.toArray(form.getElementsByTagName("textarea")).forEach(function (textarea) {
         textarea.parentElement.parentElement.children[0].classList.add("hnspecial-textarea-label");
       });
 
       // Fix up stray text near P tags in form pages
-      toArray(form.getElementsByTagName("p")).forEach(function (paragraph) {
+      _.toArray(form.getElementsByTagName("p")).forEach(function (paragraph) {
         // Refactor: this code is the same as below
         
         var container = paragraph.parentElement;
@@ -60,11 +63,11 @@ load(function () {
     }
 
     // Make the logo go to the home of hacker news
-    $("img[src='y18.gif']")[0].parentElement.setAttribute("href", location.origin);
+    _.$("img[src='y18.gif']")[0].parentElement.setAttribute("href", location.origin);
 
     // Remove some of the vertical bars
-    $("span.pagetop, span.yclinks").forEach(function (elem) {
-      toArray(elem.childNodes).forEach(function (node) {
+    _.$("span.pagetop, span.yclinks").forEach(function (elem) {
+      _.toArray(elem.childNodes).forEach(function (node) {
         if (node.nodeType === Node.TEXT_NODE) {
           node.nodeValue = node.nodeValue.replace(/\|/g, "");
         }
@@ -94,7 +97,7 @@ load(function () {
     }
 
     // Wrap the first piece of text in each comment into its own p and add a class to the upvote td
-    $("span.comment").forEach(function (elem) {
+    _.$("span.comment").forEach(function (elem) {
       var paragraph = document.createElement("p");
 
       if (elem.children.length) {
@@ -114,7 +117,7 @@ load(function () {
     });
 
     // Add a class to the upvote buttons on poll items
-    $("td.comment").forEach(function (elem) {
+    _.$("td.comment").forEach(function (elem) {
       var row = elem.parentElement;
       row.classList.add("hnspecial-poll-row");
       var arrow = row.children[0];
@@ -125,7 +128,6 @@ load(function () {
     // The page has no container. It's either the login page or an error page
 
     // Style error pages (ignoring the rss page)
-    var body = document.body;
     if ((!body.children.length || body.children[0].nodeName === "PRE") && location.pathname !== "/rss") {
       body.classList.add("error");
 
@@ -140,7 +142,7 @@ load(function () {
     }
 
     // Select log in form
-    if ($("body > form")[0]) {
+    if (_.$("body > form")[0]) {
       body.classList.add("hnspecial-form-page", "login");
 
       // Wrap everything in the body in a div

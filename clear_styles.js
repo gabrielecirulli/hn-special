@@ -1,11 +1,11 @@
-load(function () {
+settings.loadConditional("visual_theme", function () {
   // Removes the original HN CSS to avoid conflicts with the CSS added by the extension 
-  $("link[rel=stylesheet], style").forEach(function (elem) {
+  _.$("link[rel=stylesheet], style").forEach(function (elem) {
       elem.remove();
   });
    
   // Removes all styling attributes
-  $("body, table, tr, td, span, p, font, div").forEach(function (elem) {
+  _.$("body, table, tr, td, span, p, font, div").forEach(function (elem) {
       var attrs = elem.attributes;
       var names = [];
 

@@ -1,12 +1,94 @@
-// Settings management
-load(function () {
-  var container = $(".pagetop")[1];
-  if (container) {
-    var items = buildMenu(container);
+function Settings() {
+  var self = this;
 
-    // The extension has never been used. Introduce it to the user.
-    if (!localStorage.getItem("hnspecial-settings-initiated")) {
-      localStorage.setItem("hnspecial-settings-initiated", true);
+  this.loaded = false;
+  this.conditionalQueue = [];
+
+  // Load the settings
+  _.request(chrome.extension.getURL("defaults.json"), "GET", function (code) {
+    var defaults = JSON.parse(code);
+    var version = parseInt(localStorage.getItem("hnspecial-settings-version"));
+
+    self.currentSettings = JSON.parse(localStorage.getItem("hnspecial-settings"));
+    self.defaults = defaults.settings;
+
+    if (isNaN(version)) {
+      self.version = defaults.version;
+      self.currentSettings = _.clone(self.defaults);
+    } else if (version < defaults.version) {
+      self.version = defaults.version;
+      // TODO: update local settings with new stuff if version changed
+    }
+
+    self.updateLocalStorage();
+
+    // Build the menu and launch the rest of the modules when the DOM is ready
+    _.load(function () {
+      self.buildMenu();
+      self.loaded = true;
+      self.conditionalQueue.forEach(function (module) {
+        self.runConditional(module);
+      });
+    });    
+  });
+}
+
+Settings.prototype.updateLocalStorage = function () {
+  localStorage.setItem("hnspecial-defaults", JSON.stringify(this.defaults));
+  localStorage.setItem("hnspecial-settings-version", this.version);
+  localStorage.setItem("hnspecial-settings", JSON.stringify(this.currentSettings));
+};
+
+Settings.prototype.loadConditional = function (key, callback) {
+  var module = { key: key, callback: callback };
+
+  if (!this.loaded) {
+    this.conditionalQueue.push(module);
+  } else {
+    this.runConditional(module);
+  }
+};
+
+Settings.prototype.runConditional = function (module) {
+  if (this.currentSettings[module.key]) module.callback();
+};
+
+Settings.prototype.buildMenu = function (container) {
+  var self = this;
+  var container = _.$(".pagetop")[1];
+
+  if (container) {
+    var items = this.buildMenuFrame(container);
+
+    // Build the settings items
+    var keys = Object.keys(this.currentSettings);
+
+    keys.forEach(function (key) {
+      items.inner.appendChild(self.makeSettingsBlock(key, self.currentSettings[key]));
+    });
+
+    // Apply button
+    var apply = _.makeElement("input", {
+      classes: ["hnspecial-settings-submit-button"],
+      attributes: {
+        value: "Apply changes",
+        type: "submit"
+      }
+    });
+    apply.addEventListener("click", function () {
+      self.updateSettings.call(self, {
+        button: this,
+        current: self.currentSettings,
+        checkboxes: _.toArray(items.inner.getElementsByClassName("hnspecial-settings-checkbox")),
+        toggle: items.toggle
+      });
+    });
+
+    items.inner.appendChild(apply);
+
+    // First time use: display the menu to the user
+    if (!localStorage.getItem("hnspecial-settings-introduced")) {
+      localStorage.setItem("hnspecial-settings-introduced", true);
 
       // Show special welcome message
       items.inner.children[1].innerHTML = "<strong>Welcome to HN Special!</strong> This is the settings panel. Use it to enable or disable this extension's features. Make sure to apply the changes when you're done.";
@@ -17,62 +99,17 @@ load(function () {
         items.toggle.checked = true;  
       }, 1000);
     }
-
-    request(chrome.extension.getURL("defaults.json"), "GET", function (code) {
-      var defaults = JSON.parse(code);
-      var version = parseInt(localStorage.getItem("hnspecial-settings-version"));
-
-      console.log(typeof version);
-
-      if (isNaN(version)) {
-        // First time. Install the defaults.
-        console.log("INITIAL");
-
-        localStorage.setItem("hnspecial-settings-version", defaults.version);
-        localStorage.setItem("hnspecial-settings", JSON.stringify(defaults.settings));
-        localStorage.setItem("hnspecial-defaults", JSON.stringify(defaults.settings));
-      } else if (version < defaults.version) {
-        // New version: there are new settings in the default object
-        localStorage.setItem("hnspecial-settings-version", defaults.version);
-        localStorage.setItem("hnspecial-defaults", JSON.stringify(defaults.settings));
-        // TODO: handle this case
-      }
-
-      // Build the settings items
-      var current = JSON.parse(localStorage.getItem("hnspecial-settings"));
-      var keys = Object.keys(current);
-      
-      keys.forEach(function (key, index) {
-        var status = current[key];
-        items.inner.appendChild(makeSettingsBlock(key, status));
-      });
-
-      var apply = makeElement("input", {
-        classes: ["hnspecial-settings-submit-button"],
-        attributes: {
-          value: "Apply changes",
-          type: "submit"
-        }
-      });
-      apply.addEventListener("click", function () {
-        updateSettings.call(this, current, toArray(items.inner.getElementsByClassName("hnspecial-settings-checkbox")), items.toggle);
-      });
-
-      items.inner.appendChild(apply);
-    });  
   }
-  
-});
+};
 
-function buildMenu(container) {
-  // Replace the menu container with a div
-  var container = replaceTag(container, "div");
+Settings.prototype.buildMenuFrame = function (container) {
+  container = _.replaceTag(container, "div");
 
-  var button = makeElement("div", {
+  var button = _.makeElement("div", {
     classes: ["hnspecial-settings-button"]
   });
   
-  var toggle = makeElement("input", {
+  var toggle = _.makeElement("input", {
     classes: ["hnspecial-settings-button-checkbox"],
     attributes: {
       type: "checkbox"
@@ -80,25 +117,25 @@ function buildMenu(container) {
   });
   button.appendChild(toggle);
 
-  button.appendChild(makeElement("img", {
+  button.appendChild(_.makeElement("img", {
     attributes: {
       src: chrome.extension.getURL("gear.svg")
     }
   }));
 
-  var menu = makeElement("div", {
+  var menu = _.makeElement("div", {
     classes: ["hnspecial-settings-menu-container"]
   });
   
-  var inner = makeElement("div", {
+  var inner = _.makeElement("div", {
     classes: ["hnspecial-settings-menu-inner"]
   });
   
-  inner.appendChild(makeElement("strong", {
+  inner.appendChild(_.makeElement("strong", {
     content: "HN Special — Settings"
   }));
 
-  inner.appendChild(makeElement("p", {
+  inner.appendChild(_.makeElement("p", {
     content: "Use this menu to enable or disable features. Press Apply when you're done.",
     classes: ["hnspecial-settings-info"]
   }));
@@ -111,31 +148,31 @@ function buildMenu(container) {
     toggle: toggle,
     inner: inner
   };
-}
+};
 
-function makeSettingsBlock(key, status) {
+Settings.prototype.makeSettingsBlock = function (key, status) {
   var id = "hnspecial_" + key;
 
-  var block = makeElement("div", {
+  var block = _.makeElement("div", {
     classes: ["hnspecial-settings-block"],
     attributes: {
       "data-key": key
     }
   });
 
-  block.appendChild(makeElement("label", {
-    content: naturalWords(key),
+  block.appendChild(_.makeElement("label", {
+    content: _.naturalWords(key),
     classes: ["hnspecial-settings-label"],
     attributes: {
       "for": id
     }
   }));
 
-  var checkboxContainer = makeElement("div", {
+  var checkboxContainer = _.makeElement("div", {
     classes: ["hnspecial-settings-checkbox-container"]
   });
 
-  var checkbox = makeElement("input", {
+  var checkbox = _.makeElement("input", {
     classes: ["hnspecial-settings-checkbox"],
     attributes: {
       id: id,
@@ -146,12 +183,12 @@ function makeSettingsBlock(key, status) {
   checkbox.checked = status;
   checkboxContainer.appendChild(checkbox);
 
-  checkboxContainer.appendChild(makeElement("span", {
+  checkboxContainer.appendChild(_.makeElement("span", {
     content: "on",
     classes: ["hnspecial-settings-checkbox-indicator", "on"]
   }));
 
-  checkboxContainer.appendChild(makeElement("span", {
+  checkboxContainer.appendChild(_.makeElement("span", {
     content: "off",
     classes: ["hnspecial-settings-checkbox-indicator", "off"]
   }));
@@ -159,21 +196,24 @@ function makeSettingsBlock(key, status) {
   block.appendChild(checkboxContainer);
 
   return block;
-}
+};
 
-function updateSettings(current, checkboxes, toggle) {
-  var button = this;
-  
-  checkboxes.forEach(function (checkbox) {
+Settings.prototype.updateSettings = function (options) {
+  options.checkboxes.forEach(function (checkbox) {
     var key = checkbox.getAttribute("data-key");
-    current[key] = checkbox.checked;
+    options.current[key] = checkbox.checked;
   });
 
-  localStorage.setItem("hnspecial-settings", JSON.stringify(current));
-  button.value = "Saved. Reloading page...";
+  this.updateLocalStorage();
+
+  options.button.value = "Saved. Reloading page...";
 
   setTimeout(function () {
-    toggle.checked = false;
+    options.toggle.checked = false;
     location.reload();
   }, 500);
-}
+};
+
+
+// Run the settings module as soon as possible
+window.settings = new Settings();

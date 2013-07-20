@@ -15,9 +15,9 @@
       "matches": [ "http://news.ycombinator.com/*", "https://news.ycombinator.com/*" ],
       "js": [
         "utility.js",
+        "settings.js",
         "clear_styles.js",
-        "content_tweaks.js",
-        "settings.js"
+        "content_tweaks.js"
       ],
       "css": [ "hn_theme.css" ],
       "run_at": "document_start"

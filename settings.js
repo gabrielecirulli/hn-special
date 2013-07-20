@@ -221,6 +221,8 @@ Settings.prototype.updateSettings = function (options) {
   }, 500);
 };
 
-
-// Run the settings module as soon as possible
-window.settings = new Settings();
+(function () {
+  // Run the settings module as soon as possible
+  this.HNSpecial = {};
+  this.HNSpecial.settings = new Settings();  
+}).call(this);

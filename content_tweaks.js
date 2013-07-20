@@ -1,6 +1,6 @@
 // Tweaks the content of the pages to allow for better styling
 // TODO: refactor code
-settings.loadConditional("visual_theme", function () {
+HNSpecial.settings.loadConditional("visual_theme", function () {
   // Main container (contains header and content)
   var body = document.body;
   body.classList.add("hnspecial-theme");

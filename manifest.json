@@ -17,7 +17,8 @@
         "utility.js",
         "settings.js",
         "visual_theme.js",
-        "open_links_in_new_tabs.js"
+        "open_links_in_new_tabs.js",
+        "infinite_scrolling.js"
       ],
       "css": [ "hn_theme.css" ],
       "run_at": "document_start"

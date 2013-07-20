@@ -19,11 +19,11 @@ function Settings() {
     } else if (self.version < defaults.version) {
       self.version = defaults.version;
       var currentKeys = Object.keys(self.currentSettings);
-      Object.keys(defaults.settings).forEach(function (key) {
+      for (var key in defaults.settings) {
         if (currentKeys.indexOf(key) === -1) {
           self.currentSettings[key] = defaults.settings[key];
         }
-      });
+      }
       self.defaults = defaults.settings;
     }
 

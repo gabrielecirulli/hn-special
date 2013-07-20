@@ -7,17 +7,24 @@ function Settings() {
   // Load the settings
   _.request(chrome.extension.getURL("defaults.json"), "GET", function (code) {
     var defaults = JSON.parse(code);
-    var version = parseInt(localStorage.getItem("hnspecial-settings-version"));
+    self.defaults = JSON.parse(localStorage.getItem("hnspecial-defaults")); // Used when the version changes
+    self.version = parseInt(localStorage.getItem("hnspecial-settings-version"));
 
     self.currentSettings = JSON.parse(localStorage.getItem("hnspecial-settings"));
-    self.defaults = defaults.settings;
 
-    if (isNaN(version)) {
+    if (isNaN(self.version)) {
       self.version = defaults.version;
+      self.defaults = defaults.settings;
       self.currentSettings = _.clone(self.defaults);
-    } else if (version < defaults.version) {
+    } else if (self.version < defaults.version) {
       self.version = defaults.version;
-      // TODO: update local settings with new stuff if version changed
+      var currentKeys = Object.keys(self.currentSettings);
+      Object.keys(defaults.settings).forEach(function (key) {
+        if (currentKeys.indexOf(key) === -1) {
+          self.currentSettings[key] = defaults.settings[key];
+        }
+      });
+      self.defaults = defaults.settings;
     }
 
     self.updateLocalStorage();

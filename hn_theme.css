@@ -64,7 +64,7 @@ body.hnspecial-theme > center > table > tbody > tr:first-child > td > table td:n
 body.hnspecial-theme > center > table > tbody > tr:first-child > td > table td:nth-child(2) .pagetop > a,body.hnspecial-theme > center > table > tbody > tr:first-child > td > table td:nth-child(2) .pagetop > .topsel{margin-right:10px}
 body.hnspecial-theme > center > table > tbody > tr:first-child > td > table td:nth-child(2) .pagetop .topsel a{font-weight:300}
 body.hnspecial-theme > center > table > tbody > tr:first-child > td > table td:last-child{text-align:right;padding-right:25px;}
-body.hnspecial-theme > center > table > tbody > tr:first-child > td > table td:last-child a[href^=logout]{margin-left:10px}
+body.hnspecial-theme > center > table > tbody > tr:first-child > td > table td:last-child a[href^=logout]{margin-left:5px}
 body.hnspecial-theme > center > table > tbody > tr:first-child > td > table a{font-weight:100;letter-spacing:1px;color:#fbf9f7}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td{padding:42px 20px 0 20px;}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td > table:first-child{width:100%;font-weight:200;color:#999;}

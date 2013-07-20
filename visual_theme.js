@@ -87,7 +87,7 @@ HNSpecial.settings.registerModule("visual_theme", function () {
     _.$("img[src='y18.gif']")[0].parentElement.setAttribute("href", location.origin);
 
     // Remove some of the vertical bars
-    _.$("span.pagetop, span.yclinks").forEach(function (elem) {
+    _.$(".pagetop, span.yclinks").forEach(function (elem) {
       _.toArray(elem.childNodes).forEach(function (node) {
         if (node.nodeType === Node.TEXT_NODE) {
           node.nodeValue = node.nodeValue.replace(/\|/g, "");

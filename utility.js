@@ -46,18 +46,20 @@
 
   _.createElement = function(type, options) {
     var elem = document.createElement(type);
-    if (options.content) elem.innerHTML = options.content;
-    if (options.classes) {
-      options.classes.forEach(function (name) {
-        elem.classList.add(name);
-      });
-    }
-    if (options.attributes) {
-      for (var attr in options.attributes) {
-        elem.setAttribute(attr, options.attributes[attr]);
+    if (options) {
+      if (options.content) elem.innerHTML = options.content;
+      if (options.classes) {
+        options.classes.forEach(function (name) {
+          elem.classList.add(name);
+        });
       }
+      if (options.attributes) {
+        for (var attr in options.attributes) {
+          elem.setAttribute(attr, options.attributes[attr]);
+        }
+      }  
     }
-
+    
     return elem;
   };
 

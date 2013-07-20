@@ -1,15 +1,15 @@
 (function () {
   var _ = {};
 
-  _.toArray = function(collection) {
+  _.toArray = function (collection) {
     return [].slice.call(collection);
   };
 
-  _.$ = function(selector) {
-      return _.toArray(document.querySelectorAll(selector));
+  _.$ = function (selector, context) {
+      return _.toArray((context ? context : document).querySelectorAll(selector));
   };
 
-  _.load = function(callback) {
+  _.load = function (callback) {
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", callback);  
     } else {
@@ -17,7 +17,7 @@
     }    
   };
 
-  _.replaceTag = function(container, tag) {
+  _.replaceTag = function (container, tag) {
     var parent = container.parentElement;
     var newContainer = document.createElement(tag);
     _.toArray(container.classList).forEach(function (name) {
@@ -31,7 +31,7 @@
     return newContainer;
   };
 
-  _.request = function(url, method, callback) {
+  _.request = function (url, method, callback) {
     var request = new XMLHttpRequest();
     request.open(method, url, true);
 
@@ -44,7 +44,7 @@
     request.send();
   };
 
-  _.createElement = function(type, options) {
+  _.createElement = function (type, options) {
     var elem = document.createElement(type);
     if (options) {
       if (options.content) elem.innerHTML = options.content;
@@ -63,13 +63,17 @@
     return elem;
   };
 
-  _.naturalWords = function(key) {
+  _.naturalWords = function (key) {
     return key.replace(/_/g, " ").replace(/^\S/, function (char) { return char.toUpperCase() });
   };
 
-  _.clone = function(object) {
+  _.clone = function (object) {
     return JSON.parse(JSON.stringify(object));
   };
+
+  _.isLink = function (link) {
+    return link.parentElement.classList.contains("title") && !link.getAttribute("href").match(/^\/x\S+/);
+  }
 
   this._ = _;
 }).call(this);

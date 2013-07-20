@@ -1,7 +1,7 @@
 HNSpecial.settings.registerModule("open_links_in_new_tabs", function () {
   function editLinks() {
     _.toArray(document.getElementsByTagName("a")).forEach(function (link) {
-      if (link.parentElement.classList.contains("title") && !link.getAttribute("href").match(/^\/x\S+/)) {
+      if (_.isLink(link)) {
         console.log(link.textContent);
         link.setAttribute("target", "_blank");  
       }    

@@ -5,12 +5,12 @@ Improves the look and feel and adds some interesting features.
 The available features can be enabled or disabled based on your personal preference.
 
 ## Planned features
- - A modern looking visual theme
+ - A modern looking visual theme **DONE**
  - Infinite scrolling
- - Open links in new tab
+ - Open links in new tab **DONE**
  - Hide articles with certain keywords
  - More accurate domain names
- - (Maybe) Mark all as read
+ - Mark all as read (maybe)
 
 ## Contributing
 The CSS is built using [Stylus](http://learnboost.github.io/stylus/). If you'd like to contribute, you should first install [Node](http://nodejs.org/), and then get `stylus`:

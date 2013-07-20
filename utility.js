@@ -10,7 +10,11 @@
   };
 
   _.load = function(callback) {
-    document.addEventListener("DOMContentLoaded", callback);
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", callback);  
+    } else {
+      callback.call(document);
+    }    
   };
 
   _.replaceTag = function(container, tag) {

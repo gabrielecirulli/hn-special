@@ -98,7 +98,7 @@ Settings.prototype.buildMenu = function (container) {
       localStorage.setItem("hnspecial-settings-introduced", true);
 
       // Show special welcome message
-      items.inner.children[1].innerHTML = "<strong>Welcome to HN Special!</strong> This is the settings panel. Use it to enable or disable this extension's features. Make sure to apply the changes when you're done.";
+      items.inner.children[1].innerHTML = "<strong>Welcome to HN Special!</strong> This is the settings panel. You can use it to enable or disable this extension's features. Make sure to apply the changes when you're done.";
 
       // Auto-open the menu for the first time
       // Move this to the end of the process

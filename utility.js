@@ -44,7 +44,7 @@
     request.send();
   };
 
-  _.makeElement = function(type, options) {
+  _.createElement = function(type, options) {
     var elem = document.createElement(type);
     if (options.content) elem.innerHTML = options.content;
     if (options.classes) {

@@ -1,6 +1,6 @@
 // Tweaks the content of the pages to allow for better styling
 // TODO: refactor code
-HNSpecial.settings.loadConditional("visual_theme", function () {
+HNSpecial.settings.registerModule("visual_theme", function () {
   // Removes the original HN CSS to avoid conflicts with the CSS added by the extension 
   _.$("link[rel=stylesheet], style").forEach(function (elem) {
       elem.remove();

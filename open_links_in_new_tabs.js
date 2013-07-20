@@ -1,4 +1,4 @@
-HNSpecial.settings.loadConditional("open_links_in_new_tabs", function () {
+HNSpecial.settings.registerModule("open_links_in_new_tabs", function () {
   function tweakLinks() {
     _.toArray(document.getElementsByTagName("a")).forEach(function (link) {
       if (link.parentElement.classList.contains("title") && !link.getAttribute("href").match(/^\/x\S+/)) {

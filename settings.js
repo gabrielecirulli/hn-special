@@ -2,7 +2,7 @@ function Settings() {
   var self = this;
 
   this.loaded = false;
-  this.conditionalQueue = [];
+  this.moduleQueue = [];
 
   // Load the settings
   _.request(chrome.extension.getURL("defaults.json"), "GET", function (code) {
@@ -27,36 +27,36 @@ function Settings() {
       self.defaults = defaults.settings;
     }
 
-    self.updateLocalStorage();
+    self.save();
 
     // Build the menu and launch the rest of the modules when the DOM is ready
     _.load(function () {
       self.buildMenu();
       self.loaded = true;
-      self.conditionalQueue.forEach(function (module) {
-        self.runConditional(module);
+      self.moduleQueue.forEach(function (module) {
+        self.runModule(module);
       });
     });    
   });
 }
 
-Settings.prototype.updateLocalStorage = function () {
+Settings.prototype.save = function () {
   localStorage.setItem("hnspecial-defaults", JSON.stringify(this.defaults));
   localStorage.setItem("hnspecial-settings-version", this.version);
   localStorage.setItem("hnspecial-settings", JSON.stringify(this.currentSettings));
 };
 
-Settings.prototype.loadConditional = function (key, callback) {
+Settings.prototype.registerModule = function (key, callback) {
   var module = { key: key, callback: callback };
 
   if (!this.loaded) {
-    this.conditionalQueue.push(module);
+    this.moduleQueue.push(module);
   } else {
-    this.runConditional(module);
+    this.runModule(module);
   }
 };
 
-Settings.prototype.runConditional = function (module) {
+Settings.prototype.runModule = function (module) {
   if (this.currentSettings[module.key]) module.callback();
 };
 
@@ -75,7 +75,7 @@ Settings.prototype.buildMenu = function (container) {
     });
 
     // Apply button
-    var apply = _.makeElement("input", {
+    var apply = _.createElement("input", {
       classes: ["hnspecial-settings-submit-button"],
       attributes: {
         value: "Apply changes",
@@ -112,11 +112,11 @@ Settings.prototype.buildMenu = function (container) {
 Settings.prototype.buildMenuFrame = function (container) {
   container = _.replaceTag(container, "div");
 
-  var button = _.makeElement("div", {
+  var button = _.createElement("div", {
     classes: ["hnspecial-settings-button"]
   });
   
-  var toggle = _.makeElement("input", {
+  var toggle = _.createElement("input", {
     classes: ["hnspecial-settings-button-checkbox"],
     attributes: {
       type: "checkbox"
@@ -124,25 +124,25 @@ Settings.prototype.buildMenuFrame = function (container) {
   });
   button.appendChild(toggle);
 
-  button.appendChild(_.makeElement("img", {
+  button.appendChild(_.createElement("img", {
     attributes: {
       src: chrome.extension.getURL("gear.svg")
     }
   }));
 
-  var menu = _.makeElement("div", {
+  var menu = _.createElement("div", {
     classes: ["hnspecial-settings-menu-container"]
   });
   
-  var inner = _.makeElement("div", {
+  var inner = _.createElement("div", {
     classes: ["hnspecial-settings-menu-inner"]
   });
   
-  inner.appendChild(_.makeElement("strong", {
+  inner.appendChild(_.createElement("strong", {
     content: "HN Special — Settings"
   }));
 
-  inner.appendChild(_.makeElement("p", {
+  inner.appendChild(_.createElement("p", {
     content: "Use this menu to enable or disable features. Press Apply when you're done.",
     classes: ["hnspecial-settings-info"]
   }));
@@ -160,14 +160,14 @@ Settings.prototype.buildMenuFrame = function (container) {
 Settings.prototype.makeSettingsBlock = function (key, status) {
   var id = "hnspecial_" + key;
 
-  var block = _.makeElement("div", {
+  var block = _.createElement("div", {
     classes: ["hnspecial-settings-block"],
     attributes: {
       "data-key": key
     }
   });
 
-  block.appendChild(_.makeElement("label", {
+  block.appendChild(_.createElement("label", {
     content: _.naturalWords(key),
     classes: ["hnspecial-settings-label"],
     attributes: {
@@ -175,11 +175,11 @@ Settings.prototype.makeSettingsBlock = function (key, status) {
     }
   }));
 
-  var checkboxContainer = _.makeElement("div", {
+  var checkboxContainer = _.createElement("div", {
     classes: ["hnspecial-settings-checkbox-container"]
   });
 
-  var checkbox = _.makeElement("input", {
+  var checkbox = _.createElement("input", {
     classes: ["hnspecial-settings-checkbox"],
     attributes: {
       id: id,
@@ -190,12 +190,12 @@ Settings.prototype.makeSettingsBlock = function (key, status) {
   checkbox.checked = status;
   checkboxContainer.appendChild(checkbox);
 
-  checkboxContainer.appendChild(_.makeElement("span", {
+  checkboxContainer.appendChild(_.createElement("span", {
     content: "on",
     classes: ["hnspecial-settings-checkbox-indicator", "on"]
   }));
 
-  checkboxContainer.appendChild(_.makeElement("span", {
+  checkboxContainer.appendChild(_.createElement("span", {
     content: "off",
     classes: ["hnspecial-settings-checkbox-indicator", "off"]
   }));
@@ -211,7 +211,7 @@ Settings.prototype.updateSettings = function (options) {
     options.current[key] = checkbox.checked;
   });
 
-  this.updateLocalStorage();
+  this.save();
 
   options.button.value = "Saved. Reloading page...";
 

@@ -16,8 +16,7 @@
       "js": [
         "utility.js",
         "settings.js",
-        "clear_styles.js",
-        "content_tweaks.js",
+        "visual_theme.js",
         "open_links_in_new_tabs.js"
       ],
       "css": [ "hn_theme.css" ],

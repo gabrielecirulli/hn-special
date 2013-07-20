@@ -29,7 +29,7 @@ body.hnspecial-theme u{text-decoration:none}
 body.hnspecial-theme a{color:#ffac5b;text-decoration:none}
 body.hnspecial-theme a:hover{text-decoration:underline}
 body.hnspecial-theme p{line-height:1.5;margin:0;margin-bottom:1em;color:#555;font-weight:200;word-wrap:break-word}
-body.hnspecial-theme input,body.hnspecial-theme textarea{-webkit-appearance:none;-moz-appearance:none;border:1px solid #ccc;font:15px/1.5 Helvetica Neue, Arial, sans-serif;color:inherit;padding:5px 8px;margin:0;font-weight:200;}
+body.hnspecial-theme input,body.hnspecial-theme textarea{-webkit-appearance:none;border:1px solid #ccc;font:15px/1.5 Helvetica Neue, Arial, sans-serif;color:inherit;padding:5px 8px;margin:0;font-weight:200;}
 body.hnspecial-theme input[type=submit],body.hnspecial-theme textarea[type=submit]{background:#ff8937;border:none;color:#fbf9f7;font:15px/1.5 Helvetica Neue, Arial, sans-serif;font-weight:200;cursor:pointer;}
 body.hnspecial-theme input[type=submit]:active,body.hnspecial-theme textarea[type=submit]:active{color:#fff;background:#ff7718}
 body.hnspecial-theme input:focus,body.hnspecial-theme textarea:focus{border-color:#aaa;outline:none}

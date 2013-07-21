@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "Special HN Theme",
-  "description": "This extension refreshes the visual appearance of Hacker News.",
+  "name": "HN Special - An addition to Hacker News",
+  "description": "This extension refreshes the visual style of Hacker News and adds a few features, like infinite scrolling. Everything is togglable.",
   "version": "1.0",
 
   "permissions": [

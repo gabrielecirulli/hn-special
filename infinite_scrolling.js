@@ -1,6 +1,55 @@
 HNSpecial.settings.registerModule("infinite_scrolling", function () {
-  // document.height
-  // window.innerHeight + window.scrollY
+  function getThreshold() {
+    return window.scrollY + button.getBoundingClientRect().bottom + 50; // getBoundingClientRect returns coordinates relative to the viewport
+  }
+
+  function getButton(context) {
+    return _.$("a[href^='/x'], a[href^='news2']", context)[0];
+  }
+
+  function checkScroll() {
+    if (!disabled && window.scrollY + window.innerHeight > threshold) {
+      loadLinks();
+    }
+  }
+
+  function loadLinks() {
+    if (loading) return;
+    loading = true;
+
+    var label = button.textContent;
+    button.textContent = "Loading more items...";
+
+    var last = button.parentElement.parentElement.previousSibling;
+    var container = last.parentElement;
+    var url = button.getAttribute("href");
+
+    _.request(url, "GET", function (page) {
+      var dummy = _.createElement("div");
+      dummy.innerHTML = page;
+      _.toArray(dummy.getElementsByTagName("a")).forEach(function (link) {
+        if (_.isTitleLink(link)) {
+          var row = link.parentElement.parentElement;
+          var sub = row.nextSibling;
+          var empty = sub.nextSibling;
+
+          container.insertBefore(row, last);
+          container.insertBefore(sub, last);
+          container.insertBefore(empty, last);
+        }
+      });
+
+      var newButton = getButton(dummy);
+
+      button.textContent = label;
+      button.setAttribute("href", newButton.getAttribute("href"));
+      threshold = getThreshold();
+      loading = false;
+      HNSpecial.settings.emit("new links"); // Notify other modules about the presence of new links
+    });
+  }
+
+  // Set up the thing
   var button = getButton();
 
   if (_.isListingPage() && button) {
@@ -32,55 +81,5 @@ HNSpecial.settings.registerModule("infinite_scrolling", function () {
     });
 
     document.addEventListener("scroll", checkScroll);
-
-    function getThreshold() {
-      return window.scrollY + button.getBoundingClientRect().bottom + 50; // getBoundingClientRect returns coordinates relative to the viewport
-    }
-
-    function getButton(context) {
-      return _.$("a[href^='/x']", context)[0];
-    }
-
-    function checkScroll() {
-      if (!disabled && window.scrollY + window.innerHeight > threshold) {
-        loadLinks();
-      }
-    }
-
-    function loadLinks() {
-      if (loading) return;
-      loading = true;
-
-      var label = button.textContent;
-      button.textContent = "Loading more items...";
-
-      var last = button.parentElement.parentElement.previousSibling;
-      var container = last.parentElement;
-      var url = button.getAttribute("href");
-
-      _.request(url, "GET", function (page) {
-        var dummy = _.createElement("div");
-        dummy.innerHTML = page;
-        _.toArray(dummy.getElementsByTagName("a")).forEach(function (link) {
-          if (_.isTitleLink(link)) {
-            var row = link.parentElement.parentElement;
-            var sub = row.nextSibling;
-            var empty = sub.nextSibling;
-
-            container.insertBefore(row, last);
-            container.insertBefore(sub, last);
-            container.insertBefore(empty, last);
-          }
-        });
-
-        var newButton = getButton(dummy);
-
-        button.textContent = label;
-        button.setAttribute("href", newButton.getAttribute("href"));
-        threshold = getThreshold();
-        loading = false;
-        HNSpecial.settings.emit("new links"); // Notify other modules about the presence of new links
-      });
-    }
   }
 });

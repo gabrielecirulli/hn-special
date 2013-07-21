@@ -7,6 +7,10 @@
         "accurate_domain_names": true    
     },
     "tips": [
-        "This extension is completely open source. Take a look at the <a href=\"https://github.com/gabrielecirulli/hn-special\" target=\"_blank\">repository</a> on GitHub!"
+        "This extension is completely open source. Take a look at the <a href=\"https://github.com/gabrielecirulli/hn-special\" target=\"_blank\">repository</a> on GitHub!",
+        "If you don't like the theme, disable it and the other the features will still work!",
+        "<em>Open links in new tabs</em> makes links in comments open up in new tabs as well!",
+        "You can pause infinite scrolling by clicking on \"pause infinite scrolling\", next to \"More\"!",
+        "<em>Accurate domain names</em> shows you more precisely where a link takes (e.g., <em>github.com</em> becomes <em>gist.github.com</em>)!"
     ]
 }

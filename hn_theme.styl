@@ -429,6 +429,20 @@ body.hnspecial-theme
                 > tr:nth-child(3) > td
                     padding 42px 20px 0 20px
 
+                    tr >
+                        // It's the only proper way to style the leaderboard tables
+                        columns = 4
+                        for num in (1..columns)
+                            td:nth-child({num}):nth-last-child({columns - num + 1}):not(:empty)
+                                padding 0 !important
+                                padding-top 15px !important
+                                if num == 2
+                                    padding-left 10px !important
+                                    width 100%
+
+                                if num == 3
+                                    padding-right 30px !important
+
                     // Post area
                     > table:first-of-type
                         width 100%
@@ -437,12 +451,19 @@ body.hnspecial-theme
 
                         > tbody
                             > tr:first-child > 
-                                td:first-child:not(.title) // Arrow td next to title in comments page
+                                td:first-child:not(.hnspecial-upvote-button):not(.title) > center // Arrow td next to title in comments page
                                     padding 0px 13px 3px 10px // Refactor: same as #1
 
                                 td:nth-child(3):not(.title) // Heading above job listings page
                                     padding-bottom 30px
                                     line-height 1.5
+
+                            // Add spacing to leaders table
+                            tr td:first-child
+                                > a
+                                    display block
+                                    padding-top 7px
+                                    padding-bottom 8px
 
 
                             form
@@ -476,7 +497,7 @@ body.hnspecial-theme
                             padding-top 1px
 
                         center
-                            padding-top 20px
+                            padding-top 20px !important
 
                     td.comment
                         // background red

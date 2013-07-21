@@ -75,9 +75,14 @@ body.hnspecial-theme > center > table > tbody > tr:first-child > td > table td:l
 body.hnspecial-theme > center > table > tbody > tr:first-child > td > table td:last-child a[href^=logout]{margin-left:5px}
 body.hnspecial-theme > center > table > tbody > tr:first-child > td > table a{font-weight:100;letter-spacing:1px;color:#fbf9f7}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td{padding:42px 20px 0 20px;}
+body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td tr > td:nth-child(1):nth-last-child(4):not(:empty){padding:0 !important;padding-top:15px !important;}
+body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td tr > td:nth-child(2):nth-last-child(3):not(:empty){padding:0 !important;padding-top:15px !important;padding-left:10px !important;width:100%;}
+body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td tr > td:nth-child(3):nth-last-child(2):not(:empty){padding:0 !important;padding-top:15px !important;padding-right:30px !important}
+body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td tr > td:nth-child(4):nth-last-child(1):not(:empty){padding:0 !important;padding-top:15px !important;}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td > table:first-of-type{width:100%;font-weight:200;color:#999;}
-body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td > table:first-of-type > tbody > tr:first-child > td:first-child:not(.title){padding:0 13px 3px 10px}
+body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td > table:first-of-type > tbody > tr:first-child > td:first-child:not(.hnspecial-upvote-button):not(.title) > center{padding:0 13px 3px 10px}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td > table:first-of-type > tbody > tr:first-child > td:nth-child(3):not(.title){padding-bottom:30px;line-height:1.5}
+body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td > table:first-of-type > tbody tr td:first-child > a{display:block;padding-top:7px;padding-bottom:8px}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td > table:first-of-type > tbody form{padding-top:30px;margin:0;}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td > table:first-of-type > tbody form input[type=submit]{width:150px}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td .default{padding-top:20px;}
@@ -85,7 +90,7 @@ body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td .default .c
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td .hnspecial-poll-row + tr td{padding-top:5px;padding-bottom:20px}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td .hnspecial-upvote-button{padding-right:13px;vertical-align:top;}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td .hnspecial-upvote-button.poll center{padding-top:1px}
-body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td .hnspecial-upvote-button center{padding-top:20px}
+body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td .hnspecial-upvote-button center{padding-top:20px !important}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td td.comment{font-weight:200}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td td.title{padding:3px 0 5px 0;}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td td.title:last-child{width:100%}

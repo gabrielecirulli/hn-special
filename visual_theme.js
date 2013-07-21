@@ -99,7 +99,6 @@ HNSpecial.settings.registerModule("visual_theme", function () {
 
       // Only apply this when the post has textual content
       if (textContainer.textContent.trim().length) {
-        console.log("COCO");
         var unwrapped = textContainer.childNodes[0];
         var text = unwrapped.nodeValue;
         unwrapped.remove();
@@ -130,7 +129,6 @@ HNSpecial.settings.registerModule("visual_theme", function () {
       var first = elem.getElementsByTagName("p")[0];
 
       if (first) { // If the comment has a child paragraph (more than 1 paragraph), wrap all nodes before it in a <p>
-        console.log("first");
         while (first.previousSibling) paragraph.insertBefore(first.previousSibling, paragraph.childNodes[0]);
         elem.insertBefore(paragraph, first);
       } else { // If the node has no child paragraph, wrap everything inside it a <p>

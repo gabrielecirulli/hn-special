@@ -67,6 +67,10 @@
     return key.replace(/_/g, " ").replace(/^\S/, function (char) { return char.toUpperCase() });
   };
 
+  _.lowerFirst = function (string) {
+    return string.charAt(0).toLowerCase() + string.substr(1, string.length);
+  }
+
   _.clone = function (object) {
     return JSON.parse(JSON.stringify(object));
   };

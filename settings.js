@@ -8,17 +8,19 @@ function Settings() {
   // Load the settings
   _.request(chrome.extension.getURL("defaults.json"), "GET", function (code) {
     var defaults = JSON.parse(code);
+    self.tips = defaults.tips;
+
     self.defaults = JSON.parse(localStorage.getItem("hnspecial-defaults")); // Used when the version changes
     self.version = parseInt(localStorage.getItem("hnspecial-settings-version"));
 
     self.currentSettings = JSON.parse(localStorage.getItem("hnspecial-settings"));
 
     if (isNaN(self.version)) {
-      self.version = defaults.version;
+      self.version = defaults.settings_version;
       self.defaults = defaults.settings;
       self.currentSettings = _.clone(self.defaults);
-    } else if (self.version < defaults.version) {
-      self.version = defaults.version;
+    } else if (self.version < defaults.settings_version) {
+      self.version = defaults.settings_version;
       var currentKeys = Object.keys(self.currentSettings);
       for (var key in defaults.settings) {
         if (currentKeys.indexOf(key) === -1 && defaults.settings[key]) {
@@ -161,6 +163,11 @@ Settings.prototype.buildMenuFrame = function (container) {
   inner.appendChild(_.createElement("p", {
     content: "Use this menu to enable or disable features. Press Apply when you're done.",
     classes: ["hnspecial-settings-info"]
+  }));
+
+  inner.appendChild(_.createElement("p", {
+    content: "<strong>Tip:</strong> " + _.lowerFirst(this.tips[Math.floor(Math.random() * this.tips.length)]),
+    classes: ["hnspecial-settings-tip"]
   }));
 
   menu.appendChild(inner);

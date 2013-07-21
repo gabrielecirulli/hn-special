@@ -12,8 +12,11 @@
 .hnspecial-settings-menu-container:before{content:'';position:absolute;left:142px;top:3px;-webkit-transform:rotate(45deg);z-index:0;background:#f6e9d9;display:block;width:16px;height:16px}
 .hnspecial-settings-menu-inner{width:100%;background:#f00;padding:20px;box-sizing:border-box;background:#f6e9d9;pointer-events:auto;line-height:1.5;color:#8a837c;}
 .hnspecial-settings-menu-inner strong{font-weight:400;color:#6f6963;margin-bottom:109px}
-.hnspecial-settings-menu-inner strong + p{margin-top:5px;margin-bottom:20px}
-.hnspecial-settings-menu-inner p{font-size:13px}
+.hnspecial-settings-menu-inner .hnspecial-settings-info{margin-top:5px}
+.hnspecial-settings-menu-inner .hnspecial-settings-tip{margin-bottom:20px}
+.hnspecial-settings-menu-inner p{font-size:13px;}
+.hnspecial-settings-menu-inner p strong{color:#615c57 !important}
+.hnspecial-settings-menu-inner p a{color:#f19539 !important;font-weight:200 !important;letter-spacing:0 !important}
 .hnspecial-settings-menu-inner .hnspecial-settings-block{margin-bottom:7px;-webkit-user-select:none;}
 .hnspecial-settings-menu-inner .hnspecial-settings-block:after{content:'';display:block;clear:both}
 .hnspecial-settings-menu-inner .hnspecial-settings-block label{display:block;float:left;width:88%;font-weight:200;color:#6f6963;cursor:pointer}
@@ -63,6 +66,7 @@ body.hnspecial-theme > center > table > tbody > tr:first-child > td > table td:f
 body.hnspecial-theme > center > table > tbody > tr:first-child > td > table td:first-child a{display:block;width:30px;height:30px;background:#fff;border-radius:100%;}
 body.hnspecial-theme > center > table > tbody > tr:first-child > td > table td:first-child a:after{content:'Y';width:31px;height:30px;display:block;line-height:32px;text-align:center;font-size:22px;font-weight:200;color:#ff8937}
 body.hnspecial-theme > center > table > tbody > tr:first-child > td > table td:first-child a img{display:none}
+body.hnspecial-theme > center > table > tbody > tr:first-child > td > table td:nth-child(2) font{display:inline-block;overflow:hidden;letter-spacing:1px;max-width:140px;white-space:nowrap;text-overflow:ellipsis}
 body.hnspecial-theme > center > table > tbody > tr:first-child > td > table td:nth-child(2) b a{margin-right:25px;font-weight:400;letter-spacing:0}
 body.hnspecial-theme > center > table > tbody > tr:first-child > td > table td:nth-child(2) img{display:none}
 body.hnspecial-theme > center > table > tbody > tr:first-child > td > table td:nth-child(2) .pagetop > a,body.hnspecial-theme > center > table > tbody > tr:first-child > td > table td:nth-child(2) .pagetop > .topsel{margin-right:10px}

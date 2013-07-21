@@ -1,9 +1,12 @@
 {
-    "version": 1,
+    "settings_version": 1,
     "settings": {
         "visual_theme": true,
         "infinite_scrolling": true,
         "open_links_in_new_tabs": false,
         "accurate_domain_names": true    
-    }
+    },
+    "tips": [
+        "This extension is completely open source. Take a look at the <a href=\"https://github.com/gabrielecirulli/hn-special\" target=\"_blank\">repository</a> on GitHub!"
+    ]
 }

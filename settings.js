@@ -20,7 +20,7 @@ function Settings() {
       self.version = defaults.version;
       var currentKeys = Object.keys(self.currentSettings);
       for (var key in defaults.settings) {
-        if (currentKeys.indexOf(key) === -1) {
+        if (currentKeys.indexOf(key) === -1 && defaults.settings[key]) {
           self.currentSettings[key] = defaults.settings[key];
         }
       }

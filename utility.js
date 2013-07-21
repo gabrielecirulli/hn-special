@@ -75,5 +75,15 @@
     return link.parentElement.classList.contains("title") && !link.getAttribute("href").match(/^\/x\S+/);
   }
 
+  _.isCommentPage = function () {
+    var title = document.getElementsByClassName("title")[0];
+    return title && title.childElementCount && title.children[0].nodeName === "A" && !title.children[0].getAttribute("href").match(/^\/x\?.+/);
+  }
+
+  _.isListingPage = function () {
+    var title = document.getElementsByClassName("title")[0];
+    return title && !title.childElementCount && title.parentElement.childElementCount === 3;
+  }
+
   this._ = _;
 }).call(this);

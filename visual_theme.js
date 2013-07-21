@@ -52,12 +52,10 @@ HNSpecial.settings.registerModule("visual_theme", function () {
     }
 
     // Add a class to the body if it's a form page
-    // Get the post title
-    var title = document.getElementsByClassName("title")[0];
-    var isCommentPage = title && title.children.length && title.children[0].nodeName === "A" && !title.children[0].getAttribute("href").match(/^\/x\?.+/);
-
     // Get the form in the content td
     var form = content.getElementsByTagName("form")[0];
+    var title = document.getElementsByClassName("title")[0];
+    var isCommentPage = _.isCommentPage();
 
     if (form && !isCommentPage) {
 
@@ -121,7 +119,7 @@ HNSpecial.settings.registerModule("visual_theme", function () {
     _.$("span.comment").forEach(function (elem) {
       var paragraph = document.createElement("p");
 
-      if (elem.children.length) {
+      if (elem.childElementCount) {
         paragraph.appendChild(elem.children[0]);
         elem.insertBefore(paragraph, elem.children[0]);    
       } else {
@@ -133,7 +131,7 @@ HNSpecial.settings.registerModule("visual_theme", function () {
       var container = elem.parentElement.parentElement;
 
       var index = 1;
-      if (container.children.length === 2) index = 0; // page /newcomments has two tds instead of three
+      if (container.childElementCount === 2) index = 0; // page /newcomments has two tds instead of three
       container.children[index].classList.add("hnspecial-upvote-button");
     });
 
@@ -149,7 +147,7 @@ HNSpecial.settings.registerModule("visual_theme", function () {
     // The page has no container. It's either the login page or an error page
 
     // Style error pages (ignoring the rss page)
-    if ((!body.children.length || body.children[0].nodeName === "PRE") && location.pathname !== "/rss") {
+    if ((!body.childElementCount || body.children[0].nodeName === "PRE") && location.pathname !== "/rss") {
       body.classList.add("error");
 
       // Dirty hack to remove the <pre> element shown on 404 pages

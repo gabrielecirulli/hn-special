@@ -6,10 +6,10 @@ The available features can be enabled or disabled based on your personal prefere
 
 ## Planned features
  - A modern looking visual theme **DONE**
- - Infinite scrolling
+ - Infinite scrolling **DONE**
  - Open links in new tab **DONE**
- - Hide articles with certain keywords
- - More accurate domain names
+ - More accurate domain names **DONE**
+ - Hide articles with certain keywords (maybe)
  - Mark all as read (maybe)
 
 ## Contributing

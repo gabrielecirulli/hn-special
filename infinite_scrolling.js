@@ -79,7 +79,7 @@ HNSpecial.settings.registerModule("infinite_scrolling", function () {
         button.setAttribute("href", newButton.getAttribute("href"));
         threshold = getThreshold();
         loading = false;
-        if (HNSpecial.notifyLinks) HNSpecial.notifyLinks();
+        HNSpecial.settings.emit("new links"); // Notify other modules about the presence of new links
       });
     }
   }

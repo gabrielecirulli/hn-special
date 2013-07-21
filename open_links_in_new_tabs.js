@@ -10,8 +10,9 @@ HNSpecial.settings.registerModule("open_links_in_new_tabs", function () {
   // Run it
   editLinks();
 
-  // Used by other modules to notify the presence of new links
-  HNSpecial.notifyLinks = function () {
+  // Subscribe to the event emitted when new links are present
+  HNSpecial.settings.subscribe("new links", function () {
+    console.log("(open_links_in_new_tabs: got new links)");
     editLinks();
-  };
+  });
 });

@@ -3,6 +3,7 @@ function Settings() {
 
   this.loaded = false;
   this.moduleQueue = [];
+  this.events = {};
 
   // Load the settings
   _.request(chrome.extension.getURL("defaults.json"), "GET", function (code) {
@@ -58,6 +59,24 @@ Settings.prototype.registerModule = function (key, callback) {
 
 Settings.prototype.runModule = function (module) {
   if (this.currentSettings[module.key]) module.callback();
+};
+
+Settings.prototype.subscribe = function (event, callback) {
+  console.log("Subscribing to " + event + " with: " + callback);
+  if (!this.events[event]) {
+    this.events[event] = [];
+  }
+  this.events[event].push(callback);
+};
+
+Settings.prototype.emit = function (event) {
+  console.log("Emitting " + event);
+  if (this.events[event]) {
+    this.events[event].forEach(function (callback) {
+      console.log("Emitted to " + callback);
+      callback();
+    });
+  }
 };
 
 Settings.prototype.buildMenu = function (container) {

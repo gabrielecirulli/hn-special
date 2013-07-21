@@ -1,3 +1,27 @@
+@-webkit-keyframes slide-in {
+    from {
+        opacity: 0;
+        top: 400px;
+    }
+
+    to {
+        opacity: 1;
+        top: 0px;
+    }
+}
+
+@-moz-keyframes slide-in {
+    from {
+        opacity: 0;
+        top: 400px;
+    }
+
+    to {
+        opacity: 1;
+        top: 0px;
+    }
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -36,7 +60,7 @@ p {
 
 a {
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 400;
     color: #333;
 }
 
@@ -48,7 +72,7 @@ strong {
     font-weight: 500;
 }
 
-.container {
+.top {
     width: 1000px;
     margin: 0 auto;
     padding-top: 30px;
@@ -60,6 +84,7 @@ strong {
 
 .fork-link {
     position: fixed;
+    z-index: 2;
     display: block;
     right: -180px;
     top: 80px;
@@ -73,6 +98,7 @@ strong {
     background: #ff8937;
     color: #eee;
     -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
 }
 
 .introduction {
@@ -89,4 +115,23 @@ strong {
     font-weight: 100;
     letter-spacing: 1px;
     color: #ff8937;
+}
+
+.screen {
+    width: 1224px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 40px;
+}
+
+.screen img {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    -webkit-animation: slide-in 1500ms ease;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-delay: 200ms;
+    -moz-animation: slide-in 1500ms ease;
+    -moz-animation-fill-mode: both;
+    -moz-animation-delay: 200ms;
 }

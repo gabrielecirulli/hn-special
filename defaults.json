@@ -4,7 +4,6 @@
         "visual_theme": true,
         "infinite_scrolling": true,
         "open_links_in_new_tabs": false,
-        "article_filtering": false,
         "accurate_domain_names": true    
     }
 }

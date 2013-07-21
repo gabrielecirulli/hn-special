@@ -58,7 +58,6 @@ HNSpecial.settings.registerModule("visual_theme", function () {
     var isCommentPage = _.isCommentPage();
 
     if (form && !isCommentPage) {
-
       document.body.classList.add("hnspecial-form-page");
       var form = document.getElementsByTagName("form")[0];
       _.toArray(form.getElementsByTagName("textarea")).forEach(function (textarea) {
@@ -117,22 +116,33 @@ HNSpecial.settings.registerModule("visual_theme", function () {
 
     // Wrap the first piece of text in each comment into its own p and add a class to the upvote td
     _.$("span.comment").forEach(function (elem) {
-      var paragraph = document.createElement("p");
+      // Remove font tags and take out the inner elements
+      _.toArray(elem.getElementsByTagName("font")).forEach(function (font) {
+        _.toArray(font.childNodes).forEach(function (child) {
+          font.parentElement.insertBefore(child, font);
+        });
+        font.remove();
+      });
 
-      if (elem.childElementCount) {
-        paragraph.appendChild(elem.children[0]);
-        elem.insertBefore(paragraph, elem.children[0]);    
-      } else {
-        paragraph.textContent = elem.textContent;
-        elem.textContent = "";
+      var paragraph = _.createElement("p");
+
+      var first = elem.getElementsByTagName("p")[0];
+
+      if (first) { // If the comment has a child paragraph (more than 1 paragraph), wrap all nodes before it in a <p>
+        console.log("first");
+        while (first.previousSibling) paragraph.insertBefore(first.previousSibling, paragraph.childNodes[0]);
+        elem.insertBefore(paragraph, first);
+      } else { // If the node has no child paragraph, wrap everything inside it a <p>
+        while (elem.firstChild) paragraph.appendChild(elem.firstChild);
         elem.appendChild(paragraph);
-      } 
+      }
 
+      // Add a class to the upvote button
       var container = elem.parentElement.parentElement;
 
       var index = 1;
       if (container.childElementCount === 2) index = 0; // page /newcomments has two tds instead of three
-      container.children[index].classList.add("hnspecial-upvote-button");
+      container.children[index].classList.add("hnspecial-upvote-button");      
     });
 
     // Add a class to the upvote buttons on poll items

@@ -1,4 +1,4 @@
-# HN Special — An extension for Hacker News
+# HN Special — A Hacker News extension 
 A theme and extension for [Hacker News](http://news.ycombinator.com).
 Improves the look and feel and adds some interesting features.
 

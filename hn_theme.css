@@ -71,10 +71,11 @@ body.hnspecial-theme > center > table > tbody > tr:first-child > td > table td:l
 body.hnspecial-theme > center > table > tbody > tr:first-child > td > table td:last-child a[href^=logout]{margin-left:5px}
 body.hnspecial-theme > center > table > tbody > tr:first-child > td > table a{font-weight:100;letter-spacing:1px;color:#fbf9f7}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td{padding:42px 20px 0 20px;}
-body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td > table:first-child{width:100%;font-weight:200;color:#999;}
-body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td > table:first-child > tbody > tr:first-child > td:first-child:not(.title){padding:0 13px 3px 10px}
-body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td > table:first-child > tbody form{padding-top:30px;margin:0;}
-body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td > table:first-child > tbody form input[type=submit]{width:150px}
+body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td > table:first-of-type{width:100%;font-weight:200;color:#999;}
+body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td > table:first-of-type > tbody > tr:first-child > td:first-child:not(.title){padding:0 13px 3px 10px}
+body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td > table:first-of-type > tbody > tr:first-child > td:nth-child(3):not(.title){padding-bottom:30px;line-height:1.5}
+body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td > table:first-of-type > tbody form{padding-top:30px;margin:0;}
+body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td > table:first-of-type > tbody form input[type=submit]{width:150px}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td .default{padding-top:20px;}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td .default .comhead,body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td .default u{font-weight:200;font-size:13px;color:#999}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td .hnspecial-poll-row + tr td{padding-top:5px;padding-bottom:20px}

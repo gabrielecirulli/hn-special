@@ -412,14 +412,20 @@ body.hnspecial-theme
                     padding 42px 20px 0 20px
 
                     // Post area
-                    > table:first-child
+                    > table:first-of-type
                         width 100%
                         font-weight 200
                         color lighten(text-color, 40%)
 
                         > tbody
-                            > tr:first-child > td:first-child:not(.title)
-                                padding 0px 13px 3px 10px // Refactor: same as #1
+                            > tr:first-child > 
+                                td:first-child:not(.title) // Arrow td next to title in comments page
+                                    padding 0px 13px 3px 10px // Refactor: same as #1
+
+                                td:nth-child(3):not(.title) // Heading above job listings page
+                                    padding-bottom 30px
+                                    line-height 1.5
+
 
                             form
                                 padding-top 30px

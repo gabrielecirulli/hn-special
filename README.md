@@ -26,6 +26,12 @@ stylus -c -w hn_theme.styl
 ### A note about the CSS
 Some of the selectors in the CSS are very contrived. I found it was the only way to select what I wanted in a document made of tables within tables with barely any classes. I tried to use class selectors wherever I could, but it's mostly unavoidable to go down a long chain of selectors. If you spot any ways to improve any of the selectors, please make a pull request and I'll be glad to take it in!
 
+### Adding a module
+If you want to add a new module, please edit defaults.json and add a descriptive key for your module (it will be used as the actual module name). Please keep it disabled by default if it's a change that could overwhelm some users. For the actual code, make a JavaScript file with the same name as the module, and subscribe to the settings object through the module's key (take a look at `pen_links_in_new_tabs.js` for an example). If the setting is enabled from the interface, your module's code will be executed. **NOTE**: don't forget to add your JS file to `manifest.json` and uninstall/reinstall the extension. Simply reloading it won't work.
+
+### Other gotchas
+If you're developing a 
+
 ## License
 HN Special is licensed under the MIT License:
 ```

@@ -39,8 +39,8 @@ HNSpecial.settings.registerModule("visual_theme", function () {
       content.innerHTML = "";
 
       // New table to hold comments (mimics comment page structure)
-      var table = document.createElement("table");
-      var tbody = document.createElement("tbody");
+      var table = _.createElement("table");
+      var tbody = _.createElement("tbody");
       
       var i = 3; // First stray row is at index 3
       while (!container.children[i].getElementsByClassName("yclinks").length) { // Stop at the footer
@@ -73,7 +73,7 @@ HNSpecial.settings.registerModule("visual_theme", function () {
         var text = unwrapped.nodeValue;
         unwrapped.remove();
 
-        var paragraph = document.createElement("p");
+        var paragraph = _.createElement("p");
         paragraph.textContent = text;
 
         container.insertBefore(paragraph, container.children[0]);
@@ -99,11 +99,12 @@ HNSpecial.settings.registerModule("visual_theme", function () {
 
       // Only apply this when the post has textual content
       if (textContainer.textContent.trim().length) {
+        console.log("COCO");
         var unwrapped = textContainer.childNodes[0];
         var text = unwrapped.nodeValue;
         unwrapped.remove();
 
-        var paragraph = document.createElement("p");
+        var paragraph = _.createElement("p");
         paragraph.textContent = text;
 
         if (textContainer.getElementsByTagName("p").length) {
@@ -157,14 +158,14 @@ HNSpecial.settings.registerModule("visual_theme", function () {
     // The page has no container. It's either the login page or an error page
 
     // Style error pages (ignoring the rss page)
-    if ((!body.childElementCount || body.children[0].nodeName === "PRE") && location.pathname !== "/rss") {
+    if ((!body.childElementCount || body.children[0].nodeName.toLowerCase() === "pre") && location.pathname !== "/rss") {
       body.classList.add("error");
 
       // Dirty hack to remove the <pre> element shown on 404 pages
       body.innerHTML = body.textContent;
 
       // Back link
-      var link = document.createElement("a");
+      var link = _.createElement("a");
       link.setAttribute("href", location.origin);
       link.textContent = "Back home";
       body.appendChild(link);
@@ -175,7 +176,7 @@ HNSpecial.settings.registerModule("visual_theme", function () {
       body.classList.add("hnspecial-form-page", "login");
 
       // Wrap everything in the body in a div
-      var loginContainer = document.createElement("div");
+      var loginContainer = _.createElement("div");
       loginContainer.classList.add("hnspecial-form-container");
 
       while (body.firstChild) {

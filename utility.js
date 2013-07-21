@@ -19,7 +19,7 @@
 
   _.replaceTag = function (container, tag) {
     var parent = container.parentElement;
-    var newContainer = document.createElement(tag);
+    var newContainer = _.createElement(tag);
     _.toArray(container.classList).forEach(function (name) {
       newContainer.classList.add(name);
     });

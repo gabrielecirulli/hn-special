@@ -18,7 +18,6 @@ HNSpecial.settings.registerModule("accurate_domain_names", function () {
 
   // Subscribe to the event emitted when new links are present
   HNSpecial.settings.subscribe("new links", function () {
-    console.log("(accurate_domain_names: got new links)");
     editLinks();
   });
 });

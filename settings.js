@@ -62,7 +62,6 @@ Settings.prototype.runModule = function (module) {
 };
 
 Settings.prototype.subscribe = function (event, callback) {
-  console.log("Subscribing to " + event + " with: " + callback);
   if (!this.events[event]) {
     this.events[event] = [];
   }
@@ -70,10 +69,8 @@ Settings.prototype.subscribe = function (event, callback) {
 };
 
 Settings.prototype.emit = function (event) {
-  console.log("Emitting " + event);
   if (this.events[event]) {
     this.events[event].forEach(function (callback) {
-      console.log("Emitted to " + callback);
       callback();
     });
   }

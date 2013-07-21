@@ -1,5 +1,5 @@
-.hnspecial-infinite-stop{padding-left:5px;color:#828282 !important;}
-.hnspecial-infinite-stop:before{content:'|';margin-right:5px}
+.hnspecial-infinite-pause{padding-left:5px;color:#828282 !important;}
+.hnspecial-infinite-pause:before{content:'|';margin-right:5px}
 .hnspecial-settings-button{display:inline-block;width:16px;height:16px;margin-right:10px;position:relative;top:3px;}
 .hnspecial-settings-button img{opacity:.5;-webkit-transition:opacity 100ms ease}
 .hnspecial-settings-button input[type=checkbox]{-webkit-appearance:none}
@@ -44,6 +44,8 @@ body.hnspecial-theme.error{text-align:center;padding-top:140px;font-size:40px;fo
 body.hnspecial-theme.error a{display:block;font-size:20px;font-weight:100}
 body.hnspecial-theme .WordSection1{width:900px;margin:0 auto;padding:50px 0;}
 body.hnspecial-theme .WordSection1 .MsoNormal{margin:15px 0}
+body.hnspecial-theme .hnspecial-infinite-pause{padding:0;margin-left:20px;font-size:13px;text-transform:lowercase;color:#999;}
+body.hnspecial-theme .hnspecial-infinite-pause:before{content:normal}
 body.hnspecial-theme.hnspecial-form-page form td{font-weight:200;padding-bottom:20px;}
 body.hnspecial-theme.hnspecial-form-page form td:first-child{text-transform:capitalize;padding-right:30px;}
 body.hnspecial-theme.hnspecial-form-page form td:first-child.hnspecial-textarea-label{vertical-align:top;padding-top:8px}

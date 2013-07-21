@@ -5,7 +5,7 @@ light-link-color = #fbf9f7
 base-font = "15px/1.5 Helvetica Neue, Arial, sans-serif"
 
 // HN Special infinite scroll
-.hnspecial-infinite-stop
+.hnspecial-infinite-pause
     padding-left 5px
     color #828282 !important
     &:before
@@ -278,6 +278,16 @@ body.hnspecial-theme
 
         .MsoNormal
             margin 15px 0
+
+    // HN Special infinite scroll
+    .hnspecial-infinite-pause
+        padding 0
+        margin-left 20px
+        font-size 13px
+        text-transform lowercase
+        color lighten(text-color, 40%)
+        &:before
+            content normal
 
     &.hnspecial-form-page
         form

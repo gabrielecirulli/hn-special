@@ -11,20 +11,20 @@ HNSpecial.settings.registerModule("infinite_scrolling", function () {
 
     var labels = ["Pause infinite scrolling", "Resume infinite scrolling"];
 
-    var stop = _.createElement("a", {
+    var pause = _.createElement("a", {
       content: labels[0],
-      classes: ["hnspecial-infinite-stop"],
+      classes: ["hnspecial-infinite-pause"],
       attributes: {
         "href": "#"
       }
     });
-    stop.addEventListener("click", function (e) {
+    pause.addEventListener("click", function (e) {
       e.preventDefault();
       disabled = !disabled;
-      stop.textContent = labels[disabled ? 1 : 0];
+      pause.textContent = labels[disabled ? 1 : 0];
       checkScroll();
     });
-    button.parentElement.appendChild(stop);
+    button.parentElement.appendChild(pause);
 
     button.addEventListener("click", function (e) {
       e.preventDefault();

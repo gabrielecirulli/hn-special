@@ -1,0 +1,92 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #e8e3df;
+    font: 15px/1.68 Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #666;
+    font-weight: 200;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 80px;
+    font-weight: 100;
+    margin-bottom: 0;
+}
+
+h2 {
+    margin-top: 0;
+    font-weight: 100;
+    margin-bottom: 40px;
+    color: #888;
+}
+
+ul {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+ul li {
+    margin-bottom: 4px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #333;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+strong {
+    font-weight: 500;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.top h1, .top h2 {
+    text-align: center;
+}
+
+.fork-link {
+    position: fixed;
+    display: block;
+    right: -180px;
+    top: 80px;
+    width: 600px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 20px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    background: #ff8937;
+    color: #eee;
+    -webkit-transform: rotate(45deg);
+}
+
+.introduction {
+    display: block;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.install-link {
+    text-align: center;
+    display: block;
+    margin-top: 40px;
+    font-size: 40px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    color: #ff8937;
+}

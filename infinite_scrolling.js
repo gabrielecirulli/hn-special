@@ -62,7 +62,7 @@ HNSpecial.settings.registerModule("infinite_scrolling", function () {
         var dummy = _.createElement("div");
         dummy.innerHTML = page;
         _.toArray(dummy.getElementsByTagName("a")).forEach(function (link) {
-          if (_.isLink(link)) {
+          if (_.isTitleLink(link)) {
             var row = link.parentElement.parentElement;
             var sub = row.nextSibling;
             var empty = sub.nextSibling;

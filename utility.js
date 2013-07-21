@@ -71,13 +71,24 @@
     return JSON.parse(JSON.stringify(object));
   };
 
-  _.isLink = function (link) {
+  _.isTitleLink = function (link) {
     return link.parentElement.classList.contains("title") && !link.getAttribute("href").match(/^\/x\S+/);
+  }
+
+  _.isCommentLink = function (link) {
+    if (!link.getAttribute("href").match(/^reply\?id/)) {
+      var parent = link.parentElement;
+      while (parent.tagName.toLowerCase() !== "td") {
+        if (parent.tagName.toLowerCase() === "span" && parent.classList.contains("comment")) return true;
+        parent = parent.parentElement;
+      }  
+    }
+    return false;
   }
 
   _.isCommentPage = function () {
     var title = document.getElementsByClassName("title")[0];
-    return title && title.childElementCount && title.children[0].nodeName === "A" && !title.children[0].getAttribute("href").match(/^\/x\?.+/);
+    return title && title.childElementCount && title.children[0].nodeName.toLowerCase() === "a" && !title.children[0].getAttribute("href").match(/^\/x\?.+/);
   }
 
   _.isListingPage = function () {

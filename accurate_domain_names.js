@@ -6,7 +6,6 @@ HNSpecial.settings.registerModule("accurate_domain_names", function () {
       if (!title.getAttribute("data-hnspecial-accurate") && title.childElementCount === 2 && title.children[1].classList.contains("comhead")) {
         // Removes http/https, matches the domain name excluding www
         var url = title.children[0].host.replace("www.", "");
-        console.log(url);
         var domain = title.children[1];
         domain.textContent = " (" + url + ") ";
         title.setAttribute("data-hnspecial-accurate", "true");

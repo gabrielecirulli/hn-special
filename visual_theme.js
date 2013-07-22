@@ -92,25 +92,21 @@ HNSpecial.settings.registerModule("visual_theme", function () {
       })
     });
 
-    // If the first title in the page contains an A tag we're hopefully in an item page
-    // I'm not sure if there's a better way to match this.
+    // Applied to comment pages
     if (isCommentPage) {
       var textContainer = title.parentElement.parentElement.children[3].children[1];
 
-      // Only apply this when the post has textual content
+      // If the post has textual content, wrap stray text in a paragraph
       if (textContainer.textContent.trim().length) {
-        var unwrapped = textContainer.childNodes[0];
-        var text = unwrapped.nodeValue;
-        unwrapped.remove();
+        var nodes = _.toArray(textContainer.childNodes).filter(function (node) { return node.nodeType === Node.TEXT_NODE; });
 
-        var paragraph = _.createElement("p");
-        paragraph.textContent = text;
-
-        if (textContainer.getElementsByTagName("p").length) {
-          textContainer.insertBefore(paragraph, textContainer.children[0]);  
-        } else {
-          textContainer.appendChild(paragraph);
-        }      
+        // Replaced each stray text node with a paragraph
+        nodes.forEach(function (node) {
+          var paragraph = _.createElement("p");
+          paragraph.textContent = node.nodeValue;
+          textContainer.insertBefore(paragraph, node);
+          node.remove();
+        });
       }
     }
 

@@ -41,6 +41,7 @@ body.hnspecial-theme input[type=submit]:active,body.hnspecial-theme textarea[typ
 body.hnspecial-theme input:focus,body.hnspecial-theme textarea:focus{border-color:#aaa;outline:none}
 body.hnspecial-theme textarea{width:600px;height:120px;resize:vertical}
 body.hnspecial-theme pre{overflow:auto;max-width:600px;word-wrap:normal;white-space:pre}
+body.hnspecial-theme code{font:12px/1.5 Monaco,monospace;color:#888}
 body.hnspecial-theme table{border-collapse:collapse;border:none}
 body.hnspecial-theme tr,body.hnspecial-theme td{border:none;padding:0}
 body.hnspecial-theme.error{text-align:center;padding-top:140px;font-size:40px;font-weight:100;letter-spacing:1px;}

@@ -66,8 +66,6 @@ HNSpecial.settings.registerModule("visual_theme", function () {
 
       // Fix up stray text near P tags in form pages
       _.toArray(form.getElementsByTagName("p")).forEach(function (paragraph) {
-        // Refactor: this code is the same as below
-        
         var container = paragraph.parentElement;
         var unwrapped = container.childNodes[0];
         var text = unwrapped.nodeValue;
@@ -110,7 +108,7 @@ HNSpecial.settings.registerModule("visual_theme", function () {
       }
     }
 
-    // Wrap the first piece of text in each comment into its own p and add a class to the upvote td
+    // Wrap the stray pieces of text in comments into their own <p> and add a class to the upvote td
     _.$("span.comment").forEach(function (elem) {
       // Remove font tags and take out the inner elements
       _.toArray(elem.getElementsByTagName("font")).forEach(function (font) {
@@ -120,22 +118,30 @@ HNSpecial.settings.registerModule("visual_theme", function () {
         font.remove();
       });
 
-      var paragraph = _.createElement("p");
+      // Make sure each stray text node gets put into its own paragraph
+      var stops = ["p", "pre"]; // Elements that should not be joined in the same paragraph
+      var current = elem.childNodes[0]; // Start from the first node
+      while (current) {
+        if (stops.indexOf(current.nodeName.toLowerCase()) !== -1) { // Jump to the next stray node
+          current = current.nextSibling;
+          continue;
+        }
 
-      var first = elem.getElementsByTagName("p")[0];
+        var group = [current]; // Elements to be grouped in the same paragraph
+        var sibling = current.nextSibling; // Following sibling
 
-      // Some comments contain code tags and above those code tags there are empty <p> tags. We don't want those.
-      while (first && first.textContent.trim() === "") {
-        first.remove();
-        first = elem.getElementsByTagName("p")[0];
-      }
+        while (sibling && stops.indexOf(sibling.nodeName.toLowerCase()) === -1) {
+          group.push(sibling); // Add it to the group
+          sibling = sibling.nextSibling; // Go to the next sibling
+        }
 
-      if (first) { // If the comment has a child paragraph (more than 1 paragraph), wrap all nodes before it in a <p>
-        while (first.previousSibling) paragraph.insertBefore(first.previousSibling, paragraph.childNodes[0]);
-        elem.insertBefore(paragraph, first);
-      } else { // If the node has no child paragraph, wrap everything inside it a <p>
-        while (elem.firstChild) paragraph.appendChild(elem.firstChild);
-        elem.appendChild(paragraph);
+        var paragraph = _.createElement("p"); // Make the new paragraph
+        elem.insertBefore(paragraph, current); // Insert it before the current text node
+        group.forEach(function (element) {
+          paragraph.appendChild(element); // Fill it up!
+        });
+
+        current = paragraph; // And back we go again
       }
 
       // Add a class to the upvote button

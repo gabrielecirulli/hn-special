@@ -128,6 +128,12 @@ HNSpecial.settings.registerModule("visual_theme", function () {
 
       var first = elem.getElementsByTagName("p")[0];
 
+      // Some comments contain code tags and above those code tags there are empty <p> tags. We don't want those.
+      while (first && first.textContent.trim() === "") {
+        first.remove();
+        first = elem.getElementsByTagName("p")[0];
+      }
+
       if (first) { // If the comment has a child paragraph (more than 1 paragraph), wrap all nodes before it in a <p>
         while (first.previousSibling) paragraph.insertBefore(first.previousSibling, paragraph.childNodes[0]);
         elem.insertBefore(paragraph, first);

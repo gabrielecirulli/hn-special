@@ -1,8 +1,9 @@
 # HN Special — A Hacker News extension 
-A theme and extension for [Hacker News](http://news.ycombinator.com).
-Improves the look and feel and adds some interesting features.
+A theme and extension for [Hacker News](http://news.ycombinator.com) that improves the look and feel and adds some interesting features.
 
-The available features can be enabled or disabled based on your personal preference.
+The available features can be enabled or disabled based on your personal preference. New feature contributions are welcome!
+
+You can install this extension [from the Chrome Web Store](https://chrome.google.com/webstore/detail/hn-special-an-addition-to/cchaceegbflphbdpfocjalgjhjoahiia).
 
 ## Planned features
  - A modern looking visual theme **DONE**

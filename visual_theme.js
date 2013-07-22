@@ -118,7 +118,7 @@ HNSpecial.settings.registerModule("visual_theme", function () {
         font.remove();
       });
 
-      // Make sure each stray text node gets put into its own paragraph
+      // Make sure each stray piece (stuff that is not in a paragraph) gets grouped in paragraphs
       var stops = ["p", "pre"]; // Elements that should not be joined in the same paragraph
       var current = elem.childNodes[0]; // Start from the first node
       while (current) {
@@ -128,20 +128,20 @@ HNSpecial.settings.registerModule("visual_theme", function () {
         }
 
         var group = [current]; // Elements to be grouped in the same paragraph
-        var sibling = current.nextSibling; // Following sibling
+        var sibling = current.nextSibling;
 
         while (sibling && stops.indexOf(sibling.nodeName.toLowerCase()) === -1) {
-          group.push(sibling); // Add it to the group
-          sibling = sibling.nextSibling; // Go to the next sibling
+          group.push(sibling);
+          sibling = sibling.nextSibling;
         }
 
-        var paragraph = _.createElement("p"); // Make the new paragraph
-        elem.insertBefore(paragraph, current); // Insert it before the current text node
+        var paragraph = _.createElement("p");
+        elem.insertBefore(paragraph, current); 
         group.forEach(function (element) {
-          paragraph.appendChild(element); // Fill it up!
+          paragraph.appendChild(element);
         });
 
-        current = paragraph; // And back we go again
+        current = paragraph;
       }
 
       // Add a class to the upvote button

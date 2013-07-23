@@ -15,19 +15,27 @@ function Settings() {
 
     self.currentSettings = JSON.parse(localStorage.getItem("hnspecial-settings"));
 
+    var added = []; // Tracks which features have been added in a settings version
+
     if (isNaN(self.version)) {
       self.version = defaults.settings_version;
       self.defaults = defaults.settings;
       self.currentSettings = _.clone(self.defaults);
     } else if (self.version < defaults.settings_version) {
       self.version = defaults.settings_version;
-      var currentKeys = Object.keys(self.currentSettings);
-      for (var key in defaults.settings) {
-        if (currentKeys.indexOf(key) === -1 && defaults.settings[key]) {
-          self.currentSettings[key] = defaults.settings[key];
+
+      // Rebuild the settings object from the defaults (respects the ordering)
+      var old = self.currentSettings;
+      self.defaults = defaults.settings;
+      self.currentSettings = _.clone(self.defaults);
+      added = Object.keys(self.currentSettings);
+
+      for (var key in self.currentSettings) {
+        if (old[key] !== undefined) {
+          self.currentSettings[key] = old[key];
+          added.splice(added.indexOf(key), 1); // Remove existing features from added
         }
       }
-      self.defaults = defaults.settings;
     }
 
     self.save();

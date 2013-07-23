@@ -4,6 +4,23 @@ link-color = #ffac5b
 light-link-color = #fbf9f7
 base-font = "15px/1.5 Helvetica Neue, Arial, sans-serif"
 
+// Animations
+@keyframes flash
+    0%
+        left 0px
+
+    25%
+        left -12px
+
+    50%
+        left 0px
+
+    75% 
+        left 12px
+
+    100%
+        left 0px
+
 // HN Special infinite scroll
 .hnspecial-infinite-pause
     padding-left 5px
@@ -121,16 +138,24 @@ menu-color = #8a837c
         font-size 13px
 
         strong
-            color darken(menu-color, 30%) !important
+            color darken(menu-color, 50%) !important
+            font-weight 500 !important
 
         a
             color #f19539 !important
-            font-weight 200 !important
+            font-weight 400 !important
             letter-spacing 0px !important
 
     .hnspecial-settings-block
         margin-bottom 7px
         -webkit-user-select none
+
+        &.hnspecial-settings-flash
+            //background red
+            position relative
+            -webkit-animation flash 250ms ease
+            -webkit-animation-delay 2s
+            -webkit-animation-iteration-count 3
 
         &:after
             content ''

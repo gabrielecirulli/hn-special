@@ -42,7 +42,7 @@ function Settings() {
 
     // Build the menu and launch the rest of the modules when the DOM is ready
     _.load(function () {
-      self.buildMenu();
+      self.buildMenu(added, defaults.requirements);
       self.loaded = true;
       self.moduleQueue.forEach(function (module) {
         self.runModule(module);
@@ -86,19 +86,25 @@ Settings.prototype.emit = function (event) {
   }
 };
 
-Settings.prototype.buildMenu = function (container) {
+Settings.prototype.buildMenu = function (added, requirements) {
   var self = this;
   var container = _.$(".pagetop")[1];
 
   if (container) {
-    var items = this.buildMenuFrame(container);
+    var items = this.buildMenuFrame(container, !added.length);
 
     // Build the settings items
     var keys = Object.keys(this.currentSettings);
+    var map = {};
 
     keys.forEach(function (key) {
-      items.inner.appendChild(self.makeSettingsBlock(key, self.currentSettings[key]));
+      var block = self.createSettingsBlock(key, self.currentSettings[key], added.indexOf(key) !== -1);
+      map[key] = block;
+      items.inner.appendChild(block);
     });
+
+    // Apply requirements
+    self.applyRequirements(requirements, map);
 
     // Apply button
     var apply = _.createElement("input", {
@@ -108,34 +114,41 @@ Settings.prototype.buildMenu = function (container) {
         type: "submit"
       }
     });
-    apply.addEventListener("click", function () {
-      self.updateSettings.call(self, {
-        button: this,
-        current: self.currentSettings,
-        checkboxes: _.toArray(items.inner.getElementsByClassName("hnspecial-settings-checkbox")),
-        toggle: items.toggle
-      });
-    });
+    apply.addEventListener("click", self.updateAndReload.bind(self));
 
     items.inner.appendChild(apply);
 
     // First time use: display the menu to the user
-    if (!localStorage.getItem("hnspecial-settings-introduced")) {
+    var isFirstTime = !localStorage.getItem("hnspecial-settings-introduced");
+
+    if (isFirstTime) {
       localStorage.setItem("hnspecial-settings-introduced", true);
 
-      // Show special welcome message
+      // Insert welcome message
       items.inner.children[1].innerHTML = "<strong>Welcome to HN Special!</strong> This is the settings panel. You can use it to enable or disable this extension's features. Make sure to apply the changes when you're done.";
+    }
 
-      // Auto-open the menu for the first time
-      // Move this to the end of the process
+    var wrap = function (feature) {
+      return "<strong>" + _.naturalWords(feature) + "</strong>";
+    };
+
+    if (added.length) {
+      var count = added.length === 1 ? "<strong>a new feature</strong> has been added" : "<strong>" + added.length + " new features</strong> have been added";
+      var list = added.length === 1 ? wrap(added[0]) : added.slice(0, -1).map(function (feature) { return wrap(feature); }).join(", ") + ", and " + wrap(added.slice(-1)[0]);
+
+      items.inner.children[1].innerHTML = "<strong>Hey there!</strong> This is just a quick notification to let you know that " + count + ": " + list + ".";
+    }
+
+    // Auto-open the menu for the first time or if there's an update
+    if (isFirstTime || added.length) {
       setTimeout(function () {
         items.toggle.checked = true;  
       }, 1000);
-    }
+    }      
   }
 };
 
-Settings.prototype.buildMenuFrame = function (container) {
+Settings.prototype.buildMenuFrame = function (container, showTip) {
   container = _.replaceTag(container, "div");
 
   var button = _.createElement("div", {
@@ -173,10 +186,12 @@ Settings.prototype.buildMenuFrame = function (container) {
     classes: ["hnspecial-settings-info"]
   }));
 
-  inner.appendChild(_.createElement("p", {
-    content: "<strong>Tip:</strong> " + _.lowerFirst(this.tips[Math.floor(Math.random() * this.tips.length)]),
-    classes: ["hnspecial-settings-tip"]
-  }));
+  if (showTip) {
+    inner.appendChild(_.createElement("p", {
+      content: "<strong>Tip:</strong> " + _.lowerFirst(this.tips[Math.floor(Math.random() * this.tips.length)]),
+      classes: ["hnspecial-settings-tip"]
+    }));  
+  }  
 
   menu.appendChild(inner);
   button.appendChild(menu);
@@ -188,11 +203,13 @@ Settings.prototype.buildMenuFrame = function (container) {
   };
 };
 
-Settings.prototype.makeSettingsBlock = function (key, status) {
+Settings.prototype.createSettingsBlock = function (key, status, flash) {
   var id = "hnspecial_" + key;
 
+  var classes = ["hnspecial-settings-block"];
+  if (flash) classes.push("hnspecial-settings-flash");
   var block = _.createElement("div", {
-    classes: ["hnspecial-settings-block"],
+    classes: classes,
     attributes: {
       "data-key": key
     }
@@ -236,18 +253,54 @@ Settings.prototype.makeSettingsBlock = function (key, status) {
   return block;
 };
 
-Settings.prototype.updateSettings = function (options) {
-  options.checkboxes.forEach(function (checkbox) {
+Settings.prototype.applyRequirements = function(requirements, map) {
+  var self = this;
+  Object.keys(requirements).forEach(function (key) {
+    if (map[key]) {
+      var subordinate = map[key].getElementsByTagName("input")[0]; // Checkbox that can't be activated if the others aren't
+      var mandatory = requirements[key].map(function (requirement) { return map[requirement].getElementsByTagName("input")[0]; });
+
+      // Preliminary check (to prevent invalid conditions)
+      if (subordinate.checked) {
+        mandatory.forEach(function (mandatory) {
+          mandatory.checked = true;
+        });
+
+        self.updateSettings();
+      }
+
+      subordinate.addEventListener("change", function () {
+        if (this.checked) { // All mandatory checkboxes must be enabled too
+          mandatory.forEach(function (mandatory) {
+            mandatory.checked = true;
+          });
+        }
+      });
+    }
+  });
+};
+
+Settings.prototype.updateSettings = function () {
+  var self = this;
+  var checkboxes = _.toArray(document.getElementsByClassName("hnspecial-settings-checkbox"));
+
+  checkboxes.forEach(function (checkbox) {
     var key = checkbox.getAttribute("data-key");
-    options.current[key] = checkbox.checked;
+    self.currentSettings[key] = checkbox.checked;
   });
 
   this.save();
+};
 
-  options.button.value = "Saved. Reloading page...";
+Settings.prototype.updateAndReload = function () {
+  this.updateSettings();
 
+  var button = document.getElementsByClassName("hnspecial-settings-submit-button")[0];
+  var toggle = document.getElementsByClassName("hnspecial-settings-button-checkbox")[0];
+
+  button.value = "Saved. Reloading page...";
   setTimeout(function () {
-    options.toggle.checked = false;
+    toggle.checked = false;
     location.reload();
   }, 500);
 };

@@ -37,6 +37,14 @@
     ga('create', 'UA-42620757-1', 'gabrielecirulli.github.io');
     ga('send', 'pageview');
 
+    // Tracking conversions
+    document.getElementsByClassName("install-link")[0].addEventListener("click", function () {
+      ga('send', 'event', 'link', 'click', 'Install link');
+    });
+
+    document.getElementsByClassName("twit-link")[0].addEventListener("click", function () {
+      ga('send', 'event', 'link', 'click', 'Twitter link');
+    });
   </script>
 </body>
 </html>

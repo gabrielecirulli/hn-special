@@ -4,7 +4,7 @@ HNSpecial.settings.registerModule("infinite_scrolling", function () {
   }
 
   function getButton(context) {
-    return _.$("a[href^='/x'], a[href^='news2']", context)[0];
+    return _.$("td.title > a[href^='/x'], td.title > a[href^='news2']", context)[0];
   }
 
   function checkScroll() {

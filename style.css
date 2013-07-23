@@ -136,3 +136,12 @@ strong {
     -moz-animation-fill-mode: both;
     -moz-animation-delay: 200ms;
 }
+
+.sharing {
+    text-align: center;
+}
+
+
+div.fb-like {
+    display: inline-block;
+}

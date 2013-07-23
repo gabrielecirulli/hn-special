@@ -110,7 +110,8 @@ strong {
 .install-link {
     text-align: center;
     display: block;
-    margin-top: 40px;
+    margin-top: 26px;
+    margin-bottom: 20px;
     font-size: 40px;
     font-weight: 100;
     letter-spacing: 1px;

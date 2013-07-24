@@ -134,9 +134,9 @@ Settings.prototype.buildMenu = function (added, requirements) {
 
     if (added.length) {
       var count = added.length === 1 ? "<strong>a new feature</strong> has been added" : "<strong>" + added.length + " new features</strong> have been added";
-      var list = added.length === 1 ? wrap(added[0]) : added.slice(0, -1).map(function (feature) { return wrap(feature); }).join(", ") + ", and " + wrap(added.slice(-1)[0]);
+      var list = added.length === 1 ? wrap(added[0]) : added.slice(0, -1).map(function (feature) { return wrap(feature); }).join(", ") + " and " + wrap(added.slice(-1)[0]);
 
-      items.inner.children[1].innerHTML = "<strong>Hey there!</strong> This is just a quick notification to let you know that " + count + ": " + list + ".";
+      items.inner.children[1].innerHTML = "<strong>Hey there!</strong> This is a quick notification to let you know that " + count + ": " + list + ".";
     }
 
     // Auto-open the menu for the first time or if there's an update

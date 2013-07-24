@@ -18,7 +18,7 @@
         "utility.js",
         "settings.js",
         "visual_theme.js",
-        "low_contrast.js",
+        "high_contrast.js",
         "open_links_in_new_tabs.js",
         "infinite_scrolling.js",
         "accurate_domain_names.js"

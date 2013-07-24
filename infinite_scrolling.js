@@ -27,25 +27,32 @@ HNSpecial.settings.registerModule("infinite_scrolling", function () {
     _.request(url, "GET", function (page) {
       var dummy = _.createElement("div");
       dummy.innerHTML = page;
-      _.toArray(dummy.getElementsByTagName("a")).forEach(function (link) {
-        if (_.isTitleLink(link)) {
-          var row = link.parentElement.parentElement;
-          var sub = row.nextSibling;
-          var empty = sub.nextSibling;
 
-          container.insertBefore(row, last);
-          container.insertBefore(sub, last);
-          container.insertBefore(empty, last);
-        }
-      });
+      if (dummy.getElementsByClassName("title").length) {  
+        _.toArray(dummy.getElementsByTagName("a")).forEach(function (link) {
+          if (_.isTitleLink(link)) {
+            var row = link.parentElement.parentElement;
+            var sub = row.nextSibling;
+            var empty = sub.nextSibling;
 
-      var newButton = getButton(dummy);
+            container.insertBefore(row, last);
+            container.insertBefore(sub, last);
+            container.insertBefore(empty, last);
+          }
+        });
 
-      button.textContent = label;
-      button.setAttribute("href", newButton.getAttribute("href"));
-      threshold = getThreshold();
-      loading = false;
-      HNSpecial.settings.emit("new links"); // Notify other modules about the presence of new links
+        var newButton = getButton(dummy);
+
+        button.textContent = label;
+        button.setAttribute("href", newButton.getAttribute("href"));
+        threshold = getThreshold();
+        loading = false;
+        HNSpecial.settings.emit("new links"); // Notify other modules about the presence of new links  
+      } else {
+        button.textContent = "Couldn't load the page. Please try refreshing.";
+        button.nextSibling.remove(); // Remove the pause button
+        _.replaceTag(button, "span");        
+      }      
     });
   }
 

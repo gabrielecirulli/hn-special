@@ -262,20 +262,28 @@ Settings.prototype.applyRequirements = function(requirements, map) {
 
       // Preliminary check (to prevent invalid conditions)
       if (subordinate.checked) {
-        mandatory.forEach(function (mandatory) {
-          mandatory.checked = true;
+        var enabled = true;
+        mandatory.forEach(function (current) {
+          enabled = enabled && current.checked; // If any mandatory switch is disabled, subordinate is disabled too
         });
 
+        subordinate.checked = enabled;
         self.updateSettings();
       }
 
       subordinate.addEventListener("change", function () {
         if (this.checked) { // All mandatory checkboxes must be enabled too
-          mandatory.forEach(function (mandatory) {
-            mandatory.checked = true;
+          mandatory.forEach(function (current) {
+            current.checked = true;
           });
         }
       });
+
+      mandatory.forEach(function (current) {
+        current.addEventListener("change", function () {
+          if (!this.checked) subordinate.checked = false;
+        });
+      });     
     }
   });
 };

@@ -562,3 +562,16 @@ body.hnspecial-theme
                     form input
                         width 400px
                         margin-left 10px
+
+    // High contrast version
+    &.hnspecial-theme-high-contrast
+        a
+            color darken(link-color, 20%)
+
+        .title a
+            font-weight 200
+            color darken(text-color, 10%) !important
+            // color yellow !important
+
+            &:visited
+                color lighten(text-color, 40%) !important

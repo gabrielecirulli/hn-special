@@ -167,6 +167,9 @@ HNSpecial.settings.registerModule("visual_theme", function () {
     if ((!body.childElementCount || body.children[0].nodeName.toLowerCase() === "pre") && location.pathname !== "/rss") {
       body.classList.add("error");
 
+      // Set the page title
+      document.title = body.textContent.trim();
+
       // Dirty hack to remove the <pre> element shown on 404 pages
       body.innerHTML = body.textContent;
 

@@ -63,6 +63,11 @@
     return elem;
   };
 
+  _.dispatch = function (event, target) {
+    var event = new Event("change");
+    target.dispatchEvent(event);
+  }
+
   _.naturalWords = function (key) {
     return key.replace(/_/g, " ").replace(/^\S/, function (char) { return char.toUpperCase() });
   };

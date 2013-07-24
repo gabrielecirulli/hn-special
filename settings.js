@@ -268,6 +268,7 @@ Settings.prototype.applyRequirements = function(requirements, map) {
         });
 
         subordinate.checked = enabled;
+        _.dispatch("change", subordinate);
         self.updateSettings();
       }
 
@@ -275,13 +276,17 @@ Settings.prototype.applyRequirements = function(requirements, map) {
         if (this.checked) { // All mandatory checkboxes must be enabled too
           mandatory.forEach(function (current) {
             current.checked = true;
+            _.dispatch("change", current);
           });
         }
       });
 
       mandatory.forEach(function (current) {
         current.addEventListener("change", function () {
-          if (!this.checked) subordinate.checked = false;
+          if (!this.checked) {
+            subordinate.checked = false;
+            _.dispatch("change", subordinate);
+          }
         });
       });     
     }

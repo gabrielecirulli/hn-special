@@ -18,7 +18,7 @@
 .hnspecial-settings-menu-inner p strong{color:#45423e !important;font-weight:500 !important}
 .hnspecial-settings-menu-inner p a{color:#f19539 !important;font-weight:400 !important;letter-spacing:0 !important}
 .hnspecial-settings-menu-inner .hnspecial-settings-block{margin-bottom:7px;-webkit-user-select:none;}
-.hnspecial-settings-menu-inner .hnspecial-settings-block.hnspecial-settings-flash{position:relative;-webkit-animation:flash 250ms ease;-webkit-animation-delay:2s;-webkit-animation-iteration-count:3}
+.hnspecial-settings-menu-inner .hnspecial-settings-block.hnspecial-settings-flash{position:relative;-webkit-animation:flash 200ms ease;-webkit-animation-delay:2s;-webkit-animation-iteration-count:4}
 .hnspecial-settings-menu-inner .hnspecial-settings-block:after{content:'';display:block;clear:both}
 .hnspecial-settings-menu-inner .hnspecial-settings-block label{display:block;float:left;width:88%;font-weight:200;color:#6f6963;cursor:pointer}
 .hnspecial-settings-menu-inner .hnspecial-settings-block .hnspecial-settings-checkbox-container{display:block;float:right;width:12%;position:relative;}

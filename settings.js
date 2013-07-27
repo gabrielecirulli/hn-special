@@ -164,6 +164,7 @@ Settings.prototype.buildMenuFrame = function (container, showTip) {
   button.appendChild(toggle);
 
   button.appendChild(_.createElement("img", {
+    classes: ["hnspecial-settings-button-gear-icon"],
     attributes: {
       src: chrome.extension.getURL("gear.svg")
     }

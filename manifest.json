@@ -3,7 +3,7 @@
 
   "name": "HN Special - An addition to Hacker News",
   "description": "This extension refreshes the visual style of Hacker News and adds a few features, like infinite scrolling. Everything is togglable.",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "homepage_url": "http://gabrielecirulli.github.io/hn-special/",
 
   "permissions": [
@@ -20,6 +20,7 @@
         "visual_theme.js",
         "high_contrast.js",
         "open_links_in_new_tabs.js",
+        "highlight_links_when_returning.js",
         "infinite_scrolling.js",
         "accurate_domain_names.js"
       ],

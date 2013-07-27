@@ -1,14 +1,16 @@
 {
-    "settings_version": 2,
+    "settings_version": 3,
     "settings": {
         "visual_theme": true,
         "high_contrast": false,
         "infinite_scrolling": true,
         "open_links_in_new_tabs": false,
+        "highlight_links_when_returning": true,
         "accurate_domain_names": true
     },
     "requirements": {
-        "high_contrast": ["visual_theme"]
+        "high_contrast": ["visual_theme"],
+        "highlight_links_when_returning": ["visual_theme", "open_links_in_new_tabs"]
     },
     "tips": [
         "This extension is completely open source. Take a look at the <a href=\"https://github.com/gabrielecirulli/hn-special\" target=\"_blank\">repository</a> on GitHub!",
@@ -16,6 +18,8 @@
         "If you don't like the theme, disable it and the other the features will still work!",
         "<em>Open links in new tabs</em> makes links in comments open up in new tabs as well!",
         "You can pause infinite scrolling by clicking on \"pause infinite scrolling\", next to \"More\"!",
-        "<em>Accurate domain names</em> shows you more precisely where a link takes (e.g., <em>github.com</em> becomes <em>gist.github.com</em>)!"
+        "<em>Accurate domain names</em> shows you more precisely where a link takes (e.g., <em>github.com</em> becomes <em>gist.github.com</em>)!",
+        "You can try <em>High contrast</em> if you have issues reading some of the text on the site.",
+        "<em>Highlight links when returning</em> will help you find which link you came from when coming back to Hacker News!"
     ]
 }

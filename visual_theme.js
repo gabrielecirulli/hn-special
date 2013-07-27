@@ -166,41 +166,6 @@ HNSpecial.settings.registerModule("visual_theme", function () {
     _.$("img[src='grayarrow.gif']").forEach(function (image) {
       image.setAttribute("src", upArrow);
     });
-
-    // Add a flash class to titles when clicked
-    function addFlash() {
-      _.toArray(document.getElementsByTagName("a")).forEach(function (link) {
-        var parent = link.parentElement;
-        if (_.isTitleLink(link) && !link.getAttribute("data-hnspecial-flash-effect")) {
-          link.setAttribute("data-hnspecial-flash-effect", "true");
-          link.addEventListener("click", function () {
-            parent.classList.remove("hnspecial-theme-link-flash");
-            parent.classList.add("hnspecial-theme-link-pre-flash");
-          });
-        }    
-      });  
-    }
-
-    addFlash();
-
-    // Subscribe to the addition of new links by infinite scrolling
-    HNSpecial.settings.subscribe("new links", addFlash);
-  
-    // Flash the links when the window is focused
-    document.addEventListener("webkitvisibilitychange", function (e) {
-      if (!this.webkitHidden) {
-        console.log("visibility");
-
-        var link = document.getElementsByClassName("hnspecial-theme-link-pre-flash")[0];
-        console.log(link);
-        if (link) {
-          link.classList.remove("hnspecial-theme-link-pre-flash");
-          link.classList.add("hnspecial-theme-link-flash");
-        }
-      }
-      
-      
-    });
   } else {
     // The page has no container. It's either the login page or an error page
 

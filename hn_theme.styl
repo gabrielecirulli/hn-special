@@ -483,6 +483,12 @@ body.hnspecial-theme
                                 if num == 3
                                     padding-right 30px !important
 
+                    // Used by highlight_links_when_returning
+                    .hnspecial-theme-link-flash
+                        // display inline-block
+                        &, & + tr
+                            -webkit-animation link-flash 1s ease
+
                     // Upvote arrow
                     a[id^=up_]
                         opacity 0.3
@@ -559,10 +565,6 @@ body.hnspecial-theme
 
                     td.title
                         padding 3px 0 5px 0
-
-                        &.hnspecial-theme-link-flash a
-                            display inline-block
-                            -webkit-animation link-flash 1s ease
 
                         &:last-child
                             width 100%

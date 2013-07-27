@@ -82,6 +82,7 @@ body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td tr > td:nth
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td tr > td:nth-child(2):nth-last-child(3):not(:empty){padding:0 !important;padding-top:15px !important;padding-left:10px !important;width:100%;}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td tr > td:nth-child(3):nth-last-child(2):not(:empty){padding:0 !important;padding-top:15px !important;padding-right:30px !important}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td tr > td:nth-child(4):nth-last-child(1):not(:empty){padding:0 !important;padding-top:15px !important;}
+body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td .hnspecial-theme-link-flash,body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td .hnspecial-theme-link-flash + tr{-webkit-animation:link-flash 1s ease}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td a[id^=up_]{opacity:.3;display:inline-block;-webkit-transition:all 150ms ease;}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td a[id^=up_]:hover{opacity:.6}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td a[id^=up_]:active{opacity:.3}
@@ -99,7 +100,6 @@ body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td .hnspecial-
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td .hnspecial-upvote-button center{padding-top:20px !important}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td td.comment{font-weight:200}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td td.title{padding:3px 0 5px 0;}
-body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td td.title.hnspecial-theme-link-flash a{display:inline-block;-webkit-animation:link-flash 1s ease}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td td.title:last-child{width:100%}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td td.title + td{padding:0 13px 3px 10px}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td td.title a{color:#ff9227}

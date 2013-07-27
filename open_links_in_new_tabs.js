@@ -11,7 +11,5 @@ HNSpecial.settings.registerModule("open_links_in_new_tabs", function () {
   editLinks();
 
   // Subscribe to the event emitted when new links are present
-  HNSpecial.settings.subscribe("new links", function () {
-    editLinks();
-  });
+  HNSpecial.settings.subscribe("new links", editLinks);
 });

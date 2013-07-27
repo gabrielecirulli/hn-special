@@ -99,6 +99,7 @@ body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td .hnspecial-
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td .hnspecial-upvote-button center{padding-top:20px !important}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td td.comment{font-weight:200}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td td.title{padding:3px 0 5px 0;}
+body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td td.title.hnspecial-theme-link-flash a{display:inline-block;-webkit-animation:link-flash 1s ease}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td td.title:last-child{width:100%}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td td.title + td{padding:0 13px 3px 10px}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td td.title a{color:#ff9227}
@@ -138,4 +139,14 @@ body.hnspecial-theme.hnspecial-theme-high-contrast > center > table > tbody > tr
 50%{left:0}
 75%{left:12px}
 100%{left:0}
+}@-moz-keyframes link-flash{0%{opacity:.2;-webkit-transform:translateX(1000px)}
+100%{opacity:1;-webkit-transform:translateX(0)}
+}@-webkit-keyframes link-flash{0%{opacity:.2;-webkit-transform:translateX(1000px)}
+100%{opacity:1;-webkit-transform:translateX(0)}
+}@-o-keyframes link-flash{0%{opacity:.2;-webkit-transform:translateX(1000px)}
+100%{opacity:1;-webkit-transform:translateX(0)}
+}@-ms-keyframes link-flash{0%{opacity:.2;-webkit-transform:translateX(1000px)}
+100%{opacity:1;-webkit-transform:translateX(0)}
+}@keyframes link-flash{0%{opacity:.2;-webkit-transform:translateX(1000px)}
+100%{opacity:1;-webkit-transform:translateX(0)}
 }

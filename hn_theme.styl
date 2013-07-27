@@ -21,6 +21,15 @@ base-font = "15px/1.5 Helvetica Neue, Arial, sans-serif"
     100%
         left 0px
 
+@keyframes link-flash
+    from
+        opacity 0.2
+        -webkit-transform translateX(1000px)
+
+    to 
+        opacity 1
+        -webkit-transform translateX(0px)
+
 // HN Special infinite scroll
 .hnspecial-infinite-pause
     padding-left 5px
@@ -550,6 +559,10 @@ body.hnspecial-theme
 
                     td.title
                         padding 3px 0 5px 0
+
+                        &.hnspecial-theme-link-flash a
+                            display inline-block
+                            -webkit-animation link-flash 1s ease
 
                         &:last-child
                             width 100%

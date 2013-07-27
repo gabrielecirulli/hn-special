@@ -28,7 +28,7 @@
     }
   ],
 
-  "web_accessible_resources": ["gear.svg", "defaults.json"],
+  "web_accessible_resources": ["defaults.json", "gear.svg", "arrow-up.svg"],
 
   "icons": {
     "16": "icon16.png",

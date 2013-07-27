@@ -474,6 +474,20 @@ body.hnspecial-theme
                                 if num == 3
                                     padding-right 30px !important
 
+                    // Upvote arrow
+                    a[id^=up_]
+                        opacity 0.3
+                        display inline-block
+                        -webkit-transition all 150ms ease
+
+                        &:hover
+                            opacity 0.6
+                            // -webkit-transform scale(1.7)
+
+                        &:active
+                            opacity 0.3
+                            // -webkit-transform scale(1)
+
                     // Post area
                     > table:first-of-type
                         width 100%
@@ -589,10 +603,3 @@ body.hnspecial-theme
 
             .topsel a
                 font-weight 400 !important
-
-            // td:first-child a
-            //     background base-color
-            //     box-shadow 0px 0px 1px 1px #fff
-
-            //     &:after
-            //         color lighten(base-color, 90%)

@@ -160,6 +160,12 @@ HNSpecial.settings.registerModule("visual_theme", function () {
       arrow.classList.add("hnspecial-upvote-button", "poll");
       arrow.parentElement
     });
+
+    // Change the image of the upvote button
+    var upArrow = chrome.extension.getURL("arrow-up.svg");
+    _.$("img[src='grayarrow.gif']").forEach(function (image) {
+      image.setAttribute("src", upArrow);
+    });
   } else {
     // The page has no container. It's either the login page or an error page
 

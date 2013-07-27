@@ -104,8 +104,8 @@ body.hnspecial-theme > center > table > tbody > tr:nth-child(4) > td{padding-top
 body.hnspecial-theme > center > table > tbody > tr:nth-child(4) > td .yclinks a{margin-right:10px}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(4) > td form input{width:400px;margin-left:10px}
 body.hnspecial-theme.hnspecial-theme-high-contrast a{color:#ff8916}
-body.hnspecial-theme.hnspecial-theme-high-contrast .title a{font-weight:200;color:#4d4d4d !important;}
-body.hnspecial-theme.hnspecial-theme-high-contrast .title a:visited{color:#999 !important}
+body.hnspecial-theme.hnspecial-theme-high-contrast .title a{font-weight:200;color:#222 !important;}
+body.hnspecial-theme.hnspecial-theme-high-contrast .title a:visited{color:#888 !important}
 @-moz-keyframes flash{0%{left:0}
 25%{left:-12px}
 50%{left:0}

@@ -411,6 +411,9 @@ body.hnspecial-theme
                                     font-weight 200
                                     color base-color
 
+                                &:hover
+                                    text-decoration none
+
                                 img
                                     display none
 
@@ -567,11 +570,29 @@ body.hnspecial-theme
     &.hnspecial-theme-high-contrast
         a
             color darken(link-color, 20%)
+            font-weight 400
 
         .title a
             font-weight 200
-            color #222 !important
+            color #111 !important
 
             &:visited
-                color #888 !important
+                color #777 !important
 
+        > center > table > tbody > tr:first-child > td > table
+            color darken(base-color, 60%)
+            font-weight 200
+
+            a
+                color darken(base-color, 70%)
+                font-weight 200
+
+            .topsel a
+                font-weight 400 !important
+
+            td:first-child a
+                background base-color
+                box-shadow 0px 0px 1px 1px #fff
+
+                &:after
+                    color lighten(base-color, 90%)

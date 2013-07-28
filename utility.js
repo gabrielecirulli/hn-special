@@ -81,7 +81,7 @@
   };
 
   _.isTitleLink = function (link) {
-    return link.parentElement.classList.contains("title") && !link.getAttribute("href").match(/^\/x\S+/);
+    return link.parentElement.classList.contains("title") && !link.getAttribute("href").match(/^\/x\S+/) && !link.classList.contains("hnspecial-infinite-pause");
   }
 
   _.isCommentLink = function (link) {

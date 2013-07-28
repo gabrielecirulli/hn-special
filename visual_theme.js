@@ -92,19 +92,22 @@ HNSpecial.settings.registerModule("visual_theme", function () {
 
     // Applied to comment pages
     if (isCommentPage) {
-      var textContainer = title.parentElement.parentElement.children[3].children[1];
+      var tableContainer = title.parentElement.parentElement;
+      if (tableContainer.childElementCount >= 4) {
+        var textContainer = title.parentElement.parentElement.children[3].children[1];
 
-      // If the post has textual content, wrap stray text in a paragraph
-      if (textContainer.textContent.trim().length) {
-        var nodes = _.toArray(textContainer.childNodes).filter(function (node) { return node.nodeType === Node.TEXT_NODE; });
+        // If the post has textual content, wrap stray text in a paragraph
+        if (textContainer.textContent.trim().length) {
+          var nodes = _.toArray(textContainer.childNodes).filter(function (node) { return node.nodeType === Node.TEXT_NODE; });
 
-        // Replaced each stray text node with a paragraph
-        nodes.forEach(function (node) {
-          var paragraph = _.createElement("p");
-          paragraph.textContent = node.nodeValue;
-          textContainer.insertBefore(paragraph, node);
-          node.remove();
-        });
+          // Replaced each stray text node with a paragraph
+          nodes.forEach(function (node) {
+            var paragraph = _.createElement("p");
+            paragraph.textContent = node.nodeValue;
+            textContainer.insertBefore(paragraph, node);
+            node.remove();
+          });
+        }
       }
     }
 
@@ -165,6 +168,11 @@ HNSpecial.settings.registerModule("visual_theme", function () {
     var upArrow = chrome.extension.getURL("arrow-up.svg");
     _.$("img[src='grayarrow.gif']").forEach(function (image) {
       image.setAttribute("src", upArrow);
+    });
+
+    var downArrow = chrome.extension.getURL("arrow-down.svg");
+    _.$("img[src='graydown.gif']").forEach(function (image) {
+      image.setAttribute("src", downArrow);
     });
   } else {
     // The page has no container. It's either the login page or an error page

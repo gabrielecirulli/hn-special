@@ -10,7 +10,7 @@
     },
     "requirements": {
         "high_contrast": ["visual_theme"],
-        "highlight_links_when_returning": ["visual_theme", "open_links_in_new_tabs"]
+        "highlight_links_when_returning": ["open_links_in_new_tabs"]
     },
     "tips": [
         "This extension is completely open source. Take a look at the <a href=\"https://github.com/gabrielecirulli/hn-special\" target=\"_blank\">repository</a> on GitHub!",

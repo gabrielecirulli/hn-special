@@ -225,6 +225,11 @@ menu-color = #8a837c
         width 100%
         margin-top 20px
 
+// Used by highlight_links_when_returning
+.hnspecial-theme-link-flash
+    &, & + tr
+        -webkit-animation link-flash 1s ease
+
 // HNSpecial theme styles
 body.hnspecial-theme
     background #fff
@@ -482,12 +487,6 @@ body.hnspecial-theme
 
                                 if num == 3
                                     padding-right 30px !important
-
-                    // Used by highlight_links_when_returning
-                    .hnspecial-theme-link-flash
-                        // display inline-block
-                        &, & + tr
-                            -webkit-animation link-flash 1s ease
 
                     // Upvote/downvote arrow
                     a[id^=up_], a[id^=down_]

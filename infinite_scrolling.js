@@ -14,9 +14,17 @@ HNSpecial.settings.registerModule("infinite_scrolling", function () {
     disabled = true;
   }
 
+  function pauseLoading(e) {
+    if (e) e.preventDefault();
+    disabled = !disabled;
+    pause.textContent = labels[disabled ? 1 : 0];
+    checkScroll();
+  }
+
   function checkScroll() {
-    if (loads !== 5 && !disabled && window.scrollY + window.innerHeight > threshold) {
+    if (!disabled && window.scrollY + window.innerHeight > threshold) {
       loadLinks();
+      if (loads === 5) pauseLoading();
     }
   }
 
@@ -90,12 +98,7 @@ HNSpecial.settings.registerModule("infinite_scrolling", function () {
         "href": "#"
       }
     });
-    pause.addEventListener("click", function (e) {
-      e.preventDefault();
-      disabled = !disabled;
-      pause.textContent = labels[disabled ? 1 : 0];
-      checkScroll();
-    });
+    pause.addEventListener("click", pauseLoading);
     button.parentElement.appendChild(pause);
 
     button.addEventListener("click", function (e) {

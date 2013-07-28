@@ -29,7 +29,7 @@
     }
   ],
 
-  "web_accessible_resources": ["defaults.json", "gear.svg", "arrow-up.svg"],
+  "web_accessible_resources": ["defaults.json", "gear.svg", "arrow-up.svg", "arrow-down.svg"],
 
   "icons": {
     "16": "icon16.png",

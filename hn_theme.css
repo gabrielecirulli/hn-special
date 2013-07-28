@@ -83,9 +83,9 @@ body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td tr > td:nth
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td tr > td:nth-child(3):nth-last-child(2):not(:empty){padding:0 !important;padding-top:15px !important;padding-right:30px !important}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td tr > td:nth-child(4):nth-last-child(1):not(:empty){padding:0 !important;padding-top:15px !important;}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td .hnspecial-theme-link-flash,body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td .hnspecial-theme-link-flash + tr{-webkit-animation:link-flash 1s ease}
-body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td a[id^=up_]{opacity:.3;display:inline-block;-webkit-transition:all 150ms ease;}
-body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td a[id^=up_]:hover{opacity:.6}
-body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td a[id^=up_]:active{opacity:.3}
+body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td a[id^=up_],body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td a[id^=down_]{opacity:.3;display:inline-block;-webkit-transition:all 150ms ease;}
+body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td a[id^=up_]:hover,body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td a[id^=down_]:hover{opacity:.6}
+body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td a[id^=up_]:active,body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td a[id^=down_]:active{opacity:.3}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td > table:first-of-type{width:100%;font-weight:200;color:#999;}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td > table:first-of-type > tbody > tr:first-child > td:first-child:not(.hnspecial-upvote-button):not(.title) > center{padding:0 13px 3px 10px}
 body.hnspecial-theme > center > table > tbody > tr:nth-child(3) > td > table:first-of-type > tbody > tr:first-child > td:nth-child(3):not(.title){padding-bottom:30px;line-height:1.5}

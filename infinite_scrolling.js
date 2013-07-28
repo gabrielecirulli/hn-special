@@ -7,8 +7,15 @@ HNSpecial.settings.registerModule("infinite_scrolling", function () {
     return _.$("td.title > a[href^='/x'], td.title > a[href^='news2']", context)[0];
   }
 
+  function replaceButton(message) {
+    button.textContent = message;
+    button.nextSibling.remove(); // Remove the pause button
+    _.replaceTag(button, "span");
+    disabled = true;
+  }
+
   function checkScroll() {
-    if (!disabled && window.scrollY + window.innerHeight > threshold) {
+    if (loads !== 5 && !disabled && window.scrollY + window.innerHeight > threshold) {
       loadLinks();
     }
   }
@@ -16,6 +23,10 @@ HNSpecial.settings.registerModule("infinite_scrolling", function () {
   function loadLinks() {
     if (loading) return;
     loading = true;
+
+    loads++;
+    console.log(loads);
+    console.log("load");
 
     var label = button.textContent;
     button.textContent = "Loading more items...";
@@ -43,15 +54,19 @@ HNSpecial.settings.registerModule("infinite_scrolling", function () {
 
         var newButton = getButton(dummy);
 
-        button.textContent = label;
-        button.setAttribute("href", newButton.getAttribute("href"));
-        threshold = getThreshold();
+        if (newButton) {
+          button.textContent = label;
+          button.setAttribute("href", newButton.getAttribute("href"));
+          threshold = getThreshold();
+        } else {
+          replaceButton("No more links to load.");
+        }
+
         loading = false;
-        HNSpecial.settings.emit("new links"); // Notify other modules about the presence of new links  
+        HNSpecial.settings.emit("new links"); // Notify other modules about the presence of new links    
+        
       } else {
-        button.textContent = "Couldn't load the page. Please try refreshing.";
-        button.nextSibling.remove(); // Remove the pause button
-        _.replaceTag(button, "span");        
+        replaceButton("Couldn't load the page. Please try refreshing.");
       }      
     });
   }
@@ -63,6 +78,7 @@ HNSpecial.settings.registerModule("infinite_scrolling", function () {
     var threshold = getThreshold();
 
     var loading = false;
+    var loads = 0;
     var disabled = false;
 
     var labels = ["Pause infinite scrolling", "Resume infinite scrolling"];

@@ -24,17 +24,14 @@ HNSpecial.settings.registerModule("infinite_scrolling", function () {
   function checkScroll() {
     if (!disabled && window.scrollY + window.innerHeight > threshold) {
       loadLinks();
-      if (loads === 5) pauseLoading();
+      if (loads === 3) pauseLoading();
     }
   }
 
   function loadLinks() {
     if (loading) return;
     loading = true;
-
     loads++;
-    console.log(loads);
-    console.log("load");
 
     var label = button.textContent;
     button.textContent = "Loading more items...";

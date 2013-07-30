@@ -94,6 +94,8 @@ Settings.prototype.buildMenu = function (added, requirements) {
   if (container) {
     var items = this.buildMenuFrame(container, !added.length);
 
+    if (container === pageTop[0]) items.button.classList.add("hnspecial-settings-container-cell");
+
     // Build the settings items
     var keys = Object.keys(this.currentSettings);
     var map = {};
@@ -200,6 +202,7 @@ Settings.prototype.buildMenuFrame = function (container, showTip) {
   container.insertBefore(button, container.children[0]);
 
   return {
+    button: button,
     toggle: toggle,
     inner: inner
   };

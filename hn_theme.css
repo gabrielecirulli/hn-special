@@ -33,6 +33,7 @@
 .hnspecial-settings-menu-inner .hnspecial-settings-block .hnspecial-settings-checkbox-indicator.off{color:#c4c1be}
 .hnspecial-settings-menu-inner .hnspecial-settings-submit-button{cursor:pointer;width:100%;margin-top:20px}
 .hnspecial-theme-link-flash,.hnspecial-theme-link-flash + tr{-webkit-animation:link-flash 1s ease}
+body:not(.hnspecial-theme) .hnspecial-settings-container-cell{float:right;position:relative;top:0;margin-right:100px}
 body.hnspecial-theme{background:#fff;margin:0;padding:0;font:15px/1.5 Helvetica Neue, Arial, sans-serif;color:#555;}
 body.hnspecial-theme u{text-decoration:none}
 body.hnspecial-theme a{color:#ffac5b;text-decoration:none}

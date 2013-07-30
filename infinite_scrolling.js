@@ -24,7 +24,9 @@ HNSpecial.settings.registerModule("infinite_scrolling", function () {
   function checkScroll() {
     if (!disabled && window.scrollY + window.innerHeight > threshold) {
       loadLinks();
-      if (loads === 3) pauseLoading();
+
+      var nextLoads = loads - 3;
+      if (loads === 3 || (nextLoads > 0 && nextLoads % 5 === 0)) pauseLoading();
     }
   }
 

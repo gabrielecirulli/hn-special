@@ -32,6 +32,9 @@ If you want to add a new module, please edit `defaults.json` and add a descripti
 
 For the actual code, make a JavaScript file with the same name as the module, and subscribe to the settings object through the module's key (take a look at `open_links_in_new_tabs.js` for an example). If the setting is enabled from the interface, your module's code will be executed. **NOTE**: don't forget to add your JS file to `manifest.json` and uninstall/reinstall the extension before you begin developing. Simply reloading it won't work.
 
+## Contributions and mentions
+Many thanks to [@messaged](https://twitter.com/messaged) for the help!
+
 ## License
 HN Special is licensed under the MIT License:
 ```

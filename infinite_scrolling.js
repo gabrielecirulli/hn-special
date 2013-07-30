@@ -1,3 +1,4 @@
+// The code in this module is a bit ugly. It could use a rewrite.
 HNSpecial.settings.registerModule("infinite_scrolling", function () {
   function getThreshold() {
     return window.scrollY + button.getBoundingClientRect().bottom + 50; // getBoundingClientRect returns coordinates relative to the viewport
@@ -25,7 +26,7 @@ HNSpecial.settings.registerModule("infinite_scrolling", function () {
     if (!disabled && window.scrollY + window.innerHeight > threshold) {
       loadLinks();
 
-      var nextLoads = loads - 3;
+      nextLoads = loads - 3;
       if (loads === 3 || (nextLoads > 0 && nextLoads % 5 === 0)) pauseLoading();
     }
   }
@@ -86,6 +87,7 @@ HNSpecial.settings.registerModule("infinite_scrolling", function () {
 
     var loading = false;
     var loads = 0;
+    var nextLoads;
     var disabled = false;
 
     var labels = ["Pause infinite scrolling", "Resume infinite scrolling"];

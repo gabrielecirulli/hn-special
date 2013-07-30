@@ -174,6 +174,15 @@ HNSpecial.settings.registerModule("visual_theme", function () {
     _.$("img[src='graydown.gif']").forEach(function (image) {
       image.setAttribute("src", downArrow);
     });
+
+    // Don't display the topcolors page
+    if (location.pathname.match(/^\/topcolors/)) {
+      var cell = container.children[2].firstChild;
+      cell.firstChild.remove();
+      cell.appendChild(_.createElement("p", {
+        content: "Sorry, topcolors isn't supported by the visual theme of HN Special. Please disable the visual theme in order to use topcolors."
+      }));
+    }
   } else {
     // The page has no container. It's either the login page or an error page
 

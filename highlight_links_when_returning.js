@@ -8,10 +8,8 @@ HNSpecial.settings.registerModule("highlight_links_when_returning", function () 
       if (_.isTitleLink(link) && !link.getAttribute("data-hnspecial-flash-effect")) {
         link.setAttribute("data-hnspecial-flash-effect", "true");
         link.addEventListener("click", function (e) {
-          if (e.button === 0) { // Ignore all clicks except left click
-            parent.classList.remove("hnspecial-theme-link-flash");
-            parent.classList.add("hnspecial-theme-link-pre-flash");  
-          }
+          parent.classList.remove("hnspecial-theme-link-flash");
+          parent.classList.add("hnspecial-theme-link-pre-flash");
         });
       }
     });  
@@ -25,11 +23,10 @@ HNSpecial.settings.registerModule("highlight_links_when_returning", function () 
   // Flash the links when the window is focused
   document.addEventListener("webkitvisibilitychange", function (e) {
     if (!this.webkitHidden) {
-      var link = document.getElementsByClassName("hnspecial-theme-link-pre-flash")[0];
-      if (link) {
+      _.toArray(document.getElementsByClassName("hnspecial-theme-link-pre-flash")).forEach(function (link) {
         link.classList.remove("hnspecial-theme-link-pre-flash");
         link.classList.add("hnspecial-theme-link-flash");
-      }
+      });
     }
   });
 });

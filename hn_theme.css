@@ -1,9 +1,9 @@
 .hnspecial-infinite-pause{padding-left:5px;color:#828282 !important;}
 .hnspecial-infinite-pause:before{content:'|';margin-right:5px}
 .hnspecial-settings-button{display:inline-block;width:16px;height:16px;margin-right:10px;position:relative;top:3px;}
-.hnspecial-settings-button img{opacity:.5;-webkit-transition:opacity 100ms ease}
+.hnspecial-settings-button img{opacity:.5;-webkit-transition:opacity 100ms ease;display:block !important}
 .hnspecial-settings-button input[type=checkbox]{-webkit-appearance:none}
-.hnspecial-settings-button-checkbox{width:16px;height:16px;border:none !important;position:absolute;z-index:2;cursor:pointer;}
+.hnspecial-settings-button-checkbox{width:16px;height:16px;border:none !important;position:absolute;top:0;left:0;z-index:2;cursor:pointer;padding:0 !important;}
 .hnspecial-settings-button-checkbox:hover ~ img{opacity:1}
 .hnspecial-settings-button-checkbox:active ~ img{opacity:.5 !important}
 .hnspecial-settings-button-checkbox:checked ~ img{opacity:1}

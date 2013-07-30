@@ -56,7 +56,8 @@ menu-color = #8a837c
 
     img
         opacity .5
-        -webkit-transition opacity 100ms ease            
+        -webkit-transition opacity 100ms ease          
+        display block !important  
 
     input[type=checkbox]
         -webkit-appearance none
@@ -66,8 +67,11 @@ menu-color = #8a837c
     height button-size
     border none !important
     position absolute
+    top 0
+    left 0
     z-index 2
     cursor pointer
+    padding 0px !important
 
     &:hover ~ img
         opacity 1

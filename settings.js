@@ -88,7 +88,8 @@ Settings.prototype.emit = function (event) {
 
 Settings.prototype.buildMenu = function (added, requirements) {
   var self = this;
-  var container = _.$(".pagetop")[1];
+  var pageTop = _.$(".pagetop");
+  var container = pageTop[1] || pageTop[0];
 
   if (container) {
     var items = this.buildMenuFrame(container, !added.length);

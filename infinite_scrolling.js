@@ -47,7 +47,7 @@ HNSpecial.settings.registerModule("infinite_scrolling", function () {
       var dummy = _.createElement("div");
       dummy.innerHTML = page;
 
-      if (dummy.getElementsByClassName("title").length) {  
+      if (dummy.getElementsByClassName("title").length) {
         _.toArray(dummy.getElementsByTagName("a")).forEach(function (link) {
           if (_.isTitleLink(link)) {
             var row = link.parentElement.parentElement;
@@ -72,10 +72,10 @@ HNSpecial.settings.registerModule("infinite_scrolling", function () {
 
         loading = false;
         HNSpecial.settings.emit("new links"); // Notify other modules about the presence of new links    
-        
+
       } else {
         replaceButton("Couldn't load the page. Please try refreshing.");
-      }      
+      }
     });
   }
 

@@ -11,10 +11,10 @@
 
   _.load = function (callback) {
     if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", callback);  
+      document.addEventListener("DOMContentLoaded", callback);
     } else {
       callback.call(document);
-    }    
+    }
   };
 
   _.replaceTag = function (container, tag) {
@@ -57,9 +57,9 @@
         for (var attr in options.attributes) {
           elem.setAttribute(attr, options.attributes[attr]);
         }
-      }  
+      }
     }
-    
+
     return elem;
   };
 
@@ -90,7 +90,7 @@
       while (parent.tagName.toLowerCase() !== "td") {
         if (parent.tagName.toLowerCase() === "span" && parent.classList.contains("comment")) return true;
         parent = parent.parentElement;
-      }  
+      }
     }
     return false;
   }

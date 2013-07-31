@@ -12,7 +12,7 @@ HNSpecial.settings.registerModule("highlight_links_when_returning", function () 
           parent.classList.add("hnspecial-theme-link-pre-flash");
         });
       }
-    });  
+    });
   }
 
   addFlash();

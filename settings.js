@@ -47,7 +47,7 @@ function Settings() {
       self.moduleQueue.forEach(function (module) {
         self.runModule(module);
       });
-    });    
+    });
   });
 }
 
@@ -145,9 +145,9 @@ Settings.prototype.buildMenu = function (added, requirements) {
     // Auto-open the menu for the first time or if there's an update
     if (isFirstTime || added.length) {
       setTimeout(function () {
-        items.toggle.checked = true;  
+        items.toggle.checked = true;
       }, 1000);
-    }      
+    }
   }
 };
 
@@ -157,7 +157,7 @@ Settings.prototype.buildMenuFrame = function (container, showTip) {
   var button = _.createElement("div", {
     classes: ["hnspecial-settings-button"]
   });
-  
+
   var toggle = _.createElement("input", {
     classes: ["hnspecial-settings-button-checkbox"],
     attributes: {
@@ -176,11 +176,11 @@ Settings.prototype.buildMenuFrame = function (container, showTip) {
   var menu = _.createElement("div", {
     classes: ["hnspecial-settings-menu-container"]
   });
-  
+
   var inner = _.createElement("div", {
     classes: ["hnspecial-settings-menu-inner"]
   });
-  
+
   inner.appendChild(_.createElement("strong", {
     content: "HN Special — Settings"
   }));
@@ -194,8 +194,8 @@ Settings.prototype.buildMenuFrame = function (container, showTip) {
     inner.appendChild(_.createElement("p", {
       content: "<strong>Tip:</strong> " + _.lowerFirst(this.tips[Math.floor(Math.random() * this.tips.length)]),
       classes: ["hnspecial-settings-tip"]
-    }));  
-  }  
+    }));
+  }
 
   menu.appendChild(inner);
   button.appendChild(menu);
@@ -293,7 +293,7 @@ Settings.prototype.applyRequirements = function(requirements, map) {
             _.dispatch("change", subordinate);
           }
         });
-      });     
+      });
     }
   });
 };
@@ -326,5 +326,5 @@ Settings.prototype.updateAndReload = function () {
 (function () {
   // Run the settings module as soon as possible
   this.HNSpecial = {};
-  this.HNSpecial.settings = new Settings();  
+  this.HNSpecial.settings = new Settings();
 }).call(this);

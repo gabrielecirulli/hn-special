@@ -152,7 +152,26 @@ HNSpecial.settings.registerModule("visual_theme", function () {
 
       var index = 1;
       if (container.childElementCount === 2) index = 0; // page /newcomments has two tds instead of three
-      container.children[index].classList.add("hnspecial-upvote-button");      
+      container.children[index].classList.add("hnspecial-upvote-button");
+
+      // Replace the s.gif spacer image
+      var cell = container.firstChild
+      var img = container.firstChild.firstChild;
+      if (img.tagName.toLowerCase() === "img") {
+        var div = _.createElement("div", {
+          classes: ["hnspecial-theme-spacer-container"],
+          attributes: {
+            style: "width: " + img.getAttribute("width") + "px"
+          }
+        });
+
+        div.appendChild(_.createElement("div", {
+          classes: ["hnspecial-theme-spacer"]
+        }));
+
+        cell.classList.add("hnspecial-theme-spacer-cell");
+        cell.replaceChild(div, img);
+      }
     });
 
     // Add a class to the upvote buttons on poll items

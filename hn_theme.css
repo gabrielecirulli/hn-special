@@ -62,6 +62,8 @@ body.hnspecial-theme.hnspecial-form-page.login .hnspecial-form-container{width:3
 body.hnspecial-theme.hnspecial-form-page.login .hnspecial-form-container input[type=submit]{width:130px}
 body.hnspecial-theme.hnspecial-form-page.login .hnspecial-form-container b{font-size:40px;font-weight:100;letter-spacing:1px}
 body.hnspecial-theme.hnspecial-form-page.login .hnspecial-form-container td:last-child,body.hnspecial-theme.hnspecial-form-page.login .hnspecial-form-container td:last-child input{width:100%}
+body.hnspecial-theme .hnspecial-theme-spacer-cell{overflow:hidden;position:relative}
+body.hnspecial-theme .hnspecial-theme-spacer{position:absolute;top:0;bottom:0;left:7px;width:1px;background:#e1e1e1}
 body.hnspecial-theme > center{display:block;max-width:900px;margin:0 auto;}
 body.hnspecial-theme > center > table{width:100%;}
 body.hnspecial-theme > center > table > tbody > tr:first-child > td > table{background:#ff8937;color:#ffdcc3;font-weight:100;width:100%;}

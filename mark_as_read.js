@@ -3,7 +3,7 @@ HNSpecial.settings.registerModule("mark_as_read", function () {
     var titles = _.toArray(document.getElementsByClassName("title"));
 
     titles.forEach(function (title) {
-      if (!title.getAttribute("data-hnspecial-mark-as-read") && title.childElementCount === 2 && title.children[1].classList.contains("comhead")) {
+      if (!title.getAttribute("data-hnspecial-mark-as-read") && title.children.length > 0 && title.children[0].nodeName == "A") {
         title.setAttribute("data-hnspecial-mark-as-read", "true");
 
         // Create the Mark as read "button"

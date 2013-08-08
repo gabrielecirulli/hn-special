@@ -14,7 +14,7 @@ HNSpecial.settings.registerModule("mark_as_read", function () {
 
         // Add the click listener
         button.addEventListener("click", function (e) {
-          // Wow, that escalated quickly
+          // Well, that escalated quickly
           var url = e.target.parentElement.parentElement.previousSibling.childNodes[2].children[0].href;
 
           chrome.extension.sendRequest({
@@ -27,7 +27,7 @@ HNSpecial.settings.registerModule("mark_as_read", function () {
         });
 
         // Insert the button into the page
-        subtext.insertBefore(button, subtext.children[0]);
+        subtext.insertBefore(button, subtext.childNodes[0]);
       }
     });
   }

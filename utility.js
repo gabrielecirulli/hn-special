@@ -64,7 +64,7 @@
   };
 
   _.dispatch = function (event, target) {
-    var event = new Event("change");
+    var event = new Event(event);
     target.dispatchEvent(event);
   }
 

@@ -18,12 +18,9 @@ chrome.extension.onRequest.addListener(function (request, sender, sendResponse) 
                 // Add the url to the browser history
                 chrome.history.addUrl(request.params);
             }
-
-            // Return null to let the connection be cleaned up.
-            sendResponse({});
         });
-    } else {
-        // Return null to let the connection be cleaned up.
-        sendResponse({});
     }
+
+    // Return null to let the connection be cleaned up.
+    sendResponse({});
 });

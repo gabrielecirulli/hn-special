@@ -1,10 +1,10 @@
 HNSpecial.settings.registerModule("mark_as_read", function () {
   function editLinks() {
-    var titles = _.toArray(document.getElementsByClassName("title"));
+    var subtexts = _.toArray(document.getElementsByClassName("subtext"));
 
-    titles.forEach(function (title) {
-      if (!title.getAttribute("data-hnspecial-mark-as-read") && title.children.length > 0 && title.children[0].nodeName == "A") {
-        title.setAttribute("data-hnspecial-mark-as-read", "true");
+    subtexts.forEach(function (subtext) {
+      if (!subtext.getAttribute("data-hnspecial-mark-as-read")) {
+        subtext.setAttribute("data-hnspecial-mark-as-read", "true");
 
         // Create the Mark as read "button"
         var button = _.createElement("span", {
@@ -14,17 +14,20 @@ HNSpecial.settings.registerModule("mark_as_read", function () {
 
         // Add the click listener
         button.addEventListener("click", function (e) {
+          // Wow, that escalated quickly
+          var url = e.target.parentElement.parentElement.previousSibling.childNodes[2].children[0].href;
+
           chrome.extension.sendRequest({
             module: "mark_as_read",
             action: "toggle",
             params: {
-              url: e.target.parentElement.children[1].href
+              url: url
             }
           });
         });
 
         // Insert the button into the page
-        title.insertBefore(button, title.children[0]);
+        subtext.insertBefore(button, subtext.children[0]);
       }
     });
   }

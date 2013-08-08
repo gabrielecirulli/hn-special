@@ -6,8 +6,8 @@ HNSpecial.settings.registerModule("mark_as_read", function () {
       if (!subtext.getAttribute("data-hnspecial-mark-as-read")) {
         subtext.setAttribute("data-hnspecial-mark-as-read", "true");
 
-        // Create the Mark as read "button"
-        var button = _.createElement("span", {
+        // Create the Mark as read button
+        var button = _.createElement("button", {
           classes: ["hnspecial-mark-as-read-button"],
           content: "&#10004;" // tick symbol
         });

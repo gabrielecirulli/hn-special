@@ -125,7 +125,7 @@ body.hnspecial-theme .hnspecial-mark-all-as-read-container button{font:inherit;-
 body.hnspecial-theme .hnspecial-mark-all-as-read-container button:hover{text-decoration:underline}
 body.hnspecial-theme .hnspecial-infinite-scroll-separator span{margin:0;position:absolute;font-size:13px;background:#fff;right:15px;top:-9px;padding:0 10px}
 body.hnspecial-theme .hnspecial-infinite-scroll-separator td{position:relative;}
-body.hnspecial-theme .hnspecial-infinite-scroll-separator td:after{margin-top:0;height:22px}
+body.hnspecial-theme .hnspecial-infinite-scroll-separator td:after{margin-top:0;height:20px}
 .hnspecial-mark-as-read-button{border:0;background-color:transparent;cursor:pointer;margin:0;margin-right:6px;padding:0 3px 0 0;-webkit-transition:color 150ms ease;}
 .hnspecial-mark-as-read-button:hover{color:#666}
 .hnspecial-mark-as-read-button,.hnspecial-mark-as-read-button:active{color:#b3b3b3}

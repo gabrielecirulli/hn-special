@@ -48,6 +48,7 @@ HNSpecial.settings.registerModule("infinite_scrolling", function () {
       dummy.innerHTML = page;
 
       if (dummy.getElementsByClassName("title").length) {
+        // Create a separator
         var separator = _.createElement("tr", {
           classes: ["hnspecial-infinite-scroll-separator"]
         });

@@ -12,7 +12,7 @@ You can install this extension [from the Chrome Web Store](https://chrome.google
  - More accurate domain names
  - Mark as read (thanks to [@taeram](https://twitter.com/taeram/))
 
-### Potential future features
+#### Potential future features
  - Hide articles with certain keywords
 
 ## Contributing

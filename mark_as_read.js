@@ -15,7 +15,7 @@ HNSpecial.settings.registerModule("mark_as_read", function () {
         });
 
         // Well, that escalated quickly
-        var url = subtext.parentElement.previousSibling.lastChild.firstChild.getAttribute("href");
+        var url = subtext.parentElement.previousSibling.lastChild.firstChild.href;
         urls.push(url);
 
         // Add the click listener

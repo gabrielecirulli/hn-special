@@ -5,13 +5,15 @@ The available features can be enabled or disabled based on your personal prefere
 
 You can install this extension [from the Chrome Web Store](https://chrome.google.com/webstore/detail/hn-special-an-addition-to/cchaceegbflphbdpfocjalgjhjoahiia).
 
-## Planned features
- - A modern looking visual theme **DONE**
- - Infinite scrolling **DONE**
- - Open links in new tab **DONE**
- - More accurate domain names **DONE**
+## Features
+ - A modern looking visual theme
+ - Infinite scrolling
+ - Open links in new tab
+ - More accurate domain names
+ - Mark as read (thanks to [@taeram](https://twitter.com/taeram/))
+
+## Potential future features
  - Hide articles with certain keywords (maybe)
- - Mark all as read (maybe)
 
 ## Contributing
 The CSS is built using [Stylus](http://learnboost.github.io/stylus/). If you'd like to contribute, you should first install [Node](http://nodejs.org/), and then get `stylus`:

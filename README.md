@@ -12,8 +12,8 @@ You can install this extension [from the Chrome Web Store](https://chrome.google
  - More accurate domain names
  - Mark as read (thanks to [@taeram](https://twitter.com/taeram/))
 
-## Potential future features
- - Hide articles with certain keywords (maybe)
+### Potential future features
+ - Hide articles with certain keywords
 
 ## Contributing
 The CSS is built using [Stylus](http://learnboost.github.io/stylus/). If you'd like to contribute, you should first install [Node](http://nodejs.org/), and then get `stylus`:

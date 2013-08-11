@@ -9,22 +9,8 @@ HNSpecial.settings.registerModule("visual_theme", function () {
         elem.remove();
     });
 
-    // Removes all styling attributes
-    _.$("body, table, tr, td, span, p, font, div").forEach(function (elem) {
-        var attrs = elem.attributes;
-        var names = [];
-
-        // This is contrived because .length is changed, messing up the loop
-        for (var i = 0; i < attrs.length; i++) {
-          var attr = attrs[i].name;
-          if (["colspan", "class", "id"].indexOf(attr) !== -1) continue;
-          names.push(attr);
-        }
-
-        names.forEach(function (attr) {
-          elem.removeAttribute(attr);
-        });
-    });
+    // Get rid of styling attributes embedded in code
+    stripAttributes();
 
     // Main container (contains header and content)
     var body = document.body;
@@ -186,16 +172,8 @@ HNSpecial.settings.registerModule("visual_theme", function () {
         arrow.parentElement
       });
 
-      // Change the image of the upvote button
-      var upArrow = chrome.extension.getURL("arrow-up.svg");
-      _.$("img[src='grayarrow.gif']").forEach(function (image) {
-        image.setAttribute("src", upArrow);
-      });
-
-      var downArrow = chrome.extension.getURL("arrow-down.svg");
-      _.$("img[src='graydown.gif']").forEach(function (image) {
-        image.setAttribute("src", downArrow);
-      });
+      // Replace the default HN arrows
+      replaceArrows();
 
       // Don't display the topcolors page
       if (location.pathname.match(/^\/topcolors/)) {
@@ -241,4 +219,55 @@ HNSpecial.settings.registerModule("visual_theme", function () {
       }
     }
   }
+
+  // Utility functions
+  function stripAttributes(data) {
+    var set;
+
+    if (data) {
+      data = data.map(function (element) {
+        return _.$("body, table, tr, td, span, p, font, div", element);
+      });
+      set = Array.prototype.concat.apply([], data);
+    } else {
+      set = _.$("body, table, tr, td, span, p, font, div");
+    }
+
+    // Removes all styling attributes
+    set.forEach(function (elem) {
+        var attrs = elem.attributes;
+        var names = [];
+
+        // This is contrived because .length changes, messing up the loop
+        for (var i = 0; i < attrs.length; i++) {
+          var attr = attrs[i].name;
+          if (["colspan", "class", "id"].indexOf(attr) !== -1) continue;
+          names.push(attr);
+        }
+
+        names.forEach(function (attr) {
+          if (attr.match(/^data-hnspecial/i)) return; // Skip attributes added by HN Special
+          elem.removeAttribute(attr);
+        });
+    });
+  }
+
+  function replaceArrows() {
+    // Change the image of the upvote button
+    var upArrow = chrome.extension.getURL("arrow-up.svg");
+    _.$("img[src='grayarrow.gif']").forEach(function (image) {
+      image.setAttribute("src", upArrow);
+    });
+
+    var downArrow = chrome.extension.getURL("arrow-down.svg");
+    _.$("img[src='graydown.gif']").forEach(function (image) {
+      image.setAttribute("src", downArrow);
+    });
+  }
+
+  // Subscribe to new links
+  HNSpecial.settings.subscribe("new links", function (data) {
+    stripAttributes(data);
+    replaceArrows();
+  });
 });

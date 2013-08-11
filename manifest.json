@@ -14,7 +14,7 @@
 
   "background" : {
     "scripts": [
-      "mark_as_read_background.js"
+      "background.js"
     ]
   },
 

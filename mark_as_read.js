@@ -12,12 +12,12 @@ HNSpecial.settings.registerModule("mark_as_read", function () {
           content: "&#10004;" // tick symbol
         });
 
+        // Well, that escalated quickly
+        var url = subtext.parentElement.previousSibling.childNodes[2].children[0].getAttribute("href");
+
         // Add the click listener
         button.addEventListener("click", function (e) {
-          // Well, that escalated quickly
-          var url = e.target.parentElement.parentElement.previousSibling.childNodes[2].children[0].href;
-
-          chrome.extension.sendRequest({
+          chrome.extension.sendMessage({
             module: "mark_as_read",
             action: "toggle",
             params: {

@@ -678,6 +678,24 @@ body.hnspecial-theme
             &:hover
                 text-decoration underline
 
+    // Infinite scrolling separator
+    .hnspecial-infinite-scroll-separator
+        span
+            margin 0
+            position absolute
+            font-size 13px
+            background white
+            right 15px
+            top -9px
+            padding 0 10px
+
+        td
+            position relative
+
+            &:after
+                margin-top 0
+                height 22px
+
 
 .hnspecial-mark-as-read-button
     border 0
@@ -710,3 +728,17 @@ table:hover + .hnspecial-mark-all-as-read-container, .hnspecial-mark-all-as-read
 
     button
         margin-left 5px
+
+.hnspecial-infinite-scroll-separator td
+    span
+        display block
+        margin-top 10px
+
+    &:after
+        margin-top 5px
+        height 17px
+        content ''
+        width 100%
+        display block
+        border-top 1px solid #ddd
+

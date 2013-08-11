@@ -48,6 +48,21 @@ HNSpecial.settings.registerModule("infinite_scrolling", function () {
       dummy.innerHTML = page;
 
       if (dummy.getElementsByClassName("title").length) {
+        var separator = _.createElement("tr", {
+          classes: ["hnspecial-infinite-scroll-separator"]
+        });
+        var cell = _.createElement("td", {
+          attributes: {
+            colspan: 3
+          }
+        });
+
+        cell.appendChild(_.createElement("span", {
+          content: "Page " + (loads + 1)
+        }));
+        separator.appendChild(cell);
+        container.insertBefore(separator, last);
+
         _.toArray(dummy.getElementsByTagName("a")).forEach(function (link) {
           if (_.isTitleLink(link)) {
             var row = link.parentElement.parentElement;
@@ -71,7 +86,7 @@ HNSpecial.settings.registerModule("infinite_scrolling", function () {
         }
 
         loading = false;
-        HNSpecial.settings.emit("new links"); // Notify other modules about the presence of new links    
+        HNSpecial.settings.emit("new links"); // Notify other modules about the presence of new links
 
       } else {
         replaceButton("Couldn't load the page. Please try refreshing.");

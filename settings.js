@@ -78,10 +78,10 @@ Settings.prototype.subscribe = function (event, callback) {
   this.events[event].push(callback);
 };
 
-Settings.prototype.emit = function (event) {
+Settings.prototype.emit = function (event, data) {
   if (this.events[event]) {
     this.events[event].forEach(function (callback) {
-      callback();
+      callback(data);
     });
   }
 };

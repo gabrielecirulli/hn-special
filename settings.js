@@ -42,7 +42,7 @@ function Settings() {
 
     // Build the menu and launch the rest of the modules when the DOM is ready
     _.load(function () {
-      self.buildMenu(added, defaults.requirements, defaults.permissions);
+      self.buildMenu(added, defaults.requirements);
       self.loaded = true;
       self.moduleQueue.forEach(function (module) {
         self.runModule(module);
@@ -86,7 +86,7 @@ Settings.prototype.emit = function (event, data) {
   }
 };
 
-Settings.prototype.buildMenu = function (added, requirements, permissions) {
+Settings.prototype.buildMenu = function (added, requirements) {
   var self = this;
   var pageTop = _.$(".pagetop");
   var container = pageTop[1] || pageTop[0];
@@ -107,7 +107,7 @@ Settings.prototype.buildMenu = function (added, requirements, permissions) {
     });
 
     // Apply permissions
-    self.applyPermissions(permissions, map);
+    //self.applyPermissions(permissions, map);
 
     // Apply requirements
     self.applyRequirements(requirements, map);

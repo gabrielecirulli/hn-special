@@ -11,8 +11,6 @@
     "http://news.ycombinator.com/"
   ],
 
-  "optional_permissions": [ "history" ],
-
   "background" : {
     "scripts": [
       "background.js"

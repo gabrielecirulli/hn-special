@@ -1,4 +1,6 @@
 HNSpecial.settings.registerModule("mark_as_read", function () {
+  var urls = [];
+
   function editLinks() {
     var subtexts = _.toArray(document.getElementsByClassName("subtext"));
 
@@ -12,12 +14,13 @@ HNSpecial.settings.registerModule("mark_as_read", function () {
           content: "&#10004;" // tick symbol
         });
 
-        // Add the click listener
-        button.addEventListener("click", function (e) {
-          // Well, that escalated quickly
-          var url = e.target.parentElement.parentElement.previousSibling.childNodes[2].children[0].href;
+        // Well, that escalated quickly
+        var url = subtext.parentElement.previousSibling.lastChild.firstChild.href;
+        urls.push(url);
 
-          chrome.extension.sendRequest({
+        // Add the click listener
+        button.addEventListener("click", function () {
+          chrome.extension.sendMessage({
             module: "mark_as_read",
             action: "toggle",
             params: {
@@ -37,4 +40,40 @@ HNSpecial.settings.registerModule("mark_as_read", function () {
 
   // Subscribe to the event emitted when new links are present
   HNSpecial.settings.subscribe("new links", editLinks);
+
+  // Build the "mark all as read" button
+  if (_.isListingPage()) {
+    var header = _.$("body > center > table > tbody")[0].firstChild.firstChild;
+    var container = _.createElement("div", {
+      classes: ["hnspecial-mark-all-as-read-container"],
+      content: "Mark all as:"
+    });
+    var readButton = _.createElement("button", {
+      classes: ["hnspecial-mark-all-as-read-button"],
+      content: "read"
+    });
+    var unreadButton = _.createElement("button", {
+      classes: ["hnspecial-mark-all-as-unread-button"],
+      content: "not read"
+    });
+
+    function buttonListener(e) {
+      urls.forEach(function (url) {
+        chrome.extension.sendMessage({
+          module: "mark_as_read",
+          action: e.target === readButton ? "add" : "delete",
+          params: {
+            url: url
+          }
+        });
+      });
+    }
+
+    readButton.addEventListener("click", buttonListener);
+    unreadButton.addEventListener("click", buttonListener);
+
+    container.appendChild(readButton);
+    container.appendChild(unreadButton);
+    header.appendChild(container);
+  }
 });

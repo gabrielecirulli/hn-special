@@ -1,3 +1,5 @@
+**NOTE:** if you came here because of the new permissions requested by the extension (access to browsing history), those are required for the new *Mark as read* module. I assure you there's nothing nasty going on, and you [may check](https://github.com/gabrielecirulli/hn-special/blob/master/background.js) [the code](https://github.com/gabrielecirulli/hn-special/blob/master/mark_as_read.js) for yourself if you want to make sure.
+
 # HN Special — A Hacker News extension 
 A theme and extension for [Hacker News](http://news.ycombinator.com) that improves the look and feel and adds some interesting features.
 
@@ -5,13 +7,15 @@ The available features can be enabled or disabled based on your personal prefere
 
 You can install this extension [from the Chrome Web Store](https://chrome.google.com/webstore/detail/hn-special-an-addition-to/cchaceegbflphbdpfocjalgjhjoahiia).
 
-## Planned features
- - A modern looking visual theme **DONE**
- - Infinite scrolling **DONE**
- - Open links in new tab **DONE**
- - More accurate domain names **DONE**
- - Hide articles with certain keywords (maybe)
- - Mark all as read (maybe)
+## Features
+ - A modern looking visual theme
+ - Infinite scrolling
+ - Open links in new tab
+ - More accurate domain names
+ - Mark as read (thanks to [@taeram](https://twitter.com/taeram/)) (currently disabled)
+
+#### Potential future features
+ - Hide articles with certain keywords
 
 ## Contributing
 The CSS is built using [Stylus](http://learnboost.github.io/stylus/). If you'd like to contribute, you should first install [Node](http://nodejs.org/), and then get `stylus`:

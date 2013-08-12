@@ -78,10 +78,10 @@ Settings.prototype.subscribe = function (event, callback) {
   this.events[event].push(callback);
 };
 
-Settings.prototype.emit = function (event) {
+Settings.prototype.emit = function (event, data) {
   if (this.events[event]) {
     this.events[event].forEach(function (callback) {
-      callback();
+      callback(data);
     });
   }
 };
@@ -105,6 +105,9 @@ Settings.prototype.buildMenu = function (added, requirements) {
       map[key] = block;
       items.inner.appendChild(block);
     });
+
+    // Apply permissions
+    //self.applyPermissions(permissions, map);
 
     // Apply requirements
     self.applyRequirements(requirements, map);
@@ -258,7 +261,26 @@ Settings.prototype.createSettingsBlock = function (key, status, flash) {
   return block;
 };
 
-Settings.prototype.applyRequirements = function(requirements, map) {
+Settings.prototype.applyPermissions = function (permissions, map) {
+  Object.keys(permissions).forEach(function (key) {
+    if (map[key]) {
+      var checkbox = map[key].getElementsByTagName("input")[0];
+      checkbox.addEventListener("change", function (e) {
+        if (this.checked) {
+          chrome.permissions.request(permissions[key], function(granted) {
+            if (granted) {
+              // Permission has been granted
+            } else {
+              // Not granted
+            }
+          });
+        }
+      });
+    }
+  });
+};
+
+Settings.prototype.applyRequirements = function (requirements, map) {
   var self = this;
   Object.keys(requirements).forEach(function (key) {
     if (map[key]) {

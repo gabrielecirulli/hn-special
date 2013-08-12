@@ -604,8 +604,8 @@ body.hnspecial-theme
                         a
                             color darken(link-color, 15%)
 
-                        a:visited
-                            color lighten(text-color, 65%)
+                            &:visited
+                                color lighten(text-color, 65%)
 
                     td.subtext
                         font-size 13px
@@ -647,6 +647,56 @@ body.hnspecial-theme
             .topsel a
                 font-weight 400 !important
 
+        .hnspecial-mark-all-as-read-container
+            color #777
+
+    // Mark all as read
+    table:hover + .hnspecial-mark-all-as-read-container, .hnspecial-mark-all-as-read-container:hover
+        height 50px
+        padding-top 20px
+        opacity 1
+
+    .hnspecial-mark-all-as-read-container
+        opacity 0
+        width 100%
+        font-weight 200
+        padding-left 18px
+        color lighten(text-color, 40%)
+
+        button
+            font inherit
+            -webkit-appearance none
+            border none
+            font-weight 200ms
+            background none
+            cursor pointer
+            color darken(link-color, 15%)
+            margin 0
+            padding 0
+            margin-left 10px
+
+            &:hover
+                text-decoration underline
+
+    // Infinite scrolling separator
+    .hnspecial-infinite-scroll-separator
+        span
+            margin 0
+            position absolute
+            font-size 13px
+            background white
+            right 15px
+            top -9px
+            padding 0 10px
+
+        td
+            position relative
+
+            &:after
+                margin-top 0
+                height 20px
+
+
 .hnspecial-mark-as-read-button
     border 0
     background-color transparent
@@ -654,9 +704,41 @@ body.hnspecial-theme
     margin 0
     margin-right 6px
     padding 0 3px 0 0
+    -webkit-transition color 150ms ease
 
     &:hover
-        color darken(#999, 60%)
+        color #666
 
     &, &:active
-        color #999
+        color #b3b3b3
+
+table:hover + .hnspecial-mark-all-as-read-container, .hnspecial-mark-all-as-read-container:hover
+    height 40px
+    padding-top 10px
+
+.hnspecial-mark-all-as-read-container
+    -webkit-transition all 150ms ease
+    -webkit-transition-delay 300ms
+
+    box-sizing border-box
+    overflow hidden
+    height 0px
+    color black
+    padding-left 10px
+
+    button
+        margin-left 5px
+
+.hnspecial-infinite-scroll-separator td
+    span
+        display block
+        margin-top 10px
+
+    &:after
+        margin-top 5px
+        height 17px
+        content ''
+        width 100%
+        display block
+        border-top 1px solid #ddd
+

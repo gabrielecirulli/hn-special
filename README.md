@@ -1,3 +1,5 @@
+**NOTE:** if you came here because of the new permissions requested by the extension (access to browsing history), those are required for the new *Mark as read* module. I assure you there's nothing nasty going on, and you [may check](https://github.com/gabrielecirulli/hn-special/blob/master/background.js) [the code](https://github.com/gabrielecirulli/hn-special/blob/master/mark_as_read.js) for yourself if you want to make sure.
+
 # HN Special — A Hacker News extension 
 A theme and extension for [Hacker News](http://news.ycombinator.com) that improves the look and feel and adds some interesting features.
 

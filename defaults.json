@@ -13,6 +13,11 @@
         "high_contrast": ["visual_theme"],
         "highlight_links_when_returning": ["open_links_in_new_tabs"]
     },
+    "permissions": {
+        "mark_as_read": {
+            "permissions": ["history"]
+        }
+    },
     "tips": [
         "This extension is completely open source. Take a look at the <a href=\"https://github.com/gabrielecirulli/hn-special\" target=\"_blank\">repository</a> on GitHub!",
         "If you notice that something's wrong, please <a href=\"https://github.com/gabrielecirulli/hn-special/issues/new\" target=\"_blank\">open an issue</a> on GitHub!",
@@ -22,6 +27,6 @@
         "<em>Accurate domain names</em> shows you more precisely where a link takes (e.g., <em>github.com</em> becomes <em>gist.github.com</em>)!",
         "You can try <em>High contrast</em> if you have issues reading some of the text on the site.",
         "<em>Highlight links when returning</em> will help you find which link you came from when coming back to Hacker News!",
-        "<em>Mark as read</em> allows you to toggle links as visited"
+        "<em>Mark as read</em> allows you to mark links as visited, or to mark an entire page of links as read."
     ]
 }

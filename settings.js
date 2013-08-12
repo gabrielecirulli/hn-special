@@ -42,7 +42,7 @@ function Settings() {
 
     // Build the menu and launch the rest of the modules when the DOM is ready
     _.load(function () {
-      self.buildMenu(added, defaults.requirements);
+      self.buildMenu(added, defaults.requirements, defaults.permissions);
       self.loaded = true;
       self.moduleQueue.forEach(function (module) {
         self.runModule(module);
@@ -86,7 +86,7 @@ Settings.prototype.emit = function (event, data) {
   }
 };
 
-Settings.prototype.buildMenu = function (added, requirements) {
+Settings.prototype.buildMenu = function (added, requirements, permissions) {
   var self = this;
   var pageTop = _.$(".pagetop");
   var container = pageTop[1] || pageTop[0];
@@ -105,6 +105,9 @@ Settings.prototype.buildMenu = function (added, requirements) {
       map[key] = block;
       items.inner.appendChild(block);
     });
+
+    // Apply permissions
+    self.applyPermissions(permissions, map);
 
     // Apply requirements
     self.applyRequirements(requirements, map);
@@ -258,7 +261,26 @@ Settings.prototype.createSettingsBlock = function (key, status, flash) {
   return block;
 };
 
-Settings.prototype.applyRequirements = function(requirements, map) {
+Settings.prototype.applyPermissions = function (permissions, map) {
+  Object.keys(permissions).forEach(function (key) {
+    if (map[key]) {
+      var checkbox = map[key].getElementsByTagName("input")[0];
+      checkbox.addEventListener("change", function (e) {
+        if (this.checked) {
+          chrome.permissions.request(permissions[key], function(granted) {
+            if (granted) {
+              // Permission has been granted
+            } else {
+              // Not granted
+            }
+          });
+        }
+      });
+    }
+  });
+};
+
+Settings.prototype.applyRequirements = function (requirements, map) {
   var self = this;
   Object.keys(requirements).forEach(function (key) {
     if (map[key]) {

@@ -7,10 +7,11 @@
   "homepage_url": "http://gabrielecirulli.github.io/hn-special/",
 
   "permissions": [
-    "history",
     "https://news.ycombinator.com/",
     "http://news.ycombinator.com/"
   ],
+
+  "optional_permissions": [ "history" ],
 
   "background" : {
     "scripts": [

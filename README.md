@@ -12,7 +12,7 @@ You can install this extension [from the Chrome Web Store](https://chrome.google
  - Infinite scrolling
  - Open links in new tab
  - More accurate domain names
- - Mark as read (thanks to [@taeram](https://twitter.com/taeram/))
+ - Mark as read (thanks to [@taeram](https://twitter.com/taeram/)) (currently disabled)
 
 #### Potential future features
  - Hide articles with certain keywords

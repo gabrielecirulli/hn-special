@@ -1,12 +1,13 @@
 {
-    "settings_version": 5,
+    "settings_version": 6,
     "settings": {
         "visual_theme": true,
         "high_contrast": false,
         "infinite_scrolling": true,
         "open_links_in_new_tabs": false,
         "highlight_links_when_returning": true,
-        "accurate_domain_names": true
+        "accurate_domain_names": true,
+        "add_hide_comments_feature": true
     },
     "requirements": {
         "high_contrast": ["visual_theme"],

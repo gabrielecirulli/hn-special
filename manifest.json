@@ -29,7 +29,9 @@
         "highlight_links_when_returning.js",
         "infinite_scrolling.js",
         "accurate_domain_names.js",
-        "mark_as_read.js"
+        "mark_as_read.js",
+        "add_hide_comments_feature.js",
+        "vendor/jquery-1.10.2.min.js"
       ],
       "css": [ "hn_theme.css" ],
       "run_at": "document_start"

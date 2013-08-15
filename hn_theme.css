@@ -134,6 +134,7 @@ table:hover + .hnspecial-mark-all-as-read-container,.hnspecial-mark-all-as-read-
 .hnspecial-mark-all-as-read-container button{margin-left:5px}
 .hnspecial-infinite-scroll-separator td span{display:block;margin-top:10px}
 .hnspecial-infinite-scroll-separator td:after{margin-top:5px;height:17px;content:'';width:100%;display:block;border-top:1px solid #ddd}
+.toggleThread{display:inline-block;padding-left:5px}
 .toggleThread:hover{cursor:pointer}
 @-moz-keyframes flash{0%{left:0}
 25%{left:-12px}

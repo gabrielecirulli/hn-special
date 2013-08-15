@@ -21,11 +21,12 @@ HNSpecial.settings.registerModule("add_hide_comments_feature", function () {
       }
 
       //add minimize link and click event
-      $('.topLevel').find('.comhead').parent().append('<span class="toggleThread">&nbsp;[-]</span>'); 
+      $('.topLevel').find('.comhead').parent().append('<span class="toggleThread">[-]</span>'); 
       $('.toggleThread').click(function(e){
         var thread = $(this).closest('.topLevel').data('level');
         $('.thread-'+thread).slideToggle();
         $(this).parent().siblings().slideToggle();
+        this.innerHTML = (this.innerHTML === "[-]") ? "[+]" : "[-]";
       });  
     } // endif url check
   };

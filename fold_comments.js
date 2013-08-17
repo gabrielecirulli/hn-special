@@ -16,16 +16,23 @@ HNSpecial.settings.registerModule("fold_comments", function () {
       comhead.appendChild(button);
 
       button.addEventListener("click", function () {
+        var folded = comment.classList.contains("hnspecial-folded-comment");
         var current = row;
 
         while (current = current.nextSibling) {
           if (getCommentDepth(current) <= depth) break;
 
-          current.setAttribute("style", "display: none");
+          if (!folded) {
+            current.classList.add("hnspecial-folded-row");
+          } else {
+            current.classList.remove("hnspecial-folded-row");
+          }
         }
 
-        // Fold the current comment
-        comment.classList.add("hnspecial-folded-comment");
+        // Fold/unfold the current comment
+        comment.classList.toggle("hnspecial-folded-comment");
+
+        button.innerText = folded ? "fold" : "unfold";
       });
     });
   }

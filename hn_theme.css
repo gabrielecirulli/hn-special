@@ -138,6 +138,7 @@ table:hover + .hnspecial-mark-all-as-read-container,.hnspecial-mark-all-as-read-
 .hnspecial-infinite-scroll-separator td:after{margin-top:5px;height:17px;content:'';width:100%;display:block;border-top:1px solid #ddd}
 .hnspecial-folded-comment:after{content:'[folded]';font-size:13px;display:block;color:#999;margin-top:1em;font-weight:200}
 .hnspecial-folded-comment > *:not(:first-child){display:none}
+.hnspecial-folded-row{display:none}
 @-moz-keyframes flash{0%{left:0}
 25%{left:-12px}
 50%{left:0}

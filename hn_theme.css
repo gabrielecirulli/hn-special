@@ -34,6 +34,9 @@
 .hnspecial-settings-menu-inner .hnspecial-settings-submit-button{cursor:pointer;width:100%;margin-top:20px}
 .hnspecial-theme-link-flash,.hnspecial-theme-link-flash + tr{-webkit-animation:link-flash 1s ease}
 body:not(.hnspecial-theme) .hnspecial-settings-container-cell{float:right;position:relative;top:0;margin-right:100px}
+body.hnspecial-theme .hnspecial-mark-all-as-read-container button,.hnspecial-fold-comment-button{font:inherit;-webkit-appearance:none;border:none;font-weight:200;background:none;cursor:pointer;margin:0;padding:0;color:#828282;}
+body.hnspecial-theme .hnspecial-mark-all-as-read-container button:hover,.hnspecial-fold-comment-button:hover{text-decoration:underline}
+body.hnspecial-theme .hnspecial-mark-all-as-read-container button,body.hnspecial-theme .hnspecial-fold-comment-button{color:#ff9227}
 body.hnspecial-theme{background:#fff;margin:0;padding:0;font:15px/1.5 Helvetica Neue, Arial, sans-serif;color:#555;}
 body.hnspecial-theme u{text-decoration:none}
 body.hnspecial-theme a{color:#ffac5b;text-decoration:none}
@@ -121,8 +124,7 @@ body.hnspecial-theme.hnspecial-theme-high-contrast > center > table > tbody > tr
 body.hnspecial-theme.hnspecial-theme-high-contrast .hnspecial-mark-all-as-read-container{color:#777}
 body.hnspecial-theme table:hover + .hnspecial-mark-all-as-read-container,body.hnspecial-theme .hnspecial-mark-all-as-read-container:hover{height:50px;padding-top:20px;opacity:1}
 body.hnspecial-theme .hnspecial-mark-all-as-read-container{opacity:0;width:100%;font-weight:200;padding-left:18px;color:#999;}
-body.hnspecial-theme .hnspecial-mark-all-as-read-container button{font:inherit;-webkit-appearance:none;border:none;font-weight:200ms;background:none;cursor:pointer;color:#ff9227;margin:0;padding:0;margin-left:10px;}
-body.hnspecial-theme .hnspecial-mark-all-as-read-container button:hover{text-decoration:underline}
+body.hnspecial-theme .hnspecial-mark-all-as-read-container button{margin-left:10px}
 body.hnspecial-theme .hnspecial-infinite-scroll-separator span{margin:0;position:absolute;font-size:13px;background:#fff;right:15px;top:-9px;padding:0 10px}
 body.hnspecial-theme .hnspecial-infinite-scroll-separator td{position:relative;}
 body.hnspecial-theme .hnspecial-infinite-scroll-separator td:after{margin-top:0;height:20px}

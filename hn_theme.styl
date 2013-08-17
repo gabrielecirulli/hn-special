@@ -262,7 +262,7 @@ $text-button
         text-decoration underline
 
 $hnspecial-text-button
-    color darken(link-color, 15%)
+    color link-color
 
 // HNSpecial theme styles
 body.hnspecial-theme
@@ -761,3 +761,14 @@ table:hover + .hnspecial-mark-all-as-read-container, .hnspecial-mark-all-as-read
 .hnspecial-fold-comment-button
     @extend $text-button
 
+.hnspecial-folded-comment
+    &:after
+        content '[folded]'
+        font-size 13px
+        display block
+        color lighten(text-color, 40%)
+        margin-top 1em
+        font-weight 200
+
+    > *:not(:first-child)
+        display none

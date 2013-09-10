@@ -35,7 +35,7 @@
 .hnspecial-theme-link-flash,.hnspecial-theme-link-flash + tr{-webkit-animation:link-flash 1s ease}
 html:not(.hnspecial-theme) .hnspecial-settings-container-cell{float:right;position:relative;top:0;margin-right:100px}
 html.hnspecial-theme-preload body{opacity:0}
-html.hnspecial-theme body{transition:opacity 2000ms ease;opacity:1}
+html.hnspecial-theme body{opacity:1}
 html.hnspecial-theme,html.hnspecial-theme body{background:#fff;margin:0;padding:0;font:15px/1.5 Helvetica Neue, Arial, sans-serif;color:#555}
 html.hnspecial-theme u{text-decoration:none}
 html.hnspecial-theme a{color:#ffac5b;text-decoration:none}

@@ -12,9 +12,10 @@ HNSpecial.settings.registerModule("visual_theme", function () {
     // Get rid of styling attributes embedded in code
     stripAttributes();
 
-    // Main container (contains header and content)
+    document.documentElement.classList.add("hnspecial-theme");
     var body = document.body;
-    body.classList.add("hnspecial-theme");
+
+    // Main container (contains header and content)
     var container = _.$("body > center > table > tbody")[0];
 
     // Apply to pages with a container
@@ -47,7 +48,7 @@ HNSpecial.settings.registerModule("visual_theme", function () {
       var isCommentPage = _.isCommentPage();
 
       if (form && !isCommentPage) {
-        document.body.classList.add("hnspecial-form-page");
+        body.classList.add("hnspecial-form-page");
         var form = document.getElementsByTagName("form")[0];
         _.toArray(form.getElementsByTagName("textarea")).forEach(function (textarea) {
           textarea.parentElement.parentElement.children[0].classList.add("hnspecial-textarea-label");

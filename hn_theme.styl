@@ -239,20 +239,47 @@ menu-color = #8a837c
         -webkit-animation link-flash 1s ease
 
 // Place the gear icon properly in some instances
-body:not(.hnspecial-theme)
+html:not(.hnspecial-theme)
     .hnspecial-settings-container-cell
         float right
         position relative
         top 0
         margin-right 100px
 
-// HNSpecial theme styles
-body.hnspecial-theme
-    background #fff
+// Generic buttons (abstract styles)
+$text-button
+    font inherit
+    -webkit-appearance none
+    border none
+    font-weight 200
+    background none
+    cursor pointer
     margin 0
     padding 0
-    font unquote(base-font)
-    color text-color
+    color #828282
+
+    &:hover
+        text-decoration underline
+
+$hnspecial-text-button
+    color link-color
+
+html.hnspecial-theme-preload body
+    opacity 0
+
+// HNSpecial theme styles
+html.hnspecial-theme
+    // opacity 1 !important
+    body
+        transition opacity 2000ms ease
+        opacity 1
+
+    &, body
+        background #fff
+        margin 0
+        padding 0
+        font unquote(base-font)
+        color text-color
 
     u
         text-decoration none
@@ -405,7 +432,7 @@ body.hnspecial-theme
         background #e1e1e1
 
     // Primary pages
-    > center
+    body > center
         display block
         max-width 900px
         margin 0 auto // Add an option to disable this
@@ -636,7 +663,7 @@ body.hnspecial-theme
             &:visited
                 color #777 !important
 
-        > center > table > tbody > tr:first-child > td > table
+        body > center > table > tbody > tr:first-child > td > table
             // color darken(base-color, 60%)
             font-weight 200
 

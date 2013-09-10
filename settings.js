@@ -39,21 +39,7 @@ function Settings() {
     }
 
     self.save();
-
-    // Quick&dirty hack to make the visual theme appear first and avoid the
-    // ugly "jump" between the old aspect and the new one
-    // if (self.currentSettings["visual_theme"] || self.currentSettings["high_contrast"]) {
-    //   (function () {
-    //     console.log("trying");
-    //     if (document.body) {
-    //       console.log("ok");
-    //       document.body.classList.add("hnspecial-theme");
-    //     } else {
-    //       setTimeout(arguments.callee, 100);
-    //     }
-    //   })();
-    // }
-
+    
     // Quick hack to hide the document before the theme is fully loaded (to avoid the ugly jump)
     // It's animated in by the visual theme
     if (self.currentSettings["visual_theme"] || self.currentSettings["high_contrast"]) {

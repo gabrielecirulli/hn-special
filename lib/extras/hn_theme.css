@@ -31,7 +31,9 @@
 .hnspecial-settings-menu-inner .hnspecial-settings-block .hnspecial-settings-checkbox-indicator{text-transform:uppercase;}
 .hnspecial-settings-menu-inner .hnspecial-settings-block .hnspecial-settings-checkbox-indicator.on{color:#ff9e3c}
 .hnspecial-settings-menu-inner .hnspecial-settings-block .hnspecial-settings-checkbox-indicator.off{color:#c4c1be}
-.hnspecial-settings-menu-inner .hnspecial-settings-submit-button{cursor:pointer;width:100%;margin-top:20px}
+.hnspecial-settings-menu-inner .hnspecial-settings-submit-button,.hnspecial-settings-menu-inner .hnspecial-settings-cancel-button{cursor:pointer;width:125px;margin-top:20px}
+.hnspecial-settings-menu-inner .hnspecial-settings-cancel-button{margin-left:10px;background-color:#c0c0c0 !important;}
+.hnspecial-settings-menu-inner .hnspecial-settings-cancel-button:active{background-color:#b6b6b6 !important}
 .hnspecial-theme-link-flash,.hnspecial-theme-link-flash + tr{-webkit-animation:link-flash 1s ease}
 html:not(.hnspecial-theme) .hnspecial-settings-container-cell{float:right;position:relative;top:0;margin-right:100px}
 html.hnspecial-theme .hnspecial-mark-all-as-read-container button,.hnspecial-fold-comment-button{font:inherit;-webkit-appearance:none;border:none;font-weight:200;background:none;cursor:pointer;margin:0;padding:0;color:#828282;}
@@ -45,8 +47,8 @@ html.hnspecial-theme a{color:#ffac5b;text-decoration:none}
 html.hnspecial-theme a:hover{text-decoration:underline}
 html.hnspecial-theme p{line-height:1.5;margin:0;margin-bottom:1em;color:#555;font-weight:200;word-wrap:break-word}
 html.hnspecial-theme input,html.hnspecial-theme textarea{-webkit-appearance:none;border:1px solid #ccc;font:15px/1.5 Helvetica Neue, Arial, sans-serif;color:inherit;padding:5px 8px;margin:0;font-weight:200;}
-html.hnspecial-theme input[type=submit],html.hnspecial-theme textarea[type=submit]{background:#ff8937;border:none;color:#fbf9f7;font:15px/1.5 Helvetica Neue, Arial, sans-serif;font-weight:200;cursor:pointer;}
-html.hnspecial-theme input[type=submit]:active,html.hnspecial-theme textarea[type=submit]:active{color:#fff;background:#ff7718}
+html.hnspecial-theme input[type=submit],html.hnspecial-theme textarea[type=submit],html.hnspecial-theme input[type=button],html.hnspecial-theme textarea[type=button]{background:#ff8937;border:none;color:#fbf9f7;font:15px/1.5 Helvetica Neue, Arial, sans-serif;font-weight:200;cursor:pointer;}
+html.hnspecial-theme input[type=submit]:active,html.hnspecial-theme textarea[type=submit]:active,html.hnspecial-theme input[type=button]:active,html.hnspecial-theme textarea[type=button]:active{color:#fff;background:#ff7718}
 html.hnspecial-theme input:focus,html.hnspecial-theme textarea:focus{border-color:#aaa;outline:none}
 html.hnspecial-theme textarea{width:600px;height:120px;resize:vertical}
 html.hnspecial-theme pre{overflow:auto;max-width:600px;word-wrap:normal;white-space:pre}

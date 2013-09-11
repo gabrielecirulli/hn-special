@@ -228,10 +228,17 @@ menu-color = #8a837c
             &.off
                 color lighten(menu-color, 50%)
 
-    .hnspecial-settings-submit-button
+    .hnspecial-settings-submit-button, .hnspecial-settings-cancel-button
         cursor pointer
-        width 100%
+        width 125px
         margin-top 20px
+
+    .hnspecial-settings-cancel-button
+        margin-left 10px
+        background-color #c0c0c0 !important
+
+        &:active
+            background-color darken(#c0c0c0, 5%) !important
 
 // Used by highlight_links_when_returning
 .hnspecial-theme-link-flash
@@ -309,7 +316,7 @@ html.hnspecial-theme
         margin 0
         font-weight 200
 
-        &[type=submit]
+        &[type=submit], &[type=button]
             background base-color
             border none
             color light-link-color

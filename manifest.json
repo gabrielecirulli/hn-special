@@ -13,7 +13,7 @@
 
   "background" : {
     "scripts": [
-      "background.js"
+      "lib/extras/background.js"
     ]
   },
 
@@ -21,28 +21,28 @@
     {
       "matches": [ "http://news.ycombinator.com/*", "https://news.ycombinator.com/*" ],
       "js": [
-        "utility.js",
-        "settings.js",
-        "visual_theme.js",
-        "high_contrast.js",
-        "open_links_in_new_tabs.js",
-        "highlight_links_when_returning.js",
-        "infinite_scrolling.js",
-        "accurate_domain_names.js",
-        "mark_as_read.js",
-        "fold_comments.js"
+        "lib/tools/utility.js",
+        "lib/settings.js",
+        "lib/modules/visual_theme.js",
+        "lib/modules/high_contrast.js",
+        "lib/modules/open_links_in_new_tabs.js",
+        "lib/modules/highlight_links_when_returning.js",
+        "lib/modules/infinite_scrolling.js",
+        "lib/modules/accurate_domain_names.js",
+        "lib/modules/mark_as_read.js",
+        "lib/modules/fold_comments.js"
       ],
-      "css": [ "hn_theme.css" ],
+      "css": [ "lib/extras/hn_theme.css" ],
       "run_at": "document_start"
     }
   ],
 
-  "web_accessible_resources": ["defaults.json", "gear.svg", "arrow-up.svg", "arrow-down.svg"],
+  "web_accessible_resources": ["lib/defaults.json", "resources/gear.svg", "resources/arrow-up.svg", "resources/arrow-down.svg"],
 
   "icons": {
-    "16": "icon16.png",
-    "32": "icon32.png",
-    "48": "icon48.png",
-    "128": "icon128.png"
+    "16": "promo/icons/icon16.png",
+    "32": "promo/icons/icon32.png",
+    "48": "promo/icons/icon48.png",
+    "128": "promo/icons/icon128.png"
   }
 }

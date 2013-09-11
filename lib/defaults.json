@@ -21,6 +21,7 @@
         "You can pause infinite scrolling by clicking on \"pause infinite scrolling\", next to \"More\"!",
         "<em>Accurate domain names</em> shows you more precisely where a link takes (e.g., <em>github.com</em> becomes <em>gist.github.com</em>)!",
         "You can try <em>High contrast</em> if you have issues reading some of the text on the site.",
-        "<em>Highlight links when returning</em> will help you find which link you came from when coming back to Hacker News!"
+        "<em>Highlight links when returning</em> will help you find which link you came from when coming back to Hacker News!",
+        "<em>Fold comments</em> adds a button to comments that lets you expand or collapse them as you read!"
     ]
 }

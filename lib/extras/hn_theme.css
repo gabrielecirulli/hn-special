@@ -140,6 +140,9 @@ table:hover + .hnspecial-mark-all-as-read-container,.hnspecial-mark-all-as-read-
 .hnspecial-mark-all-as-read-container button{margin-left:5px}
 .hnspecial-infinite-scroll-separator td span{display:block;margin-top:10px}
 .hnspecial-infinite-scroll-separator td:after{margin-top:5px;height:17px;content:'';width:100%;display:block;border-top:1px solid #ddd}
+.hnspecial-infinite-search-notice{position:fixed;right:20px;bottom:30px;width:400px;background:#f6e9d9;padding:20px;font-weight:200;cursor:pointer;-webkit-animation:slide-up 800ms ease;}
+.hnspecial-infinite-search-notice span{color:#999;font-size:13px}
+.hnspecial-infinite-search-notice.hnspecial-infinite-search-notice-hidden{-webkit-animation:slide-out-right 450ms ease;-webkit-animation-fill-mode:both}
 .hnspecial-folded-comment:after{content:'[folded]';font-size:13px;display:block;color:#999;margin-top:1em;font-weight:200}
 .hnspecial-folded-comment > *:not(:first-child){display:none}
 .hnspecial-folded-row{display:none}
@@ -178,4 +181,34 @@ table:hover + .hnspecial-mark-all-as-read-container,.hnspecial-mark-all-as-read-
 100%{opacity:1;-webkit-transform:translateX(0)}
 }@keyframes link-flash{0%{opacity:.2;-webkit-transform:translateX(1000px)}
 100%{opacity:1;-webkit-transform:translateX(0)}
+}@-moz-keyframes slide-up{0%{bottom:-200px;opacity:0}
+60%{bottom:90px;opacity:1}
+100%{bottom:30px;opacity:1}
+}@-webkit-keyframes slide-up{0%{bottom:-200px;opacity:0}
+60%{bottom:90px;opacity:1}
+100%{bottom:30px;opacity:1}
+}@-o-keyframes slide-up{0%{bottom:-200px;opacity:0}
+60%{bottom:90px;opacity:1}
+100%{bottom:30px;opacity:1}
+}@-ms-keyframes slide-up{0%{bottom:-200px;opacity:0}
+60%{bottom:90px;opacity:1}
+100%{bottom:30px;opacity:1}
+}@keyframes slide-up{0%{bottom:-200px;opacity:0}
+60%{bottom:90px;opacity:1}
+100%{bottom:30px;opacity:1}
+}@-moz-keyframes slide-out-right{0%{right:20px;opacity:1}
+60%{right:80px;opacity:1}
+100%{right:-500px;opacity:0}
+}@-webkit-keyframes slide-out-right{0%{right:20px;opacity:1}
+60%{right:80px;opacity:1}
+100%{right:-500px;opacity:0}
+}@-o-keyframes slide-out-right{0%{right:20px;opacity:1}
+60%{right:80px;opacity:1}
+100%{right:-500px;opacity:0}
+}@-ms-keyframes slide-out-right{0%{right:20px;opacity:1}
+60%{right:80px;opacity:1}
+100%{right:-500px;opacity:0}
+}@keyframes slide-out-right{0%{right:20px;opacity:1}
+60%{right:80px;opacity:1}
+100%{right:-500px;opacity:0}
 }

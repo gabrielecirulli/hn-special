@@ -30,6 +30,32 @@ base-font = "15px/1.5 Helvetica Neue, Arial, sans-serif"
         opacity 1
         -webkit-transform translateX(0px)
 
+@keyframes slide-up
+    from
+        bottom -200px
+        opacity 0
+
+    60%
+        bottom 90px
+        opacity 1
+
+    to
+        bottom 30px
+        opacity 1
+
+@keyframes slide-out-right
+    from
+        right 20px
+        opacity 1
+
+    60%
+        right 80px
+        opacity 1
+
+    to
+        right -500px
+        opacity 0
+
 // HN Special infinite scroll
 .hnspecial-infinite-pause
     padding-left 5px
@@ -770,6 +796,26 @@ table:hover + .hnspecial-mark-all-as-read-container, .hnspecial-mark-all-as-read
         width 100%
         display block
         border-top 1px solid #ddd
+
+// Infinite scrolling notice
+.hnspecial-infinite-search-notice
+    position fixed
+    right 20px
+    bottom 30px
+    width 400px
+    background #F6E9D9
+    padding 20px
+    font-weight 200
+    cursor pointer
+    -webkit-animation slide-up 800ms ease
+
+    span
+        color lighten(text-color, 40%)
+        font-size 13px
+
+    &.hnspecial-infinite-search-notice-hidden
+        -webkit-animation slide-out-right 450ms ease
+        -webkit-animation-fill-mode both
 
 // Fold comments
 .hnspecial-fold-comment-button

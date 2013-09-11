@@ -160,7 +160,10 @@ HNSpecial.settings.registerModule("visual_theme", function () {
           }));
 
           cell.classList.add("hnspecial-theme-spacer-cell");
-          cell.replaceChild(div, img);
+          cell.appendChild(div);
+
+          // Hide the spacer image but don't remove it
+          img.setAttribute("style", "display: none");
         }
       });
 

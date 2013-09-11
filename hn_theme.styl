@@ -690,19 +690,9 @@ html.hnspecial-theme
         color lighten(text-color, 40%)
 
         button
-            font inherit
-            -webkit-appearance none
-            border none
-            font-weight 200ms
-            background none
-            cursor pointer
-            color darken(link-color, 15%)
-            margin 0
-            padding 0
+            @extend $text-button
+            @extend $hnspecial-text-button
             margin-left 10px
-
-            &:hover
-                text-decoration underline
 
     // Infinite scrolling separator
     .hnspecial-infinite-scroll-separator
@@ -722,7 +712,13 @@ html.hnspecial-theme
                 margin-top 0
                 height 20px
 
+    // Fold comments button
+    .hnspecial-fold-comment-button
+        @extend $hnspecial-text-button
 
+// END Visual theme specific styles
+
+// Mark as read
 .hnspecial-mark-as-read-button
     border 0
     background-color transparent
@@ -755,6 +751,7 @@ table:hover + .hnspecial-mark-all-as-read-container, .hnspecial-mark-all-as-read
     button
         margin-left 5px
 
+// Infinite scrolling separator
 .hnspecial-infinite-scroll-separator td
     span
         display block
@@ -768,3 +765,21 @@ table:hover + .hnspecial-mark-all-as-read-container, .hnspecial-mark-all-as-read
         display block
         border-top 1px solid #ddd
 
+// Fold comments
+.hnspecial-fold-comment-button
+    @extend $text-button
+
+.hnspecial-folded-comment
+    &:after
+        content '[folded]'
+        font-size 13px
+        display block
+        color lighten(text-color, 40%)
+        margin-top 1em
+        font-weight 200
+
+    > *:not(:first-child)
+        display none
+
+.hnspecial-folded-row
+    display none

@@ -1,11 +1,12 @@
 HNSpecial.settings.registerModule("fold_comments", function () {
   var baseWidth = 40;
 
-  var included = ["/threads"];
-
-  if (_.isCommentPage() ) {
+  if (_.isCommentPage() || location.pathname.match(/^\/(item|threads)/)) {
     _.toArray(document.getElementsByClassName("default")).forEach(function (comment) {
       var row = comment.parentElement.parentElement.parentElement.parentElement.parentElement; // Least horrible way to get to the comment row
+
+      // Skip this row if we're on a comment permalink page and it's the comment at the top
+      if (row.nextSibling && row.nextSibling.getElementsByClassName("yclinks").length) return;
 
       var comhead = comment.getElementsByClassName("comhead")[0];
       comhead.appendChild(document.createTextNode(" | "));

@@ -239,20 +239,45 @@ menu-color = #8a837c
         -webkit-animation link-flash 1s ease
 
 // Place the gear icon properly in some instances
-body:not(.hnspecial-theme)
+html:not(.hnspecial-theme)
     .hnspecial-settings-container-cell
         float right
         position relative
         top 0
         margin-right 100px
 
-// HNSpecial theme styles
-body.hnspecial-theme
-    background #fff
+// Generic buttons (abstract styles)
+$text-button
+    font inherit
+    -webkit-appearance none
+    border none
+    font-weight 200
+    background none
+    cursor pointer
     margin 0
     padding 0
-    font unquote(base-font)
-    color text-color
+    color #828282
+
+    &:hover
+        text-decoration underline
+
+$hnspecial-text-button
+    color link-color
+
+html.hnspecial-theme-preload body
+    display none
+
+// HNSpecial theme styles
+html.hnspecial-theme
+    body
+        display block
+
+    &, body
+        background #fff
+        margin 0
+        padding 0
+        font unquote(base-font)
+        color text-color
 
     u
         text-decoration none
@@ -405,7 +430,7 @@ body.hnspecial-theme
         background #e1e1e1
 
     // Primary pages
-    > center
+    body > center
         display block
         max-width 900px
         margin 0 auto // Add an option to disable this
@@ -636,7 +661,7 @@ body.hnspecial-theme
             &:visited
                 color #777 !important
 
-        > center > table > tbody > tr:first-child > td > table
+        body > center > table > tbody > tr:first-child > td > table
             // color darken(base-color, 60%)
             font-weight 200
 
@@ -664,19 +689,9 @@ body.hnspecial-theme
         color lighten(text-color, 40%)
 
         button
-            font inherit
-            -webkit-appearance none
-            border none
-            font-weight 200ms
-            background none
-            cursor pointer
-            color darken(link-color, 15%)
-            margin 0
-            padding 0
+            @extend $text-button
+            @extend $hnspecial-text-button
             margin-left 10px
-
-            &:hover
-                text-decoration underline
 
     // Infinite scrolling separator
     .hnspecial-infinite-scroll-separator
@@ -696,7 +711,13 @@ body.hnspecial-theme
                 margin-top 0
                 height 20px
 
+    // Fold comments button
+    .hnspecial-fold-comment-button
+        @extend $hnspecial-text-button
 
+// END Visual theme specific styles
+
+// Mark as read
 .hnspecial-mark-as-read-button
     border 0
     background-color transparent
@@ -729,6 +750,7 @@ table:hover + .hnspecial-mark-all-as-read-container, .hnspecial-mark-all-as-read
     button
         margin-left 5px
 
+// Infinite scrolling separator
 .hnspecial-infinite-scroll-separator td
     span
         display block
@@ -742,3 +764,21 @@ table:hover + .hnspecial-mark-all-as-read-container, .hnspecial-mark-all-as-read
         display block
         border-top 1px solid #ddd
 
+// Fold comments
+.hnspecial-fold-comment-button
+    @extend $text-button
+
+.hnspecial-folded-comment
+    &:after
+        content '[folded]'
+        font-size 13px
+        display block
+        color lighten(text-color, 40%)
+        margin-top 1em
+        font-weight 200
+
+    > *:not(:first-child)
+        display none
+
+.hnspecial-folded-row
+    display none

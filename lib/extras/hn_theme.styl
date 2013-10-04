@@ -835,3 +835,22 @@ table:hover + .hnspecial-mark-all-as-read-container, .hnspecial-mark-all-as-read
 
 .hnspecial-folded-row
     display none
+
+// Optional permissions iframe
+.hnspecial-permissions-iframe
+    border: 0 none
+    height: 100px
+    padding: 10px
+    width: 100%
+
+html.hnspecial-theme
+    &.hnspecial-permissions-iframe-inner
+        background: transparent
+        overflow: hidden
+
+        body
+            background: transparent
+
+            .hnspecial-settings-menu-inner
+                padding: 0
+

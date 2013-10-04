@@ -11,7 +11,9 @@
     "http://news.ycombinator.com/"
   ],
 
-  "optional_permissions": [ "history" ],
+  "optional_permissions": [
+    "history"
+  ],
 
   "background" : {
     "scripts": [
@@ -39,7 +41,14 @@
     }
   ],
 
-  "web_accessible_resources": ["lib/defaults.json", "resources/gear.svg", "resources/arrow-up.svg", "resources/arrow-down.svg"],
+  "web_accessible_resources": [
+    "lib/defaults.json",
+    "lib/extras/permissions.html",
+    "lib/extras/permissions.js",
+    "resources/gear.svg",
+    "resources/arrow-up.svg",
+    "resources/arrow-down.svg"
+  ],
 
   "icons": {
     "16": "promo/icons/icon16.png",

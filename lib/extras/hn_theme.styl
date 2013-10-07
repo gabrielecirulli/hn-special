@@ -257,10 +257,10 @@ menu-color = #8a837c
     .hnspecial-settings-submit-button, .hnspecial-settings-cancel-button
         cursor pointer
         width 125px
-        margin-top 20px
+        margin-top 20px !important
 
     .hnspecial-settings-cancel-button
-        margin-left 10px
+        margin-left 10px !important
         background-color #c0c0c0 !important
 
         &:active
@@ -297,10 +297,28 @@ $text-button
 $hnspecial-text-button
     color link-color
 
+$hnspecial-button
+    -webkit-appearance none
+    // border 1px solid lighten(text-color, 70%)
+    font unquote(base-font)
+    padding 5px 8px
+    margin 0
+    font-weight 200
+
+    background base-color
+    border none
+    color light-link-color
+    cursor pointer
+
+    &:active
+        color #fff
+        background darken(base-color, 10%)
+
+
+// HNSpecial theme styles
 html.hnspecial-theme-preload body
     display none
 
-// HNSpecial theme styles
 html.hnspecial-theme
     body
         display block
@@ -332,7 +350,7 @@ html.hnspecial-theme
         font-weight 200
         word-wrap break-word
 
-    input, textarea
+    textarea
         -webkit-appearance none
 
         border 1px solid lighten(text-color, 70%)
@@ -342,19 +360,15 @@ html.hnspecial-theme
         margin 0
         font-weight 200
 
+    input
         &[type=submit], &[type=button]
-            background base-color
-            border none
-            color light-link-color
-            font unquote(base-font)
-            font-weight 200
-            cursor pointer
-            &:active
-                color #fff
-                background darken(base-color, 10%)
+            @extend $hnspecial-button
 
+    button.hnspecial-button
+        @extend $hnspecial-button
+
+    input, button
         &:focus
-            border-color lighten(text-color, 50%)
             outline none
 
     // 832
@@ -756,7 +770,7 @@ html.hnspecial-theme
     background-color transparent
     cursor pointer
     margin 0
-    margin-right 6px
+    margin-right 4px
     padding 0 3px 0 0
     -webkit-transition color 150ms ease
 
@@ -772,7 +786,7 @@ table:hover + .hnspecial-mark-all-as-read-container, .hnspecial-mark-all-as-read
 
 .hnspecial-mark-all-as-read-container
     -webkit-transition all 150ms ease
-    -webkit-transition-delay 300ms
+    -webkit-transition-delay 700ms
 
     box-sizing border-box
     overflow hidden
@@ -838,19 +852,27 @@ table:hover + .hnspecial-mark-all-as-read-container, .hnspecial-mark-all-as-read
 
 // Optional permissions iframe
 .hnspecial-permissions-iframe
-    border: 0 none
-    height: 100px
-    padding: 10px
-    width: 100%
+    border 0 none
+    height 105px
+    // padding 10px
+    padding-top 10px
+    width 100%
 
 html.hnspecial-theme
     &.hnspecial-permissions-iframe-inner
-        background: transparent
-        overflow: hidden
+        background transparent
+        overflow hidden
 
         body
-            background: transparent
+            background transparent
 
             .hnspecial-settings-menu-inner
-                padding: 0
+                padding 0
+
+        .permissions-description
+            display block
+            // margin-bottom 5px
+
+        button
+            width 100%
 

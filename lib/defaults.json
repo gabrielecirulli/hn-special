@@ -1,5 +1,5 @@
 {
-    "settings_version": 6,
+    "settings_version": 7,
     "settings": {
         "visual_theme": true,
         "high_contrast": false,
@@ -7,10 +7,12 @@
         "open_links_in_new_tabs": false,
         "highlight_links_when_returning": true,
         "accurate_domain_names": true,
-        "fold_comments": true
+        "fold_comments": true,
+        "fixed_header": true
     },
     "requirements": {
         "high_contrast": ["visual_theme"],
+        "fixed_header": ["visual_theme"],
         "highlight_links_when_returning": ["open_links_in_new_tabs"]
     },
     "tips": [

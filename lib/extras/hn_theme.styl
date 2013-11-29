@@ -751,6 +751,23 @@ html.hnspecial-theme
     // Fold comments button
     .hnspecial-fold-comment-button
         @extend $hnspecial-text-button
+    
+    // Fixed header
+    &.hnspecial-theme-fixed-header
+        body > center > table > tbody > tr:first-child
+            height: (30px + (20px * 2))
+            
+            > td
+                position fixed
+                top 0
+                left 0
+                width 100%
+                z-index 10 // Must be the topmost element on the page
+                background base-color
+                
+                > table
+                    max-width 900px
+                    margin 0 auto
 
 // END Visual theme specific styles
 

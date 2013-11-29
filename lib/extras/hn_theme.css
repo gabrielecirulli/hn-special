@@ -7,8 +7,8 @@
 .hnspecial-settings-button-checkbox:hover ~ img{opacity:1}
 .hnspecial-settings-button-checkbox:active ~ img{opacity:.5 !important}
 .hnspecial-settings-button-checkbox:checked ~ img{opacity:1}
-.hnspecial-settings-button-checkbox:checked ~ .hnspecial-settings-menu-container{opacity:1;top:24px;height:2000px;padding-top:10px;outline:1px solid rgba(255,137,55,0.004);-webkit-transition-delay:0,0,0,0,300ms;-webkit-transition-timing-function:ease-out}
-.hnspecial-settings-menu-container{position:absolute;top:60px;left:-142px;width:300px;height:0;background:transparent;padding:0;overflow:hidden;box-sizing:border-box;font-weight:200;text-align:left;opacity:0;pointer-events:none;outline:none;-webkit-transition-timing-function:ease-out;-webkit-transition-property:opacity,top,height,padding,outline;-webkit-transition-duration:150ms,300ms,0,0,0;-webkit-transition-delay:0,0,300ms,300ms,0;}
+.hnspecial-settings-button-checkbox:checked ~ .hnspecial-settings-menu-container{opacity:1;top:24px;height:2000px;padding-top:10px;outline:1px solid rgba(255,137,55,0.004);-webkit-transition-delay:0ms,0ms,0ms,0ms,300ms;-webkit-transition-timing-function:ease-out}
+.hnspecial-settings-menu-container{position:absolute;top:60px;left:-142px;width:300px;height:0;background:transparent;padding:0;overflow:hidden;box-sizing:border-box;font-weight:200;text-align:left;opacity:0;pointer-events:none;outline:none;-webkit-transition-timing-function:ease-out;-webkit-transition-property:opacity,top,height,padding,outline;-webkit-transition-duration:150ms,300ms,0ms,0ms,0ms;-webkit-transition-delay:0ms,0ms,300ms,300ms,0ms;}
 .hnspecial-settings-menu-container:before{content:'';position:absolute;left:142px;top:3px;-webkit-transform:rotate(45deg);z-index:0;background:#f6e9d9;display:block;width:16px;height:16px}
 .hnspecial-settings-menu-inner{width:100%;background:#f00;padding:20px;box-sizing:border-box;background:#f6e9d9;pointer-events:auto;line-height:1.5;color:#8a837c;}
 .hnspecial-settings-menu-inner strong{font-weight:400;color:#6f6963;margin-bottom:109px}
@@ -133,6 +133,9 @@ html.hnspecial-theme .hnspecial-mark-all-as-read-container button{margin-left:10
 html.hnspecial-theme .hnspecial-infinite-scroll-separator span{margin:0;position:absolute;font-size:13px;background:#fff;right:15px;top:-9px;padding:0 10px}
 html.hnspecial-theme .hnspecial-infinite-scroll-separator td{position:relative;}
 html.hnspecial-theme .hnspecial-infinite-scroll-separator td:after{margin-top:0;height:20px}
+html.hnspecial-theme.hnspecial-theme-fixed-header body > center > table > tbody > tr:first-child{height:70px;}
+html.hnspecial-theme.hnspecial-theme-fixed-header body > center > table > tbody > tr:first-child > td{position:fixed;top:0;left:0;width:100%;z-index:10;background:#ff8937;}
+html.hnspecial-theme.hnspecial-theme-fixed-header body > center > table > tbody > tr:first-child > td > table{max-width:900px;margin:0 auto}
 .hnspecial-mark-as-read-button{border:0;background-color:transparent;cursor:pointer;margin:0;margin-right:6px;padding:0 3px 0 0;-webkit-transition:color 150ms ease;}
 .hnspecial-mark-as-read-button:hover{color:#666}
 .hnspecial-mark-as-read-button,.hnspecial-mark-as-read-button:active{color:#b3b3b3}

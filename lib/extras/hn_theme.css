@@ -147,7 +147,8 @@ table:hover + .hnspecial-mark-all-as-read-container,.hnspecial-mark-all-as-read-
 .hnspecial-folded-comment:after{content:'[folded]';font-size:13px;display:block;color:#999;margin-top:1em;font-weight:200}
 .hnspecial-folded-comment > *:not(:first-child){display:none}
 .hnspecial-folded-row{display:none}
-.hnspecial-permissions-iframe{border:0 none;height:105px;padding-top:10px;width:100%}
+.hnspecial-permissions-iframe{border:0 none;height:103px;padding-top:10px;width:100%;}
+.hnspecial-permissions-iframe.hnspecial-permissions-iframe-small{height:40px}
 html.hnspecial-theme.hnspecial-permissions-iframe-inner{background:transparent;overflow:hidden;}
 html.hnspecial-theme.hnspecial-permissions-iframe-inner body{background:transparent;}
 html.hnspecial-theme.hnspecial-permissions-iframe-inner body .hnspecial-settings-menu-inner{padding:0}

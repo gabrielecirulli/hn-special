@@ -3,12 +3,16 @@
 
   "name": "HN Special - An addition to Hacker News",
   "description": "This extension refreshes the visual style of Hacker News and adds a few features, like infinite scrolling. Everything is togglable.",
-  "version": "1.2.12",
+  "version": "1.2.13",
   "homepage_url": "http://gabrielecirulli.github.io/hn-special/",
 
   "permissions": [
     "https://news.ycombinator.com/",
     "http://news.ycombinator.com/"
+  ],
+
+  "optional_permissions": [
+    "history"
   ],
 
   "background" : {
@@ -37,7 +41,14 @@
     }
   ],
 
-  "web_accessible_resources": ["lib/defaults.json", "resources/gear.svg", "resources/arrow-up.svg", "resources/arrow-down.svg"],
+  "web_accessible_resources": [
+    "lib/defaults.json",
+    "lib/extras/permissions.html",
+    "lib/extras/permissions.js",
+    "resources/gear.svg",
+    "resources/arrow-up.svg",
+    "resources/arrow-down.svg"
+  ],
 
   "icons": {
     "16": "promo/icons/icon16.png",

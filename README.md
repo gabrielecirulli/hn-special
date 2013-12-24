@@ -11,7 +11,7 @@ You can install this extension [from the Chrome Web Store](https://chrome.google
  - Open links in new tab
  - More accurate domain names
  - Comment folding
- - Mark as read (thanks to [@taeram](https://twitter.com/taeram/)) (currently disabled)
+ - Mark as read (thanks to [@taeram](https://twitter.com/taeram/))
 
 #### Potential future features
  - Hide articles with certain keywords

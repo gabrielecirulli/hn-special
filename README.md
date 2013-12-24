@@ -12,6 +12,7 @@ You can install this extension [from the Chrome Web Store](https://chrome.google
  - More accurate domain names
  - Comment folding
  - Mark as read (thanks to [@taeram](https://twitter.com/taeram/))
+ - Sticky header (thanks to [obeattie](https://github.com/obeattie))
 
 #### Potential future features
  - Hide articles with certain keywords

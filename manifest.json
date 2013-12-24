@@ -34,7 +34,8 @@
         "lib/modules/infinite_scrolling.js",
         "lib/modules/accurate_domain_names.js",
         "lib/modules/mark_as_read.js",
-        "lib/modules/fold_comments.js"
+        "lib/modules/fold_comments.js",
+        "lib/modules/fixed_header.js"
       ],
       "css": [ "lib/extras/hn_theme.css" ],
       "run_at": "document_start"

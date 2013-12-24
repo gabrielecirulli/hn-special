@@ -154,7 +154,7 @@ table:hover + .hnspecial-mark-all-as-read-container,.hnspecial-mark-all-as-read-
 .hnspecial-folded-comment > *:not(:first-child){display:none}
 .hnspecial-folded-row{display:none}
 .hnspecial-permissions-iframe{border:0 none;height:113px;padding-top:10px;width:100%;}
-.hnspecial-permissions-iframe.hnspecial-permissions-iframe-small{height:40px}
+.hnspecial-permissions-iframe.hnspecial-permissions-iframe-small{height:50px}
 html.hnspecial-theme.hnspecial-permissions-iframe-inner{background:transparent;overflow:hidden;}
 html.hnspecial-theme.hnspecial-permissions-iframe-inner body{background:transparent;}
 html.hnspecial-theme.hnspecial-permissions-iframe-inner body .hnspecial-settings-menu-inner{padding:0}

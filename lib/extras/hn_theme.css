@@ -55,8 +55,8 @@ html.hnspecial-theme pre{overflow:auto;max-width:600px;word-wrap:normal;white-sp
 html.hnspecial-theme code{font:12px/1.5 "Monaco","Consolas","Lucida Console","Courier New",monospace;color:#888}
 html.hnspecial-theme table{border-collapse:collapse;border:none}
 html.hnspecial-theme tr,html.hnspecial-theme td{border:none;padding:0}
-html.hnspecial-theme.error{text-align:center;padding-top:140px;font-size:40px;font-weight:100;letter-spacing:1px;}
-html.hnspecial-theme.error a{display:block;font-size:20px;font-weight:100}
+html.hnspecial-theme.error body{text-align:center;padding-top:140px;font-size:40px;font-weight:100;letter-spacing:1px;}
+html.hnspecial-theme.error body a{display:block;font-size:20px;font-weight:100}
 html.hnspecial-theme .WordSection1{width:900px;margin:0 auto;padding:50px 0;}
 html.hnspecial-theme .WordSection1 .MsoNormal{margin:15px 0}
 html.hnspecial-theme .hnspecial-infinite-pause{padding:0;margin-left:20px;font-size:13px;text-transform:lowercase;color:#999;}

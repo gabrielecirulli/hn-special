@@ -32,6 +32,7 @@
         "You can try <em>High contrast</em> if you have issues reading some of the text on the site.",
         "<em>Highlight links when returning</em> will help you find which link you came from when coming back to Hacker News!",
         "<em>Fold comments</em> adds a button to comments that lets you expand or collapse them as you read!",
-        "<em>Mark as read</em> allows you to mark links as visited, or to mark an entire page of links as read."
+        "<em>Mark as read</em> allows you to mark links as visited, or to mark an entire page of links as read.",
+        "Use <em>Sticky header</em> if you'd like to make the header follow you through the page."
     ]
 }

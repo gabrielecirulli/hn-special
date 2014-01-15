@@ -1,5 +1,5 @@
 {
-    "settings_version": 7,
+    "settings_version": 8,
     "settings": {
         "visual_theme": true,
         "high_contrast": false,
@@ -9,7 +9,8 @@
         "accurate_domain_names": true,
         "fold_comments": true,
         "mark_as_read": false,
-        "sticky_header": false
+        "sticky_header": false,
+        "user_tooltips": false
     },
     "requirements": {
         "high_contrast": ["visual_theme"],

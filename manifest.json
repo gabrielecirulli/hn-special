@@ -35,9 +35,10 @@
         "lib/modules/accurate_domain_names.js",
         "lib/modules/mark_as_read.js",
         "lib/modules/fold_comments.js",
-        "lib/modules/sticky_header.js"
+        "lib/modules/sticky_header.js",
+        "lib/modules/user_tooltips.js"
       ],
-      "css": [ "lib/extras/hn_theme.css" ],
+      "css": [ "lib/extras/hn_theme.css", "lib/extras/user_tooltips.css" ],
       "run_at": "document_start"
     }
   ],

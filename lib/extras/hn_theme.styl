@@ -922,10 +922,12 @@ html.hnspecial-theme
 
 // User tooltips
 .hn-special-tooltip-container
-    width: 360px;
-    position: absolute;
-    padding-top: 15px;
-    margin-left: -10px;
+    position absolute
+    padding-top 15px
+    margin-left -10px
+
+    &.hn-special-tooltip-loaded
+        width 360px
 
 .hn-special-tooltip-container:before
     width 0
@@ -942,12 +944,14 @@ html.hnspecial-theme
     color #fff
     background-color rgba(0, 0, 0, 0.8)
     padding 15px 20px
+    font-weight 200
 
 .hn-special-tooltip-key, .hn-special-tooltip-value
     float left
     word-wrap break-word
 
 .hn-special-tooltip-key
+    font-weight 400
     width 30%
 
 .hn-special-tooltip-value

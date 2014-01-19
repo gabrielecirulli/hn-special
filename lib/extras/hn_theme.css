@@ -161,11 +161,12 @@ html.hnspecial-theme.hnspecial-permissions-iframe-inner body{background:transpar
 html.hnspecial-theme.hnspecial-permissions-iframe-inner body .hnspecial-settings-menu-inner{padding:0}
 html.hnspecial-theme.hnspecial-permissions-iframe-inner .permissions-description{display:block}
 html.hnspecial-theme.hnspecial-permissions-iframe-inner button{width:100%}
-.hn-special-tooltip-container{width:360px;position:absolute;padding-top:15px;margin-left:-10px}
+.hn-special-tooltip-container{position:absolute;padding-top:15px;margin-left:-10px;}
+.hn-special-tooltip-container.hn-special-tooltip-loaded{width:360px}
 .hn-special-tooltip-container:before{width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:10px solid rgba(0,0,0,0.8);position:absolute;top:5px;left:20px;content:" "}
-.hn-special-tooltip{color:#fff;background-color:rgba(0,0,0,0.8);padding:15px 20px}
+.hn-special-tooltip{color:#fff;background-color:rgba(0,0,0,0.8);padding:15px 20px;font-weight:200}
 .hn-special-tooltip-key,.hn-special-tooltip-value{float:left;word-wrap:break-word}
-.hn-special-tooltip-key{width:30%}
+.hn-special-tooltip-key{font-weight:400;width:30%}
 .hn-special-tooltip-value{width:70%;font-weight:200}
 .hn-special-tooltip-clear{margin-bottom:10px;clear:both;}
 .hn-special-tooltip-clear:last-child{margin-bottom:0}

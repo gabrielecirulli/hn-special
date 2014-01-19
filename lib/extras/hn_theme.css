@@ -161,6 +161,13 @@ html.hnspecial-theme.hnspecial-permissions-iframe-inner body{background:transpar
 html.hnspecial-theme.hnspecial-permissions-iframe-inner body .hnspecial-settings-menu-inner{padding:0}
 html.hnspecial-theme.hnspecial-permissions-iframe-inner .permissions-description{display:block}
 html.hnspecial-theme.hnspecial-permissions-iframe-inner button{width:100%}
+.hn-special-tooltip-container{width:300px;position:absolute;padding-top:10px;margin-left:-10px}
+.hn-special-tooltip-container:before{width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:10px solid rgba(0,0,0,0.8);position:absolute;top:0;left:10px;content:" "}
+.hn-special-tooltip{color:#fff;background-color:rgba(0,0,0,0.8);padding:10px}
+.hn-special-tooltip-key,.hn-special-tooltip-value{float:left;margin-bottom:10px;word-wrap:break-word}
+.hn-special-tooltip-key{font-weight:bold;width:30%}
+.hn-special-tooltip-value{width:70%}
+.hn-special-tooltip-clear{clear:both}
 @-moz-keyframes flash{0%{left:0}
 25%{left:-12px}
 50%{left:0}

@@ -10,7 +10,8 @@
         "accurate_domain_names": true,
         "fold_comments": true,
         "mark_as_read": false,
-        "sticky_header": false
+        "sticky_header": false,
+        "user_tooltips": false
     },
     "requirements": {
         "high_contrast": ["visual_theme"],

@@ -127,7 +127,7 @@ html.hnspecial-theme.hnspecial-theme-high-contrast body > center > table > tbody
 html.hnspecial-theme.hnspecial-theme-high-contrast body > center > table > tbody > tr:first-child > td > table a{font-weight:200}
 html.hnspecial-theme.hnspecial-theme-high-contrast body > center > table > tbody > tr:first-child > td > table .topsel a{font-weight:400 !important}
 html.hnspecial-theme.hnspecial-theme-high-contrast .hnspecial-mark-all-as-read-container{color:#777}
-html.hnspecial-theme.hnspecial-theme-visited-links-gray .title a:visited{color:#999 !important}
+html.hnspecial-theme.hnspecial-theme-visited-links-gray .title a:visited{color:#aaa !important}
 html.hnspecial-theme table:hover + .hnspecial-mark-all-as-read-container,html.hnspecial-theme .hnspecial-mark-all-as-read-container:hover{height:50px;padding-top:20px;opacity:1}
 html.hnspecial-theme .hnspecial-mark-all-as-read-container{opacity:0;width:100%;font-weight:200;padding-left:18px;color:#999;}
 html.hnspecial-theme .hnspecial-mark-all-as-read-container button{margin-left:10px}

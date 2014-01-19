@@ -13,6 +13,8 @@ You can install this extension [from the Chrome Web Store](https://chrome.google
  - Comment folding
  - Mark as read (thanks to [@taeram](https://twitter.com/taeram/))
  - Sticky header (thanks to [@obeattie](https://twitter.com/obeattie))
+ - Grey visited links (thanks to bjenik)
+ - User information tooltips (thanks to sebmck)
 
 #### Potential future features
  - Hide articles with certain keywords
@@ -38,7 +40,7 @@ Please keep your new module disabled by default if it's a change that could over
 For the actual code, create a JavaScript file in `lib/modules` with the same name as the module, and subscribe to the settings object through the module's key (take a look at `lib/modules/open_links_in_new_tabs.js` for an example). This will make the code in your module execute only if the setting is enabled from the interface. **NOTE**: don't forget to add your JS file to `manifest.json` and uninstall/reinstall the extension from the `chrome://extensions` page before you begin developing, or else your module won't be loaded. Simply pressing the reload button in the extensions page should work fine for all subsequent changes (or you can install the [Extension Reloader](https://chrome.google.com/webstore/detail/extensions-reloader/fimgfedafeadlieiabdeeaodndnlbhid) for easier access).
 
 ## Contributions and mentions
-Many thanks to [@taeram](https://twitter.com/taeram/), [@obeattie](https://twitter.com/obeattie), and [@messaged](https://twitter.com/messaged) for the contributions!
+Many thanks to [@taeram](https://twitter.com/taeram/), [@obeattie](https://twitter.com/obeattie), bjenik, sebmck and [@messaged](https://twitter.com/messaged) for the contributions!
 
 ## License
 HN Special is licensed under the MIT License:

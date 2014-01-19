@@ -19,6 +19,10 @@ You can install this extension [from the Chrome Web Store](https://chrome.google
 #### Potential future features
  - Hide articles with certain keywords
 
+## Installing
+Go ahead and install HN Special [from the Chrome Web Store](https://chrome.google.com/webstore/detail/hn-special-an-addition-to/cchaceegbflphbdpfocjalgjhjoahiia).  
+Please avoid installing it from the *Releases* section of this repository because the latest release isn't the most up-to-date one.
+
 ## Contributing
 The CSS is built using [Stylus](http://learnboost.github.io/stylus/). If you'd like to contribute, you should first install [Node](http://nodejs.org/), and then get `stylus`:
 ```

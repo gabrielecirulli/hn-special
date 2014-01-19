@@ -29,6 +29,7 @@
         "lib/settings.js",
         "lib/modules/visual_theme.js",
         "lib/modules/high_contrast.js",
+        "lib/modules/visited_links_gray.js",
         "lib/modules/open_links_in_new_tabs.js",
         "lib/modules/highlight_links_when_returning.js",
         "lib/modules/infinite_scrolling.js",

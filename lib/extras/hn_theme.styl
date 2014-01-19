@@ -56,6 +56,42 @@ base-font = "15px/1.5 Helvetica Neue, Arial, sans-serif"
         right -500px
         opacity 0
 
+// Generic buttons (abstract styles)
+$text-button
+    font inherit
+    -webkit-appearance none
+    border none
+    font-weight 200
+    background none
+    cursor pointer
+    margin 0
+    padding 0
+    color #828282
+
+    &:hover
+        text-decoration underline
+
+$hnspecial-text-button
+    color link-color
+
+$hnspecial-button
+    -webkit-appearance none
+    // border 1px solid lighten(text-color, 70%)
+    font unquote(base-font)
+    padding 5px 8px
+    margin 0
+    font-weight 200
+
+    background base-color
+    border none
+    color light-link-color
+    cursor pointer
+
+    &:active
+        color #fff
+        background darken(base-color, 10%)
+
+
 // HN Special infinite scroll
 .hnspecial-infinite-pause
     padding-left 5px
@@ -168,12 +204,6 @@ menu-color = #8a837c
         color darken(menu-color, 20%)
         margin-bottom 109px
 
-    .hnspecial-settings-info
-        margin-top 5px
-
-    .hnspecial-settings-tip
-        margin-bottom 20px
-
     p
         font-size 13px
 
@@ -185,6 +215,21 @@ menu-color = #8a837c
             color #f19539 !important
             font-weight 400 !important
             letter-spacing 0px !important
+
+    .hnspecial-settings-info
+        margin-top 5px
+
+    .hnspecial-settings-tip
+        @extend .hnspecial-settings-menu-inner p
+        margin-bottom 20px
+        overflow hidden
+
+        button
+            @extend $text-button
+            @extend $hnspecial-text-button
+            display block
+            float right
+            font-weight 400
 
     .hnspecial-settings-block
         margin-bottom 7px
@@ -278,42 +323,6 @@ html:not(.hnspecial-theme)
         position relative
         top 0
         margin-right 100px
-
-// Generic buttons (abstract styles)
-$text-button
-    font inherit
-    -webkit-appearance none
-    border none
-    font-weight 200
-    background none
-    cursor pointer
-    margin 0
-    padding 0
-    color #828282
-
-    &:hover
-        text-decoration underline
-
-$hnspecial-text-button
-    color link-color
-
-$hnspecial-button
-    -webkit-appearance none
-    // border 1px solid lighten(text-color, 70%)
-    font unquote(base-font)
-    padding 5px 8px
-    margin 0
-    font-weight 200
-
-    background base-color
-    border none
-    color light-link-color
-    cursor pointer
-
-    &:active
-        color #fff
-        background darken(base-color, 10%)
-
 
 // HNSpecial theme styles
 html.hnspecial-theme-preload body

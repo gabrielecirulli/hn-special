@@ -1,3 +1,8 @@
+.hnspecial-settings-menu-inner .hnspecial-settings-tip button,html.hnspecial-theme .hnspecial-mark-all-as-read-container button,.hnspecial-fold-comment-button{font:inherit;-webkit-appearance:none;border:none;font-weight:200;background:none;cursor:pointer;margin:0;padding:0;color:#828282;}
+.hnspecial-settings-menu-inner .hnspecial-settings-tip button:hover,html.hnspecial-theme .hnspecial-mark-all-as-read-container button:hover,.hnspecial-fold-comment-button:hover{text-decoration:underline}
+.hnspecial-settings-menu-inner .hnspecial-settings-tip button,html.hnspecial-theme .hnspecial-mark-all-as-read-container button,html.hnspecial-theme .hnspecial-fold-comment-button{color:#ffac5b}
+html.hnspecial-theme input[type=submit],html.hnspecial-theme input[type=button],html.hnspecial-theme button.hnspecial-button{-webkit-appearance:none;font:15px/1.5 Helvetica Neue, Arial, sans-serif;padding:5px 8px;margin:0;font-weight:200;background:#ff8937;border:none;color:#fbf9f7;cursor:pointer;}
+html.hnspecial-theme input[type=submit]:active,html.hnspecial-theme input[type=button]:active,html.hnspecial-theme button.hnspecial-button:active{color:#fff;background:#ff7718}
 .hnspecial-infinite-pause{padding-left:5px;color:#828282 !important;}
 .hnspecial-infinite-pause:before{content:'|';margin-right:5px}
 .hnspecial-settings-button{display:inline-block;width:16px;height:16px;margin-right:10px;position:relative;top:3px;}
@@ -12,11 +17,12 @@
 .hnspecial-settings-menu-container:before{content:'';position:absolute;left:142px;top:3px;-webkit-transform:rotate(45deg);z-index:0;background:#f6e9d9;display:block;width:16px;height:16px}
 .hnspecial-settings-menu-inner{width:100%;background:#f00;padding:20px;box-sizing:border-box;background:#f6e9d9;pointer-events:auto;line-height:1.5;color:#8a837c;}
 .hnspecial-settings-menu-inner strong{font-weight:400;color:#6f6963;margin-bottom:109px}
+.hnspecial-settings-menu-inner p,.hnspecial-settings-menu-inner .hnspecial-settings-tip{font-size:13px;}
+.hnspecial-settings-menu-inner p strong,.hnspecial-settings-menu-inner .hnspecial-settings-tip strong{color:#45423e !important;font-weight:500 !important}
+.hnspecial-settings-menu-inner p a,.hnspecial-settings-menu-inner .hnspecial-settings-tip a{color:#f19539 !important;font-weight:400 !important;letter-spacing:0 !important}
 .hnspecial-settings-menu-inner .hnspecial-settings-info{margin-top:5px}
-.hnspecial-settings-menu-inner .hnspecial-settings-tip{margin-bottom:20px}
-.hnspecial-settings-menu-inner p{font-size:13px;}
-.hnspecial-settings-menu-inner p strong{color:#45423e !important;font-weight:500 !important}
-.hnspecial-settings-menu-inner p a{color:#f19539 !important;font-weight:400 !important;letter-spacing:0 !important}
+.hnspecial-settings-menu-inner .hnspecial-settings-tip{margin-bottom:20px;overflow:hidden;}
+.hnspecial-settings-menu-inner .hnspecial-settings-tip button{display:block;float:right;font-weight:400}
 .hnspecial-settings-menu-inner .hnspecial-settings-block{margin-bottom:7px;-webkit-user-select:none;}
 .hnspecial-settings-menu-inner .hnspecial-settings-block.hnspecial-settings-flash{position:relative;-webkit-animation:flash 200ms ease;-webkit-animation-delay:2s;-webkit-animation-iteration-count:4;}
 .hnspecial-settings-menu-inner .hnspecial-settings-block.hnspecial-settings-flash label{color:#ff8e1d}
@@ -36,11 +42,6 @@
 .hnspecial-settings-menu-inner .hnspecial-settings-cancel-button:active{background-color:#b6b6b6 !important}
 .hnspecial-theme-link-flash,.hnspecial-theme-link-flash + tr{-webkit-animation:link-flash 1s ease}
 html:not(.hnspecial-theme) .hnspecial-settings-container-cell{float:right;position:relative;top:0;margin-right:100px}
-html.hnspecial-theme .hnspecial-mark-all-as-read-container button,.hnspecial-fold-comment-button{font:inherit;-webkit-appearance:none;border:none;font-weight:200;background:none;cursor:pointer;margin:0;padding:0;color:#828282;}
-html.hnspecial-theme .hnspecial-mark-all-as-read-container button:hover,.hnspecial-fold-comment-button:hover{text-decoration:underline}
-html.hnspecial-theme .hnspecial-mark-all-as-read-container button,html.hnspecial-theme .hnspecial-fold-comment-button{color:#ffac5b}
-html.hnspecial-theme input[type=submit],html.hnspecial-theme input[type=button],html.hnspecial-theme button.hnspecial-button{-webkit-appearance:none;font:15px/1.5 Helvetica Neue, Arial, sans-serif;padding:5px 8px;margin:0;font-weight:200;background:#ff8937;border:none;color:#fbf9f7;cursor:pointer;}
-html.hnspecial-theme input[type=submit]:active,html.hnspecial-theme input[type=button]:active,html.hnspecial-theme button.hnspecial-button:active{color:#fff;background:#ff7718}
 html.hnspecial-theme-preload body{display:none}
 html.hnspecial-theme body{display:block}
 html.hnspecial-theme,html.hnspecial-theme body{background:#fff;margin:0;padding:0;font:15px/1.5 Helvetica Neue, Arial, sans-serif;color:#555}

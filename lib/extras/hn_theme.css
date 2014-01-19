@@ -7,8 +7,8 @@
 .hnspecial-settings-button-checkbox:hover ~ img{opacity:1}
 .hnspecial-settings-button-checkbox:active ~ img{opacity:.5 !important}
 .hnspecial-settings-button-checkbox:checked ~ img{opacity:1}
-.hnspecial-settings-button-checkbox:checked ~ .hnspecial-settings-menu-container{opacity:1;top:24px;height:2000px;padding-top:10px;outline:1px solid rgba(255,137,55,0.004);-webkit-transition-delay:0ms,0ms,0ms,0ms,300ms;-webkit-transition-timing-function:ease-out}
-.hnspecial-settings-menu-container{position:absolute;top:60px;left:-142px;width:300px;height:0;background:transparent;padding:0;overflow:hidden;box-sizing:border-box;font-weight:200;text-align:left;opacity:0;pointer-events:none;outline:none;-webkit-transition-timing-function:ease-out;-webkit-transition-property:opacity,top,height,padding,outline;-webkit-transition-duration:150ms,300ms,0ms,0ms,0ms;-webkit-transition-delay:0ms,0ms,300ms,300ms,0ms;}
+.hnspecial-settings-button-checkbox:checked ~ .hnspecial-settings-menu-container{opacity:1;top:24px;height:2000px;padding-top:10px;outline:1px solid rgba(255,137,55,0.004);-webkit-transition-delay:0,0,0,0,300ms;-webkit-transition-timing-function:ease-out}
+.hnspecial-settings-menu-container{position:absolute;top:60px;left:-142px;width:300px;height:0;background:transparent;padding:0;overflow:hidden;box-sizing:border-box;font-weight:200;text-align:left;opacity:0;pointer-events:none;outline:none;-webkit-transition-timing-function:ease-out;-webkit-transition-property:opacity,top,height,padding,outline;-webkit-transition-duration:150ms,300ms,0,0,0;-webkit-transition-delay:0,0,300ms,300ms,0;}
 .hnspecial-settings-menu-container:before{content:'';position:absolute;left:142px;top:3px;-webkit-transform:rotate(45deg);z-index:0;background:#f6e9d9;display:block;width:16px;height:16px}
 .hnspecial-settings-menu-inner{width:100%;background:#f00;padding:20px;box-sizing:border-box;background:#f6e9d9;pointer-events:auto;line-height:1.5;color:#8a837c;}
 .hnspecial-settings-menu-inner strong{font-weight:400;color:#6f6963;margin-bottom:109px}

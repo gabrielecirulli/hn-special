@@ -726,6 +726,12 @@ html.hnspecial-theme
         .hnspecial-mark-all-as-read-container
             color #777
 
+    // Visited links gray
+    &.hnspecial-theme-visited-links-gray
+        .title a
+            &:visited
+                color #999 !important
+
     // Mark all as read
     table:hover + .hnspecial-mark-all-as-read-container, .hnspecial-mark-all-as-read-container:hover
         height 50px

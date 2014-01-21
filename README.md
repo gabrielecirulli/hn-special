@@ -25,7 +25,7 @@ Please avoid installing it from the *Releases* section of this repository becaus
 
 ## Contributing
 
-Please see the [contributing guide &raquo;](contributing.md)
+Please see the [contributing guide &raquo;](CONTRIBUTING.md)
 
 ## Notable mentions
 Many thanks to [@taeram](https://twitter.com/taeram/), [@obeattie](https://twitter.com/obeattie), [@bjenik](https://twitter.com/bjenik), sebmck and [@messaged](https://twitter.com/messaged) for the contributions!

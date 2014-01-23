@@ -831,9 +831,6 @@ html.hnspecial-theme
     &, &:active
         color #b3b3b3
 
-table:hover + .hnspecial-mark-all-as-read-container, .hnspecial-mark-all-as-read-container:hover
-    height 40px
-    padding-top 10px
 
 .hnspecial-mark-all-as-read-container
     -webkit-transition all 150ms ease
@@ -847,6 +844,17 @@ table:hover + .hnspecial-mark-all-as-read-container, .hnspecial-mark-all-as-read
 
     button
         margin-left 5px
+
+table:hover + .hnspecial-mark-all-as-read-container, .hnspecial-mark-all-as-read-container:hover
+    height 40px
+    padding-top 10px
+
+// Special message container
+.hnspecial-message-container
+    color lighten(text-color, 40%)
+    text-align center
+    font-weight 200
+    padding-top 20px
 
 // Infinite scrolling separator
 .hnspecial-infinite-scroll-separator td

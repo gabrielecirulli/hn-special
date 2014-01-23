@@ -144,9 +144,10 @@ html.hnspecial-theme.hnspecial-theme-sticky-header body > center > table > tbody
 .hnspecial-mark-as-read-button{border:0;background-color:transparent;cursor:pointer;margin:0;margin-right:4px;padding:0 3px 0 0;-webkit-transition:color 150ms ease;}
 .hnspecial-mark-as-read-button:hover{color:#666}
 .hnspecial-mark-as-read-button,.hnspecial-mark-as-read-button:active{color:#b3b3b3}
-table:hover + .hnspecial-mark-all-as-read-container,.hnspecial-mark-all-as-read-container:hover{height:40px;padding-top:10px}
 .hnspecial-mark-all-as-read-container{-webkit-transition:all 150ms ease;-webkit-transition-delay:700ms;box-sizing:border-box;overflow:hidden;height:0;color:#000;padding-left:10px;}
 .hnspecial-mark-all-as-read-container button{margin-left:5px}
+table:hover + .hnspecial-mark-all-as-read-container,.hnspecial-mark-all-as-read-container:hover{height:40px;padding-top:10px}
+.hnspecial-message-container{color:#999;text-align:center;font-weight:200;padding-top:20px}
 .hnspecial-infinite-scroll-separator td span{display:block;margin-top:10px}
 .hnspecial-infinite-scroll-separator td:after{margin-top:5px;height:17px;content:'';width:100%;display:block;border-top:1px solid #ddd}
 .hnspecial-infinite-search-notice{position:fixed;right:20px;bottom:30px;width:400px;background:#f6e9d9;padding:20px;font-weight:200;cursor:pointer;-webkit-animation:slide-up 800ms ease;}

@@ -138,6 +138,7 @@ html.hnspecial-theme .hnspecial-infinite-scroll-separator td:after{margin-top:0;
 html.hnspecial-theme.hnspecial-theme-sticky-header .hnspecial-mark-all-as-read-container{width:900px;margin:0 auto;padding-left:25px !important;padding-top:0 !important;color:#fff !important;}
 html.hnspecial-theme.hnspecial-theme-sticky-header .hnspecial-mark-all-as-read-container button{color:#fff !important;font-weight:300 !important}
 html.hnspecial-theme.hnspecial-theme-sticky-header table:hover + .hnspecial-mark-all-as-read-container,html.hnspecial-theme.hnspecial-theme-sticky-header .hnspecial-mark-all-as-read-container:hover{height:35px}
+html.hnspecial-theme.hnspecial-theme-sticky-header .hnspecial-message-container{padding-top:15px;padding-bottom:5px}
 html.hnspecial-theme.hnspecial-theme-sticky-header body > center > table > tbody > tr:first-child{height:70px;}
 html.hnspecial-theme.hnspecial-theme-sticky-header body > center > table > tbody > tr:first-child > td{position:fixed;top:0;left:0;width:100%;z-index:10;background:#ff8937;}
 html.hnspecial-theme.hnspecial-theme-sticky-header body > center > table > tbody > tr:first-child > td > table{max-width:900px;margin:0 auto}
@@ -147,7 +148,7 @@ html.hnspecial-theme.hnspecial-theme-sticky-header body > center > table > tbody
 .hnspecial-mark-all-as-read-container{-webkit-transition:all 150ms ease;-webkit-transition-delay:700ms;box-sizing:border-box;overflow:hidden;height:0;color:#000;padding-left:10px;}
 .hnspecial-mark-all-as-read-container button{margin-left:5px}
 table:hover + .hnspecial-mark-all-as-read-container,.hnspecial-mark-all-as-read-container:hover{height:40px;padding-top:10px}
-.hnspecial-message-container{color:#999;text-align:center;font-weight:200;padding-top:20px}
+.hnspecial-message-container{background:#fff;color:#999;text-align:center;font-weight:200;padding-top:20px}
 .hnspecial-infinite-scroll-separator td span{display:block;margin-top:10px}
 .hnspecial-infinite-scroll-separator td:after{margin-top:5px;height:17px;content:'';width:100%;display:block;border-top:1px solid #ddd}
 .hnspecial-infinite-search-notice{position:fixed;right:20px;bottom:30px;width:400px;background:#f6e9d9;padding:20px;font-weight:200;cursor:pointer;-webkit-animation:slide-up 800ms ease;}

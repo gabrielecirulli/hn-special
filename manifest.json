@@ -50,7 +50,8 @@
     "lib/extras/permissions.js",
     "resources/gear.svg",
     "resources/arrow-up.svg",
-    "resources/arrow-down.svg"
+    "resources/arrow-down.svg",
+    "resources/logo.svg"
   ],
 
   "icons": {

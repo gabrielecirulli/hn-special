@@ -125,7 +125,7 @@ html.hnspecial-theme body > center > table > tbody > tr:nth-child(4) > td{paddin
 html.hnspecial-theme body > center > table > tbody > tr:nth-child(4) > td .yclinks a{margin-right:10px}
 html.hnspecial-theme body > center > table > tbody > tr:nth-child(4) > td form input{width:400px;margin-left:10px}
 html.hnspecial-theme.hnspecial-theme-high-contrast a{color:#ff8916;font-weight:400}
-html.hnspecial-theme.hnspecial-theme-high-contrast .title a{font-weight:400;color:#111 !important;}
+html.hnspecial-theme.hnspecial-theme-high-contrast .title a{font-weight:400;color:#444 !important;}
 html.hnspecial-theme.hnspecial-theme-high-contrast .title a:visited{color:#777 !important}
 html.hnspecial-theme.hnspecial-theme-high-contrast body > center > table > tbody > tr:first-child > td > table{font-weight:200;}
 html.hnspecial-theme.hnspecial-theme-high-contrast body > center > table > tbody > tr:first-child > td > table a{font-weight:200}

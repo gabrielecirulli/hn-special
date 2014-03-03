@@ -1,4 +1,10 @@
-## Contributing
+# Contributing
+
+## Reporting an issue
+
+Thanks for taking the time to report an issue. Please describe the issue in as much detail as possible and include, if possible, your Chrome version and the steps needed to reproduce the issue (if needed).
+
+## Modifying HN Special
 
 The CSS is built using [Stylus](http://learnboost.github.io/stylus/). If you'd like to contribute, you should first install [Node](http://nodejs.org/), and then get `stylus`:
 

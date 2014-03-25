@@ -37,6 +37,7 @@
         "lib/modules/mark_as_read.js",
         "lib/modules/fold_comments.js",
         "lib/modules/sticky_header.js",
+        "lib/modules/full_width.js",
         "lib/modules/user_tooltips.js"
       ],
       "css": [ "lib/extras/hn_theme.css" ],

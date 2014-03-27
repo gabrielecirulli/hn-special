@@ -1,11 +1,12 @@
 {
-    "settings_version": 9,
+    "settings_version": 10,
     "settings": {
         "visual_theme": true,
         "high_contrast": false,
         "gray_visited_links": false,
         "infinite_scrolling": true,
         "open_links_in_new_tabs": false,
+        "open_link_and_comment": false,
         "highlight_links_when_returning": true,
         "accurate_domain_names": true,
         "fold_comments": true,

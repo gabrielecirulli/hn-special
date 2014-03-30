@@ -1,9 +1,10 @@
 {
-    "settings_version": 9,
+    "settings_version": 10,
     "settings": {
         "visual_theme": true,
         "high_contrast": false,
         "gray_visited_links": false,
+        "icon_previews": false,
         "infinite_scrolling": true,
         "open_links_in_new_tabs": false,
         "highlight_links_when_returning": true,
@@ -16,6 +17,7 @@
     "requirements": {
         "high_contrast": ["visual_theme"],
         "gray_visited_links": ["visual_theme"],
+        "icon_previews": ["visual_theme"],
         "sticky_header": ["visual_theme"],
         "highlight_links_when_returning": ["open_links_in_new_tabs"]
     },
@@ -28,16 +30,18 @@
     "tips": [
         "This extension is completely open source. Take a look at the <a href=\"https://github.com/gabrielecirulli/hn-special\" target=\"_blank\">repository</a> on GitHub!",
         "If you notice that something's wrong, please <a href=\"https://github.com/gabrielecirulli/hn-special/issues/new\" target=\"_blank\">open an issue</a> on GitHub!",
+
         "If you don't like the theme, disable it and the other the features will still work!",
-        "<em>Open links in new tabs</em> also makes links inside comments open up in separate tabs!",
-        "You can pause infinite scrolling by clicking on \"pause infinite scrolling\", next to \"More\"!",
-        "<em>Accurate domain names</em> shows you more precisely where a link takes (e.g., <em>github.com</em> becomes <em>gist.github.com</em>)!",
         "You can try <em>High contrast</em> if you have issues reading some of the text on the site.",
+        "<em>Gray visited links</em> could make it easier for you to distinguish the links you haven't clicked on yet.",
+        "<em>Icon previews</em> shows you what posts loook like before you even click them.",
+        "You can pause infinite scrolling by clicking on \"pause infinite scrolling\", next to \"More\"!",
+        "<em>Open links in new tabs</em> also makes links inside comments open up in separate tabs!",
         "<em>Highlight links when returning</em> will help you find which link you came from when coming back to Hacker News!",
+        "<em>Accurate domain names</em> shows you more precisely where a link takes (e.g., <em>github.com</em> becomes <em>gist.github.com</em>)!",
         "<em>Fold comments</em> adds a button to comments that lets you expand or collapse them as you read!",
         "<em>Mark as read</em> allows you to mark links as visited, or to mark an entire page of links as read.",
         "Use <em>Sticky header</em> if you'd like to make the header follow you through the page.",
-        "<em>Gray visited links</em> could make it easier for you to distinguish the links you haven't clicked on yet.",
         "<em>User tooltips</em> give you information about users just by hovering their name with your cursor."
     ]
 }

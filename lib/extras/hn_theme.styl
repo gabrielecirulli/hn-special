@@ -56,6 +56,13 @@ base-font = "15px/1.5 Helvetica Neue, Arial, sans-serif"
         right -500px
         opacity 0
 
+@-webkit-keyframes fill-icon
+    from
+        width 10px
+    to
+        width 50px
+
+
 // HN Special Logo spin
 .logo
     -webkit-transition: all 1s
@@ -154,6 +161,7 @@ menu-color = #8a837c
             opacity 1
 
         .hnspecial-settings-menu-container
+            z-index 99
             opacity 1
             top 24px
             height 2000px
@@ -721,9 +729,48 @@ html.hnspecial-theme
                             &:visited
                                 color lighten(link-color, 20%)
 
-                    td.subtext
+                        .with-icon
+                            white-space nowrap
+                            position relative
+                            left 5px
+                            top 5px
+
+                        .icon
+                            position relative
+                            float left
+                            width 50px
+                            height 50px
+                            border 1px solid gray
+                            border-radius 3px
+
+                            img
+                                border-radius 3px
+
+                            img.icon-load
+                                position relative
+                                top 10
+                                left 10
+                                -webkit-transition opacity 0.5s
+
+                            img.icon-img
+                                margin auto
+                                position absolute
+                                top 0
+                                left 0
+                                bottom 0
+                                right 0
+                                -webkit-animation fill-icon 1s
+                               
+
+                    .subtext
                         font-size 13px
                         padding-bottom 22px
+
+                        &.with-icon
+                            padding-bottom 0px
+                            position relative
+                            left 55px + 2px // for image border
+                            top -20px - 5px // meeting title in the middle
 
                 > tr:nth-child(4) > td
                     padding-top 30px

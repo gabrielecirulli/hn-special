@@ -30,6 +30,7 @@
         "lib/modules/visual_theme.js",
         "lib/modules/high_contrast.js",
         "lib/modules/gray_visited_links.js",
+        "lib/modules/icon_previews.js",
         "lib/modules/open_links_in_new_tabs.js",
         "lib/modules/highlight_links_when_returning.js",
         "lib/modules/infinite_scrolling.js",
@@ -51,7 +52,9 @@
     "resources/gear.svg",
     "resources/arrow-up.svg",
     "resources/arrow-down.svg",
-    "resources/logo.svg"
+    "resources/logo.svg",
+    "resources/icon-load.gif",
+    "resources/text-icon.jpg"
   ],
 
   "icons": {

@@ -1,5 +1,5 @@
 {
-    "settings_version": 9,
+    "settings_version": 10,
     "settings": {
         "visual_theme": true,
         "high_contrast": false,
@@ -40,6 +40,6 @@
         "Use <em>Sticky header</em> if you'd like to make the header follow you through the page.",
         "<em>Gray visited links</em> could make it easier for you to distinguish the links you haven't clicked on yet.",
         "<em>User tooltips</em> give you information about users just by hovering their name with your cursor.",
-        "<em>Keyboard shortcuts</em> provides you with hot keys for navigating."
+        "<em>Keyboard shortcuts</em> provides you with hot keys. Press '?' to find out the keys."
     ]
 }

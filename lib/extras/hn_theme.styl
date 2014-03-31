@@ -191,7 +191,6 @@ menu-color = #8a837c
 
 .hnspecial-settings-menu-inner
     width 100%
-    background red
     padding 20px
     box-sizing border-box
     background menu-background
@@ -359,7 +358,7 @@ html.hnspecial-theme
         font-weight 200
         word-wrap break-word
 
-    textarea
+    textarea, input[type="text"]
         -webkit-appearance none
 
         border 1px solid lighten(text-color, 70%)
@@ -379,6 +378,9 @@ html.hnspecial-theme
     input, button
         &:focus
             outline none
+
+    
+
 
     // 832
     textarea
@@ -489,6 +491,23 @@ html.hnspecial-theme
         width 10px !important
         height 10px !important
 
+    // Shows HN Special color next to topcolor input
+    input[name="topcolor"] + p
+        margin-left 20px
+        strong
+            font-weight 400
+        &, pre
+            display inline
+
+    // Topcolors in topcolors page
+    .hnspecial-theme-topcolor-preview
+        width 17px
+        height 17px
+        margin-left 20px
+        display inline-block
+        position absolute
+        left 100px
+
     // Primary pages
     body > center
         display block
@@ -500,89 +519,92 @@ html.hnspecial-theme
 
             // Header
             > tbody
-                > tr:first-child > td > table
+                > tr:first-child > td
                     background base-color
-                    color lighten(base-color, 70%)
-                    font-weight 100
-                    width 100%
 
-                    b
-                        font-weight inherit
-                        margin 0
+                    > table
+                        // color lighten(base-color, 70%)
+                        color rgba(#fff, 80%)
+                        font-weight 100
+                        width 100%
 
-                    td
-                        padding 20px 0
+                        b
+                            font-weight inherit
+                            margin 0
 
-                        // Logo td
-                        &:first-child
-                            square-size = 30px
-                            width square-size
+                        td
+                            padding 20px 0
 
-                            padding-left 25px
-                            padding-right 10px
-
-                            a
-                                display block
+                            // Logo td
+                            &:first-child
+                                square-size = 30px
                                 width square-size
-                                height square-size
-                                background #fff
-                                border-radius 100%
 
-                                &:after
-                                    content 'Y'
-                                    width square-size + 1px
-                                    height square-size
+                                padding-left 25px
+                                padding-right 10px
+
+                                a
                                     display block
-                                    line-height square-size + 2px
-                                    text-align center
-                                    font-size 22px
-                                    font-weight 200
-                                    color base-color
+                                    width square-size
+                                    height square-size
+                                    // background #fff
+                                    // border-radius 100%
 
-                                &:hover
-                                    text-decoration none
+                                    // &:after
+                                    //     content 'Y'
+                                    //     width square-size + 1px
+                                    //     height square-size
+                                    //     display block
+                                    //     line-height square-size + 2px
+                                    //     text-align center
+                                    //     font-size 22px
+                                    //     font-weight 200
+                                    //     color base-color
 
+                                    &:hover
+                                        text-decoration none
+
+                                    // img
+                                    //     display none
+
+                            // Title and links td
+                            &:nth-child(2)
+                                font
+                                    display inline-block
+                                    overflow hidden
+                                    letter-spacing 1px
+                                    max-width 140px
+                                    white-space nowrap
+                                    text-overflow ellipsis
+
+                                b a
+                                        margin-right 25px
+                                        font-weight 400
+                                        letter-spacing 0px
+
+                                // Remove spacer gif
                                 img
                                     display none
 
-                        // Title and links td
-                        &:nth-child(2)
-                            font
-                                display inline-block
-                                overflow hidden
-                                letter-spacing 1px
-                                max-width 140px
-                                white-space nowrap
-                                text-overflow ellipsis
+                                .pagetop
+                                    > a, > .topsel
+                                        margin-right 10px
 
-                            b a
-                                    margin-right 25px
-                                    font-weight 400
-                                    letter-spacing 0px
+                                    .topsel a
+                                        font-weight 300
 
-                            // Remove spacer gif
-                            img
-                                display none
+                            // User td
+                            &:last-child
+                                text-align right
+                                padding-right 25px
 
-                            .pagetop
-                                > a, > .topsel
-                                    margin-right 10px
+                                a[href^=logout]
+                                    margin-left 5px
 
-                                .topsel a
-                                    font-weight 300
-
-                        // User td
-                        &:last-child
-                            text-align right
-                            padding-right 25px
-
-                            a[href^=logout]
-                                margin-left 5px
-
-                    a
-                        font-weight 100
-                        letter-spacing 1px
-                        color light-link-color
+                        a
+                            font-weight 100
+                            letter-spacing 1px
+                            color light-link-color
 
                 // Contents
                 > tr:nth-child(3) > td
@@ -715,8 +737,8 @@ html.hnspecial-theme
             font-weight 400
 
         .title a
-            font-weight 200
-            color #111 !important
+            font-weight 400
+            color #444 !important
 
             &:visited
                 color #777 !important
@@ -798,6 +820,10 @@ html.hnspecial-theme
         .hnspecial-mark-all-as-read-container:hover
             height 35px
 
+        .hnspecial-message-container
+            padding-top 15px
+            padding-bottom 5px
+
         body > center > table > tbody > tr:first-child
             height: (30px + (20px * 2))
 
@@ -807,7 +833,7 @@ html.hnspecial-theme
                 left 0
                 width 100%
                 z-index 10 // Must be the topmost element on the page
-                background base-color
+                // background base-color
 
                 > table
                     max-width 900px
@@ -851,6 +877,7 @@ table:hover + .hnspecial-mark-all-as-read-container, .hnspecial-mark-all-as-read
 
 // Special message container
 .hnspecial-message-container
+    background white
     color lighten(text-color, 40%)
     text-align center
     font-weight 200
@@ -940,6 +967,7 @@ html.hnspecial-theme
 // User tooltips
 .hn-special-tooltip-container
     position absolute
+    z-index 1000
     padding-top 15px
     margin-left -10px
 

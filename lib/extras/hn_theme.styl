@@ -1020,3 +1020,59 @@ html.hnspecial-theme
 
     &:last-child
         margin-bottom 0
+
+// Keyboard shortcuts
+
+.hn-special-keyboard-hightlight
+    background-color rgba(255, 137, 55, 0.25)
+
+.hn-special-overlay
+    visibility hidden
+    position fixed
+    left 0px
+    top 0px
+    width 100%
+    height 100%
+    z-index 1000
+    background-color rgba(0, 0, 0, 0.25)
+
+    .outer 
+        display table
+        position absolute
+        height 100%
+        width 100%
+
+    .middle 
+        display table-cell
+        vertical-align middle
+
+    .inner 
+        margin-left auto
+        margin-right auto
+        width 500px
+        background-color #fff
+        padding 10px 20px
+
+    td
+        padding-top 3px !important
+        padding-bottom 3px !important
+
+    h1
+        font-size 20px
+        margin 0 0 5px 0
+        padding 0
+        border-bottom 1px solid #ccc
+
+    .keys 
+        padding-right 10px
+        white-space nowrap
+
+    .key
+        display inline-block
+        min-width 20px
+        padding 5px 6px
+        font-family monospace
+        color #eee
+        line-height 1
+        text-align center
+        background-color #333

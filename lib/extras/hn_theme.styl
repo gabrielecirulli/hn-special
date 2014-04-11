@@ -56,6 +56,10 @@ base-font = "15px/1.5 Helvetica Neue, Arial, sans-serif"
         right -500px
         opacity 0
 
+// needs to be relative for saved posts div
+center
+    position relative
+
 // Generic buttons (abstract styles)
 $text-button
     font inherit
@@ -878,6 +882,13 @@ table:hover + .hnspecial-mark-all-as-read-container, .hnspecial-mark-all-as-read
 // saved
 .saved
     color brown !important
+
+#saved-posts
+    position absolute
+    width 100%
+    top 70px
+    margin-top 10px
+    text-align center
 
 // Special message container
 .hnspecial-message-container

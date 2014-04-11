@@ -1,5 +1,5 @@
 {
-    "settings_version": 9,
+    "settings_version": 10,
     "settings": {
         "visual_theme": true,
         "high_contrast": false,
@@ -10,6 +10,7 @@
         "accurate_domain_names": true,
         "fold_comments": true,
         "mark_as_read": false,
+        "save_for_later": false,
         "sticky_header": false,
         "user_tooltips": false
     },
@@ -23,6 +24,10 @@
         "mark_as_read": {
             "permissions": ["history"],
             "description": "<em>Mark As Read</em> uses the <a target=\"_blank\" href=\"http://developer.chrome.com/extensions/history.html\">chrome.history</a> API to add links that you mark as read to your browser history."
+        },
+        "save_for_later": {
+            "permissions": ["storage"],
+            "description": "<em>Save For Later</em> uses the <a target=\"_blank\" href=\"https://developer.chrome.com/extensions/storage\">chrome.storage</a> API to remember what posts you've saved for later."
         }
     },
     "tips": [
@@ -36,6 +41,7 @@
         "<em>Highlight links when returning</em> will help you find which link you came from when coming back to Hacker News!",
         "<em>Fold comments</em> adds a button to comments that lets you expand or collapse them as you read!",
         "<em>Mark as read</em> allows you to mark links as visited, or to mark an entire page of links as read.",
+        "<em>Save for later</em> gives you the ability to save posts for future reading.",
         "Use <em>Sticky header</em> if you'd like to make the header follow you through the page.",
         "<em>Gray visited links</em> could make it easier for you to distinguish the links you haven't clicked on yet.",
         "<em>User tooltips</em> give you information about users just by hovering their name with your cursor."

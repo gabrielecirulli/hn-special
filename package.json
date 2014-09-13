@@ -6,7 +6,6 @@
   "author": "Gabriele Cirulli",
   "license": "MIT",
   "main": "index.js",
-  "data": "./",
   "engines": {
     "firefox": ">=32.0"
   }

@@ -3,26 +3,31 @@ var self    = require('sdk/self'),
 
 console.error( "I actually loaded, I promise." );
 
+function notDataUrl( name )
+{
+    return self.data.url( name ).replace( "/data/", "/" );
+}
+
 pageMod.PageMod({
     include: "*.ycombinator.com",
     attachTo: [ "top" ],
     onAttach: function( things ) {
         console.error( "Attached!" );
     },
-    contentStyleFile: [ self.data.url( "lib/extras/hn_theme.css" ) ],
+    contentStyleFile: [ notDataUrl( "lib/extras/hn_theme.css" ) ],
     contentScriptFile: [
-        self.data.url( "lib/tools/utility.js" ),
-        self.data.url( "lib/settings.js" ),
-        self.data.url( "lib/modules/visual_theme.js" ),
-        self.data.url( "lib/modules/high_contrast.js" ),
-        self.data.url( "lib/modules/gray_visited_links.js" ),
-        self.data.url( "lib/modules/open_links_in_new_tabs.js" ),
-        self.data.url( "lib/modules/highlight_links_when_returning.js" ),
-        self.data.url( "lib/modules/infinite_scrolling.js" ),
-        self.data.url( "lib/modules/accurate_domain_names.js" ),
-        self.data.url( "lib/modules/mark_as_read.js" ),
-        self.data.url( "lib/modules/fold_comments.js" ),
-        self.data.url( "lib/modules/sticky_header.js" ),
-        self.data.url( "lib/modules/user_tooltips.js" )
+        notDataUrl( "lib/tools/utility.js" ),
+        notDataUrl( "lib/settings.js" ),
+        notDataUrl( "lib/modules/visual_theme.js" ),
+        notDataUrl( "lib/modules/high_contrast.js" ),
+        notDataUrl( "lib/modules/gray_visited_links.js" ),
+        notDataUrl( "lib/modules/open_links_in_new_tabs.js" ),
+        notDataUrl( "lib/modules/highlight_links_when_returning.js" ),
+        notDataUrl( "lib/modules/infinite_scrolling.js" ),
+        notDataUrl( "lib/modules/accurate_domain_names.js" ),
+        notDataUrl( "lib/modules/mark_as_read.js" ),
+        notDataUrl( "lib/modules/fold_comments.js" ),
+        notDataUrl( "lib/modules/sticky_header.js" ),
+        notDataUrl( "lib/modules/user_tooltips.js" )
     ],
 });

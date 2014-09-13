@@ -8,5 +8,7 @@
   "main": "index.js",
   "engines": {
     "firefox": ">=32.0"
-  }
+  },
+  "icon": "promo/icons/icon48.png",
+  "icon64": "promo/icons/icon64.png"
 }

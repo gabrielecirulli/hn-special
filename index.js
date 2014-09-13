@@ -1,8 +1,6 @@
 var self    = require('sdk/self'),
     pageMod = require('sdk/page-mod');
 
-console.error( "I actually loaded, I promise." );
-
 function notDataUrl( name )
 {
   return self.data.url( name ).replace( "/data/", "/" );

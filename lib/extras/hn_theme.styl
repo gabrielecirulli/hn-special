@@ -24,11 +24,11 @@ base-font = "15px/1.5 Helvetica Neue, Arial, sans-serif"
 @keyframes link-flash
     from
         opacity 0.2
-        -webkit-transform translateX(1000px)
+        transform translateX(1000px)
 
     to
         opacity 1
-        -webkit-transform translateX(0px)
+        transform translateX(0px)
 
 @keyframes slide-up
     from
@@ -59,7 +59,6 @@ base-font = "15px/1.5 Helvetica Neue, Arial, sans-serif"
 // Generic buttons (abstract styles)
 $text-button
     font inherit
-    -webkit-appearance none
     border none
     font-weight 200
     background none
@@ -75,7 +74,6 @@ $hnspecial-text-button
     color link-color
 
 $hnspecial-button
-    -webkit-appearance none
     // border 1px solid lighten(text-color, 70%)
     font unquote(base-font)
     padding 5px 8px
@@ -118,11 +116,11 @@ menu-color = #8a837c
 
     img
         opacity .5
-        -webkit-transition opacity 100ms ease
+        transition opacity 100ms ease
         display block !important
 
-    input[type=checkbox]
-        -webkit-appearance none
+    input[type="checkbox"]
+        opacity 0
 
 .hnspecial-settings-button-checkbox
     width button-size
@@ -151,10 +149,9 @@ menu-color = #8a837c
             top 24px
             height 2000px
             padding-top 10px
-            outline 1px solid rgba(base-color, 0.4%) // Trick to trigger a redraw when the animation is over (fixes visual glitch)
 
-            -webkit-transition-delay 0ms, 0ms, 0ms, 0ms, 300ms
-            -webkit-transition-timing-function ease-out
+            transition-delay 0ms, 0ms, 0ms, 0ms, 300ms
+            transition-timing-function ease-out
 
 .hnspecial-settings-menu-container
     position absolute
@@ -172,17 +169,17 @@ menu-color = #8a837c
     pointer-events none
     outline none
 
-    -webkit-transition-timing-function ease-out
-    -webkit-transition-property opacity, top, height, padding, outline
-    -webkit-transition-duration 150ms, 300ms, 0ms, 0ms, 0ms
-    -webkit-transition-delay 0ms, 0ms, 300ms, 300ms, 0ms
+    transition-timing-function ease-out
+    transition-property opacity, top, height, padding, outline
+    transition-duration 150ms, 300ms, 0ms, 0ms, 0ms
+    transition-delay 0ms, 0ms, 300ms, 300ms, 0ms
 
     &:before
         content ''
         position absolute
         left (menu-width/2 - button-size/2)
         top 3px
-        -webkit-transform rotate(45deg)
+        transform rotate(45deg)
         z-index 0
         background menu-background
         display block
@@ -233,12 +230,13 @@ menu-color = #8a837c
     .hnspecial-settings-block
         margin-bottom 7px
         -webkit-user-select none
+        -moz-user-select none
 
         &.hnspecial-settings-flash
             position relative
-            -webkit-animation flash 200ms ease
-            -webkit-animation-delay 2s
-            -webkit-animation-iteration-count 4
+            animation flash 200ms ease
+            animation-delay 2s
+            animation-iteration-count 4
 
             label
                 color darken(#ff9e3c, 10%)
@@ -313,7 +311,7 @@ menu-color = #8a837c
 // Used by highlight_links_when_returning
 .hnspecial-theme-link-flash
     &, & + tr
-        -webkit-animation link-flash 1s ease
+        animation link-flash 1s ease
 
 // Place the gear icon properly in some instances
 html:not(.hnspecial-theme)
@@ -359,8 +357,6 @@ html.hnspecial-theme
         word-wrap break-word
 
     textarea, input[type="text"]
-        -webkit-appearance none
-
         border 1px solid lighten(text-color, 70%)
         font unquote(base-font)
         color inherit
@@ -628,7 +624,7 @@ html.hnspecial-theme
                     a[id^=up_], a[id^=down_]
                         opacity 0.3
                         display inline-block
-                        -webkit-transition all 150ms ease
+                        transition all 150ms ease
 
                         &:hover
                             opacity 0.6
@@ -849,7 +845,7 @@ html.hnspecial-theme
     margin 0
     margin-right 4px
     padding 0 3px 0 0
-    -webkit-transition color 150ms ease
+    transition color 150ms ease
 
     &:hover
         color #666
@@ -859,8 +855,8 @@ html.hnspecial-theme
 
 
 .hnspecial-mark-all-as-read-container
-    -webkit-transition all 150ms ease
-    -webkit-transition-delay 700ms
+    transition all 150ms ease
+    transition-delay 700ms
 
     box-sizing border-box
     overflow hidden
@@ -907,15 +903,15 @@ table:hover + .hnspecial-mark-all-as-read-container, .hnspecial-mark-all-as-read
     padding 20px
     font-weight 200
     cursor pointer
-    -webkit-animation slide-up 800ms ease
+    animation slide-up 800ms ease
 
     span
         color lighten(text-color, 40%)
         font-size 13px
 
     &.hnspecial-infinite-search-notice-hidden
-        -webkit-animation slide-out-right 450ms ease
-        -webkit-animation-fill-mode both
+        animation slide-out-right 450ms ease
+        animation-fill-mode both
 
 // Fold comments
 .hnspecial-fold-comment-button

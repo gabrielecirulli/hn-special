@@ -40,3 +40,32 @@ pageMod.PageMod({
     });
   }
 });
+
+(function() {
+  var modules = {
+    mark_as_read: {
+      toggle: function (params) {
+        var self = this;
+        let { search } = require("sdk/places/history");
+
+        search(params)
+          .on("end", function (results) {
+          if (results.length > 0) {
+            self.delete(params);
+          } else {
+            self.add(params);
+          }
+        });
+      },
+      delete: function (params) {
+        Components.classes["@mozilla.org/browser/nav-history-service;1"]
+          .getService(Components.interfaces.nsIBrowserHistory).removePage(params.url);
+
+      },
+      add: function (params) {
+        Components.classes["@mozilla.org/browser/nav-history-service;1"]
+          .getService(Components.interfaces.nsINavHistoryService).markPageAsFollowedLink(params.url);
+      }
+    }
+  };
+})();

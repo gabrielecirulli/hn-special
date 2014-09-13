@@ -1,0 +1,12 @@
+{
+  "title": "HN Special - An addition to Hacker News",
+  "name": "hn-special",
+  "version": "1.3.6",
+  "description": "This extension refreshes the visual style of Hacker News and adds a few features, like infinite scrolling. Everything is togglable.",
+  "main": "index.js",
+  "author": "Gabriele Cirulli",
+  "engines": {
+    "firefox": ">=33.0a1"
+  },
+  "license": "MIT"
+}

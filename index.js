@@ -16,9 +16,6 @@ function notDataRead( name )
 pageMod.PageMod({
     include: "*.ycombinator.com",
     attachTo: [ "top" ],
-    onAttach: function( things ) {
-      console.error( "Attached!" );
-    },
     contentStyleFile: [ notDataUrl( "lib/extras/hn_theme.css" ) ],
     contentScriptFile: [
       notDataUrl( "lib/tools/utility.js" ),

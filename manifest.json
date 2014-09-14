@@ -28,6 +28,7 @@
         "lib/tools/utility.js",
         "lib/settings.js",
         "lib/modules/visual_theme.js",
+        "lib/modules/dark_theme.js",
         "lib/modules/high_contrast.js",
         "lib/modules/gray_visited_links.js",
         "lib/modules/open_links_in_new_tabs.js",

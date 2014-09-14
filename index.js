@@ -53,6 +53,7 @@ pageMod.PageMod({
     notDataUrl( "lib/tools/utility.js" ),
     notDataUrl( "lib/settings.js" ),
     notDataUrl( "lib/modules/visual_theme.js" ),
+    notDataUrl( "lib/modules/dark_theme.js" ),
     notDataUrl( "lib/modules/high_contrast.js" ),
     notDataUrl( "lib/modules/gray_visited_links.js" ),
     notDataUrl( "lib/modules/open_links_in_new_tabs.js" ),

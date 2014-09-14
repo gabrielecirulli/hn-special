@@ -76,8 +76,6 @@ pageMod.PageMod({
 
       for( var actionName in modules[ moduleName ] )
       {
-        console.error( "Adding event: ", moduleName + "#" + actionName );
-
         worker.port.on( moduleName + "#" + actionName, function( params ) {
           module[ actionName ].call( module, params );
         } );

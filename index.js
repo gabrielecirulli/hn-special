@@ -48,7 +48,10 @@ var modules = {
 pageMod.PageMod({
   include: "*.ycombinator.com",
   attachTo: [ "top" ],
-  contentStyleFile: [ notDataUrl( "lib/extras/hn_theme.css" ) ],
+  contentStyleFile: [ 
+    notDataUrl( "lib/extras/hn_theme.css" ),
+    notDataUrl( "lib/extras/hn_theme_dark.css" )
+  ],
   contentScriptFile: [
     notDataUrl( "lib/tools/utility.js" ),
     notDataUrl( "lib/settings.js" ),

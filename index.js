@@ -11,6 +11,40 @@ function notDataRead( name )
   return self.data.load( "../" + name );
 }
 
+let { Cc, Ci } = require('chrome');
+
+var modules = {
+  mark_as_read: {
+    toggle: function (params) {
+      var self = this;
+      let { search } = require("sdk/places/history");
+
+      search(params)
+        .on("end", function (results) {
+        if (results.length > 0) {
+          self.delete(params);
+        } else {
+          self.add(params);
+        }
+      });
+    },
+    delete: function (params) {
+      console.error( "Removing: ", params.url );
+      Cc["@mozilla.org/browser/nav-history-service;1"]
+        .getService(Ci.nsIBrowserHistory).removePage(params);
+
+    },
+    add: function (params) {
+      console.error( "Adding: ", params.url );
+      Cc["@mozilla.org/browser/history;1"]
+        .getService(Ci.mozIAsyncHistory).updatePlaces( {
+          uri: params.url,
+          visitDate: new Date().toJSON().slice(0,10)
+        } );
+    }
+  }
+};
+
 pageMod.PageMod({
   include: "*.ycombinator.com",
   attachTo: [ "top" ],
@@ -35,37 +69,18 @@ pageMod.PageMod({
     defaultOptions: notDataRead( "lib/defaults.json" )
   },
   onAttach: function(worker) {
-    worker.port.on( "", function( data ) {
-      
-    });
-  }
-});
+    for( var moduleName in modules )
+    {
+      var module = modules[ moduleName ];
 
-(function() {
-  var modules = {
-    mark_as_read: {
-      toggle: function (params) {
-        var self = this;
-        let { search } = require("sdk/places/history");
+      for( var actionName in modules[ moduleName ] )
+      {
+        console.error( "Adding event: ", moduleName + "#" + actionName );
 
-        search(params)
-          .on("end", function (results) {
-          if (results.length > 0) {
-            self.delete(params);
-          } else {
-            self.add(params);
-          }
-        });
-      },
-      delete: function (params) {
-        Components.classes["@mozilla.org/browser/nav-history-service;1"]
-          .getService(Components.interfaces.nsIBrowserHistory).removePage(params.url);
-
-      },
-      add: function (params) {
-        Components.classes["@mozilla.org/browser/nav-history-service;1"]
-          .getService(Components.interfaces.nsINavHistoryService).markPageAsFollowedLink(params.url);
+        worker.port.on( moduleName + "#" + actionName, function( params ) {
+          module[ actionName ].call( module, params );
+        } );
       }
     }
-  };
-})();
+  }
+});

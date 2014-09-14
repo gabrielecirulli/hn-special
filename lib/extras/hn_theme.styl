@@ -1,7 +1,28 @@
+// Colors
 base-color = #ff8937
-text-color = #555
+text-color = #555555
 link-color = #ffac5b
+page-background-color = #ffffff
 light-link-color = #fbf9f7
+text-button-color = #828282
+text-button-active-color = #ffffff
+
+//HN Special menu
+menu-background = #f6e9d9
+menu-color = #8a837c
+text-settings-link-color = #f19539
+text-settings-highlight-color = #ff9e3c
+text-settings-disabled-color = #c0c0c0
+
+// Comments
+comment-spacer-color = #e1e1e1
+text-new-user-color = #7f9c60
+text-showdead-color = #d3d3d3
+
+// Tooltips
+tooltip-text-color = #ffffff
+tooltip-background-color = rgba(#000000, 0.8)
+
 base-font = "15px/1.5 Helvetica Neue, Arial, sans-serif"
 
 // Animations
@@ -65,7 +86,7 @@ $text-button
     cursor pointer
     margin 0
     padding 0
-    color #828282
+    color text-button-color
 
     &:hover
         text-decoration underline
@@ -86,14 +107,14 @@ $hnspecial-button
     cursor pointer
 
     &:active
-        color #fff
+        color text-button-active-color
         background darken(base-color, 10%)
 
 
 // HN Special infinite scroll
 .hnspecial-infinite-pause
     padding-left 5px
-    color #828282 !important
+    color text-button-color !important
     &:before
         content '|'
         margin-right 5px
@@ -101,8 +122,6 @@ $hnspecial-button
 // HN Special menu
 button-size = 16px
 menu-width = 300px
-menu-background = #f6e9d9
-menu-color = #8a837c
 
 .hnspecial-settings-button
     display inline-block
@@ -208,7 +227,7 @@ menu-color = #8a837c
             font-weight 500 !important
 
         a
-            color #f19539 !important
+            color text-settings-link-color !important
             font-weight 400 !important
             letter-spacing 0px !important
 
@@ -239,7 +258,7 @@ menu-color = #8a837c
             animation-iteration-count 4
 
             label
-                color darken(#ff9e3c, 10%)
+                color darken(text-settings-highlight-color, 10%)
 
         &:after
             content ''
@@ -291,7 +310,7 @@ menu-color = #8a837c
             //font-weight 400
 
             &.on
-                color #ff9e3c
+                color text-settings-highlight-color
 
             &.off
                 color lighten(menu-color, 50%)
@@ -303,10 +322,10 @@ menu-color = #8a837c
 
     .hnspecial-settings-cancel-button
         margin-left 10px !important
-        background-color #c0c0c0 !important
+        background-color text-settings-disabled-color !important
 
         &:active
-            background-color darken(#c0c0c0, 5%) !important
+            background-color darken(text-settings-disabled-color, 5%) !important
 
 // Used by highlight_links_when_returning
 .hnspecial-theme-link-flash
@@ -330,7 +349,7 @@ html.hnspecial-theme
         display block
 
     &, body
-        background #fff
+        background page-background-color
         margin 0
         padding 0
         font unquote(base-font)
@@ -481,7 +500,7 @@ html.hnspecial-theme
         bottom 0
         left 7px
         width 1px
-        background #e1e1e1
+        background comment-spacer-color
 
     div.votearrow
         width 10px !important
@@ -519,8 +538,7 @@ html.hnspecial-theme
                     background base-color
 
                     > table
-                        // color lighten(base-color, 70%)
-                        color rgba(#fff, 80%)
+                        color light-link-color
                         font-weight 100
                         width 100%
 
@@ -668,11 +686,20 @@ html.hnspecial-theme
                     .default
                         padding-top 20px
 
+                        font[color="#737373"]
+                            color text-showdead-color
+
+                        font[color="#000000"]
+                            color text-color
+
                         // Comment info & reply button
                         .comhead, u
                             font-weight 200
                             font-size 13px
                             color lighten(text-color, 40%)
+
+                            font[color="#3c963c"]
+                                color text-new-user-color
 
                     // Custom class added to poll items
                     .hnspecial-poll-row + tr td
@@ -713,6 +740,9 @@ html.hnspecial-theme
                     td.subtext
                         font-size 13px
                         padding-bottom 22px
+
+                        font[color="#3c963c"]
+                            color text-new-user-color
 
                 > tr:nth-child(4) > td
                     padding-top 30px
@@ -899,7 +929,7 @@ table:hover + .hnspecial-mark-all-as-read-container, .hnspecial-mark-all-as-read
     right 20px
     bottom 30px
     width 400px
-    background #F6E9D9
+    background menu-background
     padding 20px
     font-weight 200
     cursor pointer
@@ -967,7 +997,7 @@ html.hnspecial-theme
         height 0
         border-left 10px solid transparent
         border-right 10px solid transparent
-        border-bottom 10px solid rgba(0, 0, 0, 0.8)
+        border-bottom 10px solid tooltip-background-color
         position absolute
         top 5px
         left 20px
@@ -979,14 +1009,14 @@ html.hnspecial-theme
 
         &:before
             border-bottom none !important
-            border-top 10px solid rgba(0, 0, 0, 0.8) !important
+            border-top 10px solid tooltip-background-color !important
             top auto
             bottom 0px
 
 
 .hn-special-tooltip
-    color #fff
-    background-color rgba(0, 0, 0, 0.8)
+    color tooltip-text-color
+    background-color tooltip-background-color
     padding 15px 20px
     font-weight 200
 

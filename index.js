@@ -39,7 +39,7 @@ var modules = {
       Cc["@mozilla.org/browser/history;1"]
         .getService(Ci.mozIAsyncHistory).updatePlaces( {
           uri: params.url,
-          visitDate: new Date().toJSON().slice(0,10)
+          visitDate: new Date().toJSON().slice(0, 10)
         } );
     }
   }
@@ -47,11 +47,7 @@ var modules = {
 
 pageMod.PageMod({
   include: "*.ycombinator.com",
-  attachTo: [ "top" ],
-  contentStyleFile: [ 
-    notDataUrl( "lib/extras/hn_theme.css" ),
-    notDataUrl( "lib/extras/hn_theme_dark.css" )
-  ],
+  attachTo: [ "top", "existing" ],
   contentScriptFile: [
     notDataUrl( "lib/tools/utility.js" ),
     notDataUrl( "lib/settings.js" ),

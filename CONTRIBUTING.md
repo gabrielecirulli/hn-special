@@ -24,7 +24,7 @@ From here you have two options for testing. One, you can run the addon in Firefo
 jpm run
 ```
 
-Two, you can use [Extension Auto-Installer](https://addons.mozilla.org/en-US/firefox/addon/autoinstaller/) to run and update the addon in a normal Firefox window. From a command line, you can simplify this process by running:
+Or you can use [Extension Auto-Installer](https://addons.mozilla.org/en-US/firefox/addon/autoinstaller/) to run and update the addon in a normal Firefox window. From a command line, you can simplify this process by running:
 
 ```
 jpm xpi && wget --post-file=hn-special@gabrielecirulli.github.io.xpi http://localhost:8888/

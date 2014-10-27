@@ -38,10 +38,10 @@ The CSS is built using [Stylus](http://learnboost.github.io/stylus/). If you'd l
 npm install -g stylus
 ```
 
-You can then edit `lib/extras/hn_theme.styl` and tell Stylus to watch the changes to the `.styl` file and recompile automatically:
+You can then edit `lib/extras/_theme.styl` or whatever theme you are changing and tell Stylus to watch the changes to the `.styl` file and recompile automatically:
 
 ```
-stylus -c -w lib/extras/hn_theme.styl
+stylus -c -w lib/extras/hn_theme_light.styl
 ```
 
 ### A note about the CSS

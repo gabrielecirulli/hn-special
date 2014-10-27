@@ -722,8 +722,8 @@ html.hnspecial-theme
                     form input
                         width 400px
                         margin-left 10px
-                        background: darken(page-background-color, 20%)
-                        border: 1px solid darken(page-background-color, 50%)
+                        background darken(page-background-color, 20%)
+                        border 1px solid darken(page-background-color, 50%)
 
     // Gray visited links
     &.hnspecial-theme-gray-visited-links
@@ -742,11 +742,12 @@ html.hnspecial-theme
         width 100%
         font-weight 200
         padding-left 18px
-        color lighten(text-color, 40%)
+        color light-link-color
 
         button
             @extend $text-button
             @extend $hnspecial-text-button
+            color light-link-color
             margin-left 10px
 
     // Infinite scrolling separator

@@ -190,18 +190,19 @@ $hnspecial-button
 
     p
         font-size 13px
+        color menu-color
 
         strong
-            color darken(menu-color, 50%) !important
             font-weight 500 !important
 
         a
-            color text-settings-link-color !important
+            color link-color !important
             font-weight 400 !important
             letter-spacing 0px !important
 
     .hnspecial-settings-info
         margin-top 5px
+        color menu-color
 
     .hnspecial-settings-tip
         @extend .hnspecial-settings-menu-inner p
@@ -227,7 +228,7 @@ $hnspecial-button
             animation-iteration-count 4
 
             label
-                color darken(text-settings-highlight-color, 10%)
+                color lighten(menu-color, 50%)
 
         &:after
             content ''
@@ -239,7 +240,7 @@ $hnspecial-button
             float left
             width 88%
             font-weight 200
-            color darken(menu-color, 20%)
+            color menu-color
             cursor pointer
 
         .hnspecial-settings-checkbox-container
@@ -279,10 +280,10 @@ $hnspecial-button
             //font-weight 400
 
             &.on
-                color text-settings-highlight-color
+                color settings-on-color
 
             &.off
-                color lighten(menu-color, 50%)
+                color settings-off-color
 
     .hnspecial-settings-submit-button, .hnspecial-settings-cancel-button
         cursor pointer
@@ -291,10 +292,7 @@ $hnspecial-button
 
     .hnspecial-settings-cancel-button
         margin-left 10px !important
-        background-color text-settings-disabled-color !important
-
-        &:active
-            background-color darken(text-settings-disabled-color, 5%) !important
+        background-color darken(menu-background, 20%) !important
 
 // Used by highlight_links_when_returning
 .hnspecial-theme-link-flash
@@ -366,8 +364,11 @@ html.hnspecial-theme
         width 100%
         height 120px
         resize vertical
-        background: darken(page-background-color, 5%)
-        border: 1px solid darken(page-background-color, 30%)
+
+    textarea, input[type="text"], input[type="password"]
+        color text-color
+        background darken(page-background-color, 20%)
+        border 1px solid darken(page-background-color, 50%)
 
     // Pre and code tags can stretch the page if not limited
     pre
@@ -698,10 +699,10 @@ html.hnspecial-theme
                             padding 0px 13px 3px 10px // Refactor: same as #1
 
                         a
-                            color darken(link-color, 15%)
+                            color link-color
 
                             &:visited
-                                color lighten(link-color, 20%)
+                                color link-visited-color
 
                     td.subtext
                         font-size 13px
@@ -721,35 +722,8 @@ html.hnspecial-theme
                     form input
                         width 400px
                         margin-left 10px
-                        background: darken(page-background-color, 5%)
-                        border: 1px solid darken(page-background-color, 30%)
-
-    // High contrast version
-    &.hnspecial-theme-high-contrast
-        a
-            color darken(link-color, 20%)
-            font-weight 400
-
-        .title a
-            font-weight 400
-            color #444 !important
-
-            &:visited
-                color #777 !important
-
-        body > center > table > tbody > tr:first-child > td > table
-            // color darken(base-color, 60%)
-            font-weight 200
-
-            a
-                // color darken(base-color, 70%)
-                font-weight 200
-
-            .topsel a
-                font-weight 400 !important
-
-        .hnspecial-mark-all-as-read-container
-            color #777
+                        background: darken(page-background-color, 20%)
+                        border: 1px solid darken(page-background-color, 50%)
 
     // Gray visited links
     &.hnspecial-theme-gray-visited-links
@@ -781,7 +755,7 @@ html.hnspecial-theme
             margin 0
             position absolute
             font-size 13px
-            background white
+            background comment-spacer-color
             right 15px
             top -9px
             padding 0 10px
@@ -889,7 +863,7 @@ table:hover + .hnspecial-mark-all-as-read-container, .hnspecial-mark-all-as-read
         content ''
         width 100%
         display block
-        border-top 1px solid #ddd
+        border-top 1px solid comment-spacer-color
 
 // Infinite scrolling notice
 .hnspecial-infinite-search-notice

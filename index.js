@@ -1,13 +1,11 @@
 var self    = require('sdk/self'),
     pageMod = require('sdk/page-mod');
 
-function notDataUrl( name )
-{
+function notDataUrl( name ) {
   return self.data.url( name ).replace( "/data/", "/" );
 }
 
-function notDataRead( name )
-{
+function notDataRead( name ) {
   return self.data.load( "../" + name );
 }
 

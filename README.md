@@ -1,4 +1,7 @@
 # HN Special — A Hacker News extension
+
+![screenshot](http://gabrielecirulli.github.io/hn-special/screenshot.png)
+
 A theme and extension for [Hacker News](http://news.ycombinator.com) that improves the look and feel and adds some interesting features.
 
 The available features can be enabled or disabled based on your personal preference. New feature contributions are welcome!
@@ -14,6 +17,7 @@ You can install this extension [from the Chrome Web Store](https://chrome.google
  - Mark as read (thanks to [@taeram](https://twitter.com/taeram/))
  - Sticky header (thanks to [@obeattie](https://twitter.com/obeattie))
  - Grey visited links (thanks to [@bjenik](https://twitter.com/bjenik))
+ - Save posts for later (thanks to [@coffeecodecouch](https://twitter.com/coffeecodecouch))
  - User information tooltips (thanks to sebmck)
 
 #### Potential future features

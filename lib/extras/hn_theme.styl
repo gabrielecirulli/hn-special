@@ -1020,3 +1020,20 @@ html.hnspecial-theme
 
     &:last-child
         margin-bottom 0
+
+//Full width
+.hnspecial-theme-full-width
+    center
+        max-width: 100% !important
+
+//Full width styles for vanilla HN theme
+.hnspecial-theme-full-width-no-visual
+    body
+        margin: 0;
+    center > table
+            width: 100% !important
+            > tbody
+                >tr:nth-child(1) > td
+                    padding: 5px
+                >tr:nth-child(3) > td
+                    padding: 0 10px

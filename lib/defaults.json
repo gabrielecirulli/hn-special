@@ -1,5 +1,5 @@
 {
-    "settings_version": 9,
+    "settings_version": 10,
     "settings": {
         "visual_theme": true,
         "high_contrast": false,
@@ -11,7 +11,8 @@
         "fold_comments": true,
         "mark_as_read": false,
         "sticky_header": false,
-        "user_tooltips": false
+        "user_tooltips": false,
+        "comment_traversal": true
     },
     "requirements": {
         "high_contrast": ["visual_theme"],

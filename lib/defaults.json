@@ -39,6 +39,7 @@
         "<em>Mark as read</em> allows you to mark links as visited, or to mark an entire page of links as read.",
         "Use <em>Sticky header</em> if you'd like to make the header follow you through the page.",
         "<em>Gray visited links</em> could make it easier for you to distinguish the links you haven't clicked on yet.",
-        "<em>User tooltips</em> give you information about users just by hovering their name with your cursor."
+        "<em>User tooltips</em> give you information about users just by hovering their name with your cursor.",
+        "<em>Comment traversal</em> is useful for huge comment threads! Use CTRL+ArrowKeys: up/down go to top level comments, left/right goes to the current neighbour."
     ]
 }

@@ -56,6 +56,12 @@ base-font = "15px/1.5 Helvetica Neue, Arial, sans-serif"
         right -500px
         opacity 0
 
+@keyframes blink {
+  //0%   { background-color: #FFFFFF; }
+  50%  { background-color: #FFBD8E; }
+  //100% { background-color: #FFFFFF; }
+}
+
 // Generic buttons (abstract styles)
 $text-button
     font inherit
@@ -1020,3 +1026,6 @@ html.hnspecial-theme
 
     &:last-child
         margin-bottom 0
+
+.hn-special-comment-active
+    -webkit-animation: blink 0.25s ease-in-out; 

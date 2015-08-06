@@ -1,6 +1,7 @@
 base-color = #ff8937
 text-color = #555
 link-color = #ffac5b
+op-link-color = #3BCAFF
 light-link-color = #fbf9f7
 base-font = "15px/1.5 Helvetica Neue, Arial, sans-serif"
 
@@ -344,6 +345,9 @@ html.hnspecial-theme
     a
         color link-color
         text-decoration none
+
+    a.op
+        color op-link-color
 
     a:hover
         /*color #fdbe80*/
@@ -735,6 +739,9 @@ html.hnspecial-theme
         a
             color darken(link-color, 20%)
             font-weight 400
+
+        a.op
+           color darken(op-link-color, 20%)
 
         .title a
             font-weight 400

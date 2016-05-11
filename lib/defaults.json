@@ -1,5 +1,5 @@
 {
-    "settings_version": 9,
+    "settings_version": 10,
     "settings": {
         "visual_theme": true,
         "high_contrast": false,
@@ -11,7 +11,8 @@
         "fold_comments": true,
         "mark_as_read": false,
         "sticky_header": false,
-        "user_tooltips": false
+        "user_tooltips": false,
+        "hide_downvote": false
     },
     "requirements": {
         "high_contrast": ["visual_theme"],
@@ -38,6 +39,7 @@
         "<em>Mark as read</em> allows you to mark links as visited, or to mark an entire page of links as read.",
         "Use <em>Sticky header</em> if you'd like to make the header follow you through the page.",
         "<em>Gray visited links</em> could make it easier for you to distinguish the links you haven't clicked on yet.",
-        "<em>User tooltips</em> give you information about users just by hovering their name with your cursor."
+        "<em>User tooltips</em> give you information about users just by hovering their name with your cursor.",
+        "<em>Hide downvote</em> lets you encourage yourself to reply rather than downvoting a comment."
     ]
 }

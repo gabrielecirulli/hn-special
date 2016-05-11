@@ -37,7 +37,8 @@
         "lib/modules/mark_as_read.js",
         "lib/modules/fold_comments.js",
         "lib/modules/sticky_header.js",
-        "lib/modules/user_tooltips.js"
+        "lib/modules/user_tooltips.js",
+        "lib/modules/hide_downvote.js"
       ],
       "css": [ "lib/extras/hn_theme.css" ],
       "run_at": "document_start"

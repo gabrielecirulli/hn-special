@@ -1,7 +1,8 @@
 {
-    "settings_version": 9,
+    "settings_version": 10,
     "settings": {
         "visual_theme": true,
+        "dark_theme": false,
         "high_contrast": false,
         "gray_visited_links": false,
         "infinite_scrolling": true,
@@ -14,6 +15,7 @@
         "user_tooltips": false
     },
     "requirements": {
+        "dark_theme": ["visual_theme"],
         "high_contrast": ["visual_theme"],
         "gray_visited_links": ["visual_theme"],
         "sticky_header": ["visual_theme"],

@@ -2,8 +2,8 @@
   "manifest_version": 2,
 
   "name": "HN Special - An addition to Hacker News",
-  "description": "This extension refreshes the visual style of Hacker News and adds a few features, like infinite scrolling. Everything is togglable.",
-  "version": "1.4.0",
+  "description": "This extension refreshes the visual style of Hacker News and adds a few features, like infinite scrolling. Everything is toggleable.",
+  "version": "1.4.4",
   "homepage_url": "http://gabrielecirulli.github.io/hn-special/",
 
   "permissions": [
@@ -28,6 +28,7 @@
         "lib/tools/utility.js",
         "lib/settings.js",
         "lib/modules/visual_theme.js",
+        "lib/modules/dark_theme.js",
         "lib/modules/high_contrast.js",
         "lib/modules/gray_visited_links.js",
         "lib/modules/open_links_in_new_tabs.js",
@@ -39,7 +40,6 @@
         "lib/modules/sticky_header.js",
         "lib/modules/user_tooltips.js"
       ],
-      "css": [ "lib/extras/hn_theme.css" ],
       "run_at": "document_start"
     }
   ],
@@ -48,9 +48,14 @@
     "lib/defaults.json",
     "lib/extras/permissions.html",
     "lib/extras/permissions.js",
+    "lib/extras/hn_theme_light.css",
+    "lib/extras/hn_theme_light_contrast.css",
+    "lib/extras/hn_theme_dark.css",
     "resources/gear.svg",
-    "resources/arrow-up.svg",
-    "resources/arrow-down.svg",
+    "resources/arrow-up-white.svg",
+    "resources/arrow-down-white.svg",
+    "resources/arrow-up-black.svg",
+    "resources/arrow-down-black.svg",
     "resources/logo.svg"
   ],
 
@@ -58,6 +63,7 @@
     "16": "promo/icons/icon16.png",
     "32": "promo/icons/icon32.png",
     "48": "promo/icons/icon48.png",
+    "64": "promo/icons/icon64.png",
     "128": "promo/icons/icon128.png"
   }
 }

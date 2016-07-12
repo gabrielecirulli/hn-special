@@ -58,7 +58,6 @@ pageMod.PageMod({
     notDataUrl("lib/modules/infinite_scrolling.js"),
     notDataUrl("lib/modules/accurate_domain_names.js"),
     notDataUrl("lib/modules/mark_as_read.js"),
-    notDataUrl("lib/modules/fold_comments.js"),
     notDataUrl("lib/modules/sticky_header.js"),
     notDataUrl("lib/modules/user_tooltips.js")
   ],

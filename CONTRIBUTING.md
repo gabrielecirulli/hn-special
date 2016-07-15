@@ -15,19 +15,19 @@ See [this Stack Overflow answer](https://stackoverflow.com/questions/11480985/ca
 If you haven't installed [Node.JS](http://nodejs.org/) and [jpm](https://github.com/mozilla/jpm), do so:
 
 ```
-npm install -g jpm
+npm install -g web-ext
 ```
 
 From here you have two options for testing. One, you can run the addon in Firefox test mode. To do this, run:
 
 ```
-jpm run
+web-ext run
 ```
 
-Or you can use [Extension Auto-Installer](https://addons.mozilla.org/en-US/firefox/addon/autoinstaller/) to run and update the addon in a normal Firefox window. From a command line, you can simplify this process by running:
+To create a release package, simply run:
 
 ```
-jpm xpi && wget --post-file=hn-special@gabrielecirulli.github.io.xpi http://localhost:8888/
+web-ext build
 ```
 
 ## Modifying the style

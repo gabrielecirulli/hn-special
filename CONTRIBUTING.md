@@ -2,7 +2,7 @@
 
 ## Reporting an issue
 
-Thanks for taking the time to report an issue. Please describe the issue in as much detail as possible and include, if possible, your Chrome version and the steps needed to reproduce the issue (if needed).
+Thanks for taking the time to report an issue. Please describe the issue in as much detail as possible and include, if possible, your browser version and the steps needed to reproduce the issue (if needed).
 
 ## Building the extension
 
@@ -12,7 +12,7 @@ See [this Stack Overflow answer](https://stackoverflow.com/questions/11480985/ca
 
 ### Firefox
 
-If you haven't installed [Node.JS](http://nodejs.org/) and [jpm](https://github.com/mozilla/jpm), do so:
+If you haven't installed [Node.JS](http://nodejs.org/) and [web-ext](https://github.com/mozilla/web-ext), do so:
 
 ```
 npm install -g web-ext
@@ -53,4 +53,4 @@ Some of the selectors in the CSS are very contrived. I found it was the only way
 If you want to add a new module, please edit `lib/defaults.json` and add a descriptive key for your module (it will be used as the actual module name in the settings panel) and increment the `settings_version` key. If the module depends on another module to run, please also make sures to add it to `requirements` properly.  
 Please keep your new module disabled by default if it's a change that could overwhelm some users. There is also some code in place that will notify the users of the presence of a new module whenever their installation of the extension is auto-updated.
 
-For the actual code, create a JavaScript file in `lib/modules` with the same name as the module, and subscribe to the settings object through the module's key (take a look at `lib/modules/open_links_in_new_tabs.js` for an example). This will make the code in your module execute only if the setting is enabled from the interface. **NOTE**: don't forget to add your JS file to `manifest.json` and uninstall/reinstall the extension from the `chrome://extensions` page before you begin developing, or else your module won't be loaded. Simply pressing the reload button in the extensions page should work fine for all subsequent changes (or you can install the [Extension Reloader](https://chrome.google.com/webstore/detail/extensions-reloader/fimgfedafeadlieiabdeeaodndnlbhid) for easier access).
+For the actual code, create a JavaScript file in `lib/modules` with the same name as the module, and subscribe to the settings object through the module's key (take a look at `lib/modules/open_links_in_new_tabs.js` for an example). This will make the code in your module execute only if the setting is enabled from the interface. **NOTE**: don't forget to add your JS file to `manifest.json`.

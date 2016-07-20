@@ -12,7 +12,6 @@ You can install this extension [from the Chrome Web Store](https://chrome.google
  - Infinite scrolling
  - Open links in new tab
  - More accurate domain names
- - Comment folding
  - Mark as read (thanks to [@taeram](https://twitter.com/taeram/))
  - Sticky header (thanks to [@obeattie](https://twitter.com/obeattie))
  - Grey visited links (thanks to [@bjenik](https://twitter.com/bjenik))

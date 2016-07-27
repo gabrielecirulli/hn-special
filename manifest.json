@@ -48,6 +48,7 @@
         "lib/modules/user_tooltips.js",
         "lib/modules/hide_downvote.js"
       ],
+      "css": [ "lib/extras/hn_theme_base.css" ],
       "run_at": "document_start"
     }
   ],

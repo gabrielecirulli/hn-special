@@ -56,6 +56,7 @@
     "lib/defaults.json",
     "lib/extras/permissions.html",
     "lib/extras/permissions.js",
+    "lib/extras/hn_theme_base.css",
     "lib/extras/hn_theme_light.css",
     "lib/extras/hn_theme_light_contrast.css",
     "lib/extras/hn_theme_dark.css",

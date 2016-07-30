@@ -24,7 +24,7 @@
     "permissions": {
         "mark_as_read": {
             "permissions": ["history"],
-            "description": "<em>Mark As Read</em> uses the <a target=\"_blank\" href=\"http://developer.chrome.com/extensions/history.html\">chrome.history</a> API to add links that you mark as read to your browser history."
+            "description": "<em>Mark As Read</em> uses additional browser permissions to add links that you mark as read to your history."
         }
     },
     "tips": [

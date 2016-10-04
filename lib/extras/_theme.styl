@@ -47,10 +47,9 @@ html.hnspecial-theme
         background-color desaturate(darken(menu-background, 20%), 80%) !important
 
     // Used in posts and comments
-    p
+    p, div.comment > span:first-child
         line-height 1.5
-        margin 0
-        margin-bottom 1em
+        margin 0.5em 0
         color lighten(text-color, 0%)
         font-weight 200
         word-wrap break-word
@@ -342,6 +341,9 @@ html.hnspecial-theme
 
                     // Post area
                     > table:first-of-type
+                        :first-child:not(a)
+                            color text-color
+
                         width 100%
                         font-weight 200
                         color lighten(text-color, 40%)

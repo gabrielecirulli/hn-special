@@ -79,7 +79,7 @@ html.hnspecial-theme
 
     textarea, input[type="text"], input[type="password"]
         color text-color
-        background darken(page-background-color, 20%)
+        background lighten(page-background-color, 20%)
         border 1px solid darken(page-background-color, 50%)
 
     // Pre and code tags can stretch the page if not limited
@@ -181,9 +181,14 @@ html.hnspecial-theme
         width 1px
         background comment-spacer-color
 
+    .votelinks
+        vertical-align top
+        padding-top 20px
+    
     div.votearrow
-        width 10px !important
-        height 10px !important
+        width 10px
+        height 10px
+        margin 3px 5px 6px 0px
 
     .nosee
         visibility: hidden;

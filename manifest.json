@@ -32,7 +32,6 @@
     {
       "matches": [ "http://news.ycombinator.com/*", "https://news.ycombinator.com/*" ],
       "js": [
-        "lib/setup.js",
         "lib/tools/utility.js",
         "lib/settings.js",
         "lib/modules/visual_theme.js",

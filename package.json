@@ -1,0 +1,28 @@
+{
+  "name": "hn-special",
+  "version": "1.4.10",
+  "description": "A theme and extension for Hacker News that improves the look and feel and adds some interesting features.",
+  "private": true,
+  "scripts": {
+    "build": "npx web-ext build",
+    "build:dev": "npx web-ext run",
+    "lint": "npx eslint lib/**/*.js --fix",
+    "prettier": "npx prettier --write ./src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabrielecirulli/hn-special"
+  },
+  "keywords": [
+    "web",
+    "extension"
+  ],
+  "author": "Gabriele Cirulli and Daniel Jost",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.4.0",
+    "web-ext": "6.4.0"
+  }
+}

@@ -4,10 +4,11 @@
   "description": "A theme and extension for Hacker News that improves the look and feel and adds some interesting features.",
   "private": true,
   "scripts": {
-    "build": "npx web-ext build",
-    "build:dev": "npx web-ext run",
+    "css": "npx stylus -c ./lib/extras/hn_theme_light.styl && npx stylus -c ./lib/extras/hn_theme_dark.styl && npx stylus -c ./lib/extras/hn_theme_light_contrast.styl",
+    "build": "npm run css && npx web-ext build",
+    "build:dev": "npm run css && npx web-ext run",
     "lint": "npx eslint lib/**/*.js --fix",
-    "prettier": "npx prettier --write ./src/"
+    "prettier": "npx prettier --write ./lib/"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "prettier": "^2.4.0",
+    "stylus": "0.55.0",
     "web-ext": "6.4.0"
   }
 }

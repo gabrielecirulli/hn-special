@@ -6,43 +6,13 @@ Thanks for taking the time to report an issue. Please describe the issue in as m
 
 ## Building the extension
 
-### Chrome
-
-See [this Stack Overflow answer](https://stackoverflow.com/questions/11480985/can-a-greasemonkey-type-userscript-be-packaged-as-a-chrome-extension/11481476#11481476) on how to package an extension.
-
-### Firefox
-
-If you haven't installed [Node.JS](http://nodejs.org/) and [web-ext](https://github.com/mozilla/web-ext), do so:
-
-```
-npm install -g web-ext
-```
-
-From here you have two options for testing. One, you can run the addon in Firefox test mode. To do this, run:
-
-```
-web-ext run
-```
-
-To create a release package, simply run:
-
-```
-web-ext build
-```
+With Node.js installed, run `npm install` and `npm run build:dev` to compile and run your changes locally. To create a package for publishing, use `npm run build`.
 
 ## Modifying the style
 
-The CSS is built using [Stylus](http://learnboost.github.io/stylus/). If you'd like to contribute, you should first install [Node](http://nodejs.org/), and then get `stylus`:
+The CSS is built using [Stylus](http://learnboost.github.io/stylus/). If you'd like to contribute, you should first install [Node](http://nodejs.org/).
 
-```
-npm install -g stylus
-```
-
-You can then edit `lib/extras/_theme.styl` or whatever theme you are changing and tell Stylus to watch the changes to the `.styl` file and recompile automatically:
-
-```
-stylus -c -w lib/extras/hn_theme_light.styl
-```
+You can then edit `lib/extras/_theme.styl` or whatever theme you are changing, then run `npm run css`.
 
 ### A note about the CSS
 
@@ -50,7 +20,7 @@ Some of the selectors in the CSS are very contrived. I found it was the only way
 
 ## Adding a module
 
-If you want to add a new module, please edit `lib/defaults.json` and add a descriptive key for your module (it will be used as the actual module name in the settings panel) and increment the `settings_version` key. If the module depends on another module to run, please also make sures to add it to `requirements` properly.  
+If you want to add a new module, please edit `lib/defaults.json` and add a descriptive key for your module (it will be used as the actual module name in the settings panel) and increment the `settings_version` key. If the module depends on another module to run, please also make sures to add it to `requirements` properly.
 Please keep your new module disabled by default if it's a change that could overwhelm some users. There is also some code in place that will notify the users of the presence of a new module whenever their installation of the extension is auto-updated.
 
 For the actual code, create a JavaScript file in `lib/modules` with the same name as the module, and subscribe to the settings object through the module's key (take a look at `lib/modules/open_links_in_new_tabs.js` for an example). This will make the code in your module execute only if the setting is enabled from the interface. **NOTE**: don't forget to add your JS file to `manifest.json`.

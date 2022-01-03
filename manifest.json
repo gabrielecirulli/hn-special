@@ -31,6 +31,13 @@
     {
       "matches": [ "*://news.ycombinator.com/*" ],
       "js": [
+        "lib/tools/hide_flash.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [ "*://news.ycombinator.com/*" ],
+      "js": [
         "lib/tools/utility.js",
         "lib/settings.js",
         "lib/modules/visual_theme.js",

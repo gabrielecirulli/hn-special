@@ -1,6 +1,6 @@
 {
   "name": "hn-special",
-  "version": "1.4.10",
+  "version": "1.4.11",
   "description": "A theme and extension for Hacker News that improves the look and feel and adds some interesting features.",
   "private": true,
   "scripts": {

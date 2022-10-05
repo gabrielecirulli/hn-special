@@ -3,40 +3,32 @@
 
   "name": "HN Special - An addition to Hacker News",
   "description": "This extension refreshes the visual style of Hacker News and adds a few features, like infinite scrolling. Everything is toggleable.",
-  "version": "1.4.10",
+  "version": "1.4.11",
   "homepage_url": "http://gabrielecirulli.github.io/hn-special/",
 
-  "permissions": [
-    "*://news.ycombinator.com/*"
-  ],
+  "permissions": ["*://news.ycombinator.com/*"],
 
-  "optional_permissions": [
-    "history"
-  ],
+  "optional_permissions": ["history"],
 
   "applications": {
     "gecko": {
-      "id": "hn-special@gabrielecirulli.github.io",
+      "id": "hn-special-firefox@gabrielecirulli.github.io",
       "strict_min_version": "57.0"
     }
   },
 
-  "background" : {
-    "scripts": [
-      "lib/extras/background.js"
-    ]
+  "background": {
+    "scripts": ["lib/extras/background.js"]
   },
 
   "content_scripts": [
     {
-      "matches": [ "*://news.ycombinator.com/*" ],
-      "js": [
-        "lib/tools/hide_flash.js"
-      ],
+      "matches": ["*://news.ycombinator.com/*"],
+      "js": ["lib/tools/hide_flash.js"],
       "run_at": "document_start"
     },
     {
-      "matches": [ "*://news.ycombinator.com/*" ],
+      "matches": ["*://news.ycombinator.com/*"],
       "js": [
         "lib/tools/utility.js",
         "lib/settings.js",
@@ -53,7 +45,7 @@
         "lib/modules/user_tooltips.js",
         "lib/modules/hide_downvote.js"
       ],
-      "css": [ "lib/extras/hn_theme_base.css" ],
+      "css": ["lib/extras/hn_theme_base.css"],
       "run_at": "document_start"
     }
   ],

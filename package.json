@@ -4,11 +4,11 @@
   "description": "A theme and extension for Hacker News that improves the look and feel and adds some interesting features.",
   "private": true,
   "scripts": {
-    "css": "npx stylus -c ./lib/extras/hn_theme_light.styl && npx stylus -c ./lib/extras/hn_theme_dark.styl && npx stylus -c ./lib/extras/hn_theme_light_contrast.styl",
-    "build": "npm run css && npx web-ext build",
-    "build:dev": "npm run css && npx web-ext run",
-    "lint": "npx eslint lib/**/*.js --fix",
-    "prettier": "npx prettier --write ./lib/"
+    "css": "stylus -c ./lib/extras/hn_theme_light.styl && stylus -c ./lib/extras/hn_theme_dark.styl && stylus -c ./lib/extras/hn_theme_light_contrast.styl",
+    "build": "npm run css && web-ext build",
+    "build:dev": "npm run css && web-ext run",
+    "lint": "eslint lib/**/*.js --fix",
+    "prettier": "prettier --write ./lib/"
   },
   "repository": {
     "type": "git",
@@ -21,11 +21,11 @@
   "author": "Gabriele Cirulli and Daniel Jost",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^8.24.0",
-    "eslint-config-prettier": "^8.5.0",
-    "husky": "^8.0.1",
-    "prettier": "^2.7.1",
-    "stylus": "0.59.0",
-    "web-ext": "7.2.0"
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.8",
+    "stylus": "0.62.0",
+    "web-ext": "7.9.0"
   }
 }

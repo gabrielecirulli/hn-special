@@ -1,19 +1,19 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
 
   "name": "HN Special - An addition to Hacker News",
   "description": "This extension refreshes the visual style of Hacker News and adds a few features, like infinite scrolling. Everything is toggleable.",
-  "version": "1.4.11",
+  "version": "1.5.0",
   "homepage_url": "http://gabrielecirulli.github.io/hn-special/",
 
-  "permissions": ["*://news.ycombinator.com/*"],
+  "host_permissions": ["*://news.ycombinator.com/*"],
 
   "optional_permissions": ["history"],
 
-  "applications": {
+  "browser_specific_settings": {
     "gecko": {
       "id": "hn-special-firefox@gabrielecirulli.github.io",
-      "strict_min_version": "57.0"
+      "strict_min_version": "109.0"
     }
   },
 
@@ -51,19 +51,24 @@
   ],
 
   "web_accessible_resources": [
-    "lib/defaults.json",
-    "lib/extras/permissions.html",
-    "lib/extras/permissions.js",
-    "lib/extras/hn_theme_base.css",
-    "lib/extras/hn_theme_light.css",
-    "lib/extras/hn_theme_light_contrast.css",
-    "lib/extras/hn_theme_dark.css",
-    "resources/gear.svg",
-    "resources/arrow-up-white.svg",
-    "resources/arrow-down-white.svg",
-    "resources/arrow-up-black.svg",
-    "resources/arrow-down-black.svg",
-    "resources/logo.svg"
+    {
+      "resources": [
+        "lib/defaults.json",
+        "lib/extras/permissions.html",
+        "lib/extras/permissions.js",
+        "lib/extras/hn_theme_base.css",
+        "lib/extras/hn_theme_light.css",
+        "lib/extras/hn_theme_light_contrast.css",
+        "lib/extras/hn_theme_dark.css",
+        "resources/gear.svg",
+        "resources/arrow-up-white.svg",
+        "resources/arrow-down-white.svg",
+        "resources/arrow-up-black.svg",
+        "resources/arrow-down-black.svg",
+        "resources/logo.svg"
+      ],
+      "matches": ["*://news.ycombinator.com/*"]
+    }
   ],
 
   "icons": {

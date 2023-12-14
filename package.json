@@ -8,6 +8,7 @@
     "build": "npm run css && web-ext build",
     "build:dev": "npm run css && web-ext run",
     "lint": "eslint lib/**/*.js --fix",
+    "lint:manifest": "web-ext lint",
     "prettier": "prettier --write ./lib/"
   },
   "repository": {

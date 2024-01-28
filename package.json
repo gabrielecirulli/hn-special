@@ -1,6 +1,6 @@
 {
   "name": "hn-special",
-  "version": "1.4.11",
+  "version": "1.5.0",
   "description": "A theme and extension for Hacker News that improves the look and feel and adds some interesting features.",
   "private": true,
   "scripts": {
@@ -22,11 +22,11 @@
   "author": "Gabriele Cirulli and Daniel Jost",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^8.55.0",
+    "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "husky": "^8.0.3",
     "prettier": "^2.8.8",
     "stylus": "0.62.0",
-    "web-ext": "7.9.0"
+    "web-ext": "7.11.0"
   }
 }

@@ -18,7 +18,7 @@
   },
 
   "background": {
-    "scripts": ["lib/extras/background.js"]
+    "service_worker": "lib/extras/background.js"
   },
 
   "content_scripts": [

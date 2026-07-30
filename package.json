@@ -22,11 +22,13 @@
   "author": "Gabriele Cirulli and Daniel Jost",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
-    "husky": "^8.0.3",
-    "prettier": "^2.8.8",
-    "stylus": "0.62.0",
-    "web-ext": "7.11.0"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.8.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.8.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.9.6",
+    "stylus": "^0.64.0",
+    "web-ext": "^10.5.0"
   }
 }

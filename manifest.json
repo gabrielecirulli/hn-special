@@ -13,11 +13,15 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "hn-special-firefox@gabrielecirulli.github.io",
-      "strict_min_version": "109.0"
+      "strict_min_version": "120.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
     }
   },
 
   "background": {
+    "scripts": ["lib/extras/background.js"],
     "service_worker": "lib/extras/background.js"
   },
 
